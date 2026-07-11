@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ed-educate.github.io/sitemap.xml

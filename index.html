@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Процесс: Доверие — групповой процесс онлайн</title>
+<meta name="description" content="Процесс: Доверие — групповая встреча онлайн для тех, кто уже всё про себя понимает, но рядом с людьми всё равно проверяет, контролирует или исчезает. Одна метафора, десятки живых ситуаций — и видно, где может начаться другая мера доверия.">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://mc.yandex.ru https://yastatic.net; connect-src 'self' https://mc.yandex.ru https://yandex.ru https://*.yandex.ru https://*.yandex.net; img-src 'self' data: https://mc.yandex.ru https://yandex.ru https://*.yandex.ru; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<link rel="canonical" href="https://ed-educate.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="assets/zoom-warm.webp" fetchpriority="high">
+<meta property="og:title" content="Процесс: Доверие">
+<meta property="og:description" content="Не лекция и не чат: одна метафора, ситуации участников, малые группы и общий круг, где доверие становится живым материалом.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ed-educate.github.io/">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --bg:#FAF7F2;
+    --card:#FFFFFF;
+    --ink:#211E1A;
+    --muted:#6B645B;
+    --accent:#1E5A5E;
+    --accent-dark:#164346;
+    --accent-soft:#DCEDEA;
+    --line:#E7E0D6;
+    --soft:#F0EBE2;
+    --gold:#F6D488;
+    --rose:#F2D6CE;
+    --sage:#DCE7D4;
+    --blue:#DDE7F1;
+    --shadow:0 18px 48px rgba(33,30,26,.09);
+    --shadow-hover:0 20px 54px rgba(33,30,26,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:17px;
+    line-height:1.58;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent)}
+  img{display:block;max-width:100%;height:auto}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .narrow{max-width:760px}
+  h1,h2,h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:600;
+    line-height:1.16;
+    letter-spacing:0;
+  }
+  h1{font-size:clamp(34px,3.6vw,44px);max-width:780px}
+  h2{font-size:clamp(27px,3.3vw,40px);margin-bottom:16px}
+  h3{font-size:21px}
+  section{padding:66px 0;border-bottom:1px solid var(--line)}
+  p+p{margin-top:11px}
+  .muted{color:var(--muted)}
+  .section-head{max-width:760px;margin-bottom:24px}
+  .section-head p{font-size:18px;color:var(--muted)}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    width:max-content;
+    max-width:100%;
+    color:var(--accent);
+    border:2px solid var(--accent);
+    border-radius:999px;
+    padding:7px 18px;
+    margin-bottom:22px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .hero{padding:54px 0 50px;border-bottom:1px solid var(--line)}
+  .hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr);gap:38px;align-items:center}
+  .hero-lead{margin-top:18px;max-width:720px;font-size:clamp(21px,2.05vw,27px);line-height:1.38;color:#3A352E}
+  .hero-sub{margin-top:16px;max-width:680px;font-size:17px;color:var(--muted)}
+  .hero-visual{position:relative;border-radius:30px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .hero-visual img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .zoom-badge{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:rgba(255,255,255,.9);padding:7px 12px;color:#2D2924;font-size:13px;font-weight:800;box-shadow:0 8px 22px rgba(33,30,26,.12)}
+  .zoom-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:#35A66B}
+  .hero-note{position:absolute;left:14px;right:14px;bottom:14px;border-radius:18px;background:rgba(30,90,94,.92);color:#fff;padding:13px 15px;font-size:14px;line-height:1.35}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border-radius:18px;
+    padding:15px 22px;
+    min-height:54px;
+    border:2px solid var(--accent);
+    font-size:16px;
+    font-weight:800;
+    line-height:1.2;
+    text-decoration:none;
+    transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease;
+  }
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.secondary{background:rgba(255,255,255,.48);color:var(--accent)}
+  @media (hover:hover){
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+    .btn.primary:hover{background:var(--accent-dark)}
+  }
+  .facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .facts span{background:var(--soft);border-radius:13px;padding:8px 12px;font-size:15px;line-height:1.2}
+  .grid{display:grid;gap:16px}
+  .cards-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cards-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cards-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:20px;
+    box-shadow:0 12px 32px rgba(33,30,26,.06);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  }
+  @media (hover:hover){ .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#D8CDBF} }
+  .card p{font-size:16px;color:var(--muted)}
+  .card h3{margin-bottom:10px}
+  .recognition-card{min-height:198px;display:flex;flex-direction:column;justify-content:space-between}
+  .recognition-card:nth-child(1){background:linear-gradient(180deg,#fff 0%,#FDF6E6 100%)}
+  .recognition-card:nth-child(2){background:linear-gradient(180deg,#fff 0%,#EEF6EF 100%)}
+  .recognition-card:nth-child(3){background:linear-gradient(180deg,#fff 0%,#F7ECE7 100%)}
+  .recognition-card:nth-child(4){background:linear-gradient(180deg,#fff 0%,#EEF3F8 100%)}
+  .recognition-card:nth-child(5){background:linear-gradient(180deg,#fff 0%,#F3EDF5 100%)}
+  .recognition-card:nth-child(6){background:linear-gradient(180deg,#fff 0%,#EDF2E7 100%)}
+  .reactions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .reaction{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:34px;
+    padding:6px 11px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,255,255,.74);
+    color:#4B4540;
+    font-size:15px;
+    font-weight:800;
+    font-family:inherit;
+  }
+  button.reaction{cursor:pointer;transition:transform .16s ease,background-color .16s ease,border-color .16s ease}
+  @media (hover:hover){ button.reaction:hover{transform:translateY(-1px);border-color:#D4C8B8} }
+  button.reaction[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  .answer-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+  .answer-card.accent{background:#F7EBDD}
+  .method-flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+  .flow-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 12px 32px rgba(33,30,26,.05)}
+  .flow-card b{display:block;color:var(--accent);font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+  .flow-card p{font-size:15.5px;color:var(--muted)}
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:17px 20px;
+    box-shadow:0 10px 28px rgba(33,30,26,.05);
+  }
+  details summary{cursor:pointer;font-weight:800;font-size:17px;list-style:none;position:relative;padding-right:34px}
+  details summary::after{content:"+";position:absolute;right:0;top:-4px;font-size:25px;color:var(--accent)}
+  details[open] summary::after{content:"-"}
+  details p{font-size:15.5px;color:var(--muted)}
+  .meet-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px;align-items:center}
+  .photo-card{
+    overflow:hidden;
+    border-radius:28px;
+    background:var(--card);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .photo-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .photo-card figcaption{padding:12px 16px;font-size:14px;color:var(--muted)}
+  .steps-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .small-step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:17px;min-height:140px}
+  .small-step b{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-bottom:10px;border-radius:50%;background:var(--accent-soft);color:var(--accent)}
+  blockquote{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:22px;
+    box-shadow:0 12px 32px rgba(33,30,26,.06);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:19px;
+    line-height:1.42;
+    color:#3A352E;
+  }
+  blockquote .src{display:block;margin-top:12px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;color:var(--muted)}
+  .quotes-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;margin-top:16px;scrollbar-width:thin}
+  .quotes-grid::-webkit-scrollbar{height:6px}
+  .quotes-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+  .quotes-grid blockquote{flex:0 0 min(320px,84%);scroll-snap-align:start}
+  .quotes-grid blockquote:nth-child(6n+1){background:linear-gradient(180deg,#fff 0%,#FDF6E6 100%)}
+  .quotes-grid blockquote:nth-child(6n+2){background:linear-gradient(180deg,#fff 0%,#EEF6EF 100%)}
+  .quotes-grid blockquote:nth-child(6n+3){background:linear-gradient(180deg,#fff 0%,#F7ECE7 100%)}
+  .quotes-grid blockquote:nth-child(6n+4){background:linear-gradient(180deg,#fff 0%,#EEF3F8 100%)}
+  .quotes-grid blockquote:nth-child(6n+5){background:linear-gradient(180deg,#fff 0%,#F3EDF5 100%)}
+  .quotes-grid blockquote:nth-child(6n+6){background:linear-gradient(180deg,#fff 0%,#EDF2E7 100%)}
+  .stat-bar{display:flex;align-items:center;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 26px;margin-top:20px;box-shadow:0 12px 32px rgba(33,30,26,.06)}
+  .stat-bar b{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1;color:var(--accent);white-space:nowrap}
+  .stat-bar p{margin:0;color:var(--muted)}
+  @media(max-width:620px){.stat-bar{flex-direction:column;align-items:flex-start;gap:8px}}
+  .photo-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+  .photo-strip .photo-card img{aspect-ratio:16/10}
+  .compact-band{
+    background:var(--soft);
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:26px;
+    box-shadow:0 12px 32px rgba(33,30,26,.05);
+  }
+  .compact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .compact-grid .card{box-shadow:none}
+  .authors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:stretch}
+  .author-card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow)}
+  .author-card img{width:82px;height:82px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin-bottom:14px}
+  .author-card p{color:var(--muted);font-size:15.5px}
+  .author-card b{color:var(--ink)}
+  .pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+  .price-card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:var(--shadow);max-width:760px}
+  .price-card.featured{border:2px solid var(--accent)}
+  .price{font-family:Georgia,"Times New Roman",serif;font-size:42px;line-height:1;margin:12px 0;color:var(--accent)}
+  .price-sub{margin:-6px 0 12px;font-size:15px;color:var(--muted)}
+  .price-sub s{opacity:.55}
+  .final{padding:66px 0 92px}
+  footer{padding:34px 0 82px;font-size:15px;color:var(--muted)}
+  footer a{color:var(--accent)}
+  .cookie-consent{
+    position:fixed;
+    left:16px;
+    right:16px;
+    bottom:16px;
+    z-index:20;
+    max-width:680px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 14px 36px rgba(33,30,26,.14);
+    padding:14px 16px;
+  }
+  .cookie-consent[hidden]{display:none}
+  .cookie-consent p{font-size:14px;line-height:1.45;color:var(--muted);margin:0}
+  .cookie-actions{display:flex;gap:12px;align-items:center;justify-content:space-between}
+  .cookie-copy{padding-right:8px}
+  .cookie-btn{
+    flex:0 0 auto;
+    border:1px solid var(--accent);
+    border-radius:13px;
+    background:var(--accent);
+    color:#fff;
+    padding:9px 14px;
+    font:inherit;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .telegram-float{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:19;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:800;
+    line-height:1;
+    padding:12px 15px;
+    border-radius:999px;
+    box-shadow:0 12px 28px rgba(30,90,94,.24);
+    transition:transform .18s ease,background-color .18s ease;
+  }
+  @media (hover:hover){ .telegram-float:hover{transform:translateY(-2px);background:var(--accent-dark)} }
+  .telegram-float::before{
+    content:"TG";
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    font-size:11px;
+    letter-spacing:.04em;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero h1,.hero-lead,.hero-sub,.actions,.facts,.hero-visual{animation:rise .55s ease both}
+    .hero-lead{animation-delay:.04s}
+    .hero-sub{animation-delay:.08s}
+    .actions{animation-delay:.12s}
+    .facts{animation-delay:.16s}
+    .hero-visual{animation-delay:.18s}
+    @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  }
+  @media(max-width:940px){
+    .cards-4{grid-template-columns:1fr 1fr}
+    .hero-layout,.answer-grid,.meet-grid,.photo-strip,.authors-grid,.pricing,.method-flow{grid-template-columns:1fr}
+    .steps-row,.compact-grid{grid-template-columns:1fr}
+    .cookie-consent{bottom:74px}
+  }
+  @media(max-width:620px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    section{padding:46px 0}
+    .hero{padding:38px 0 34px}
+    .eyebrow{font-size:12px;padding:6px 14px;margin-bottom:18px}
+    h1{font-size:33px}
+    .hero-lead{font-size:22px}
+    .hero-sub{font-size:17px}
+    .actions{display:grid}
+    .btn{width:100%;min-height:52px;border-radius:16px}
+    .facts span{white-space:normal}
+    .cards-4,.cards-3,.cards-2{grid-template-columns:1fr}
+    .hero-visual img{aspect-ratio:16/10}
+    .hero-note{position:static;border-radius:0}
+    .recognition-card{min-height:0}
+    .small-step{min-height:0}
+    .price{font-size:36px}
+    .cookie-actions{align-items:flex-start}
+    .cookie-consent{padding:12px 14px}
+    .telegram-float{left:auto;right:14px;bottom:14px;padding:11px 13px;font-size:0}
+    .telegram-float::before{font-size:11px;margin:0}
+    .final{padding-bottom:122px}
+    footer{padding-bottom:88px}
+    .quotes-grid{gap:12px;scrollbar-width:none}
+    .quotes-grid::-webkit-scrollbar{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-layout">
+    <div>
+      <span class="eyebrow">Процесс: Доверие</span>
+      <h1>Я всё про себя понимаю. И всё равно проверяю, закрываюсь и жду подвоха.</h1>
+      <p class="hero-lead">Групповая встреча, где видишь свой цикл недоверия со стороны — и уходишь со следующим посильным шагом.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://payform.ru/tkbOtCN/">Записаться за 1900₽</a>
+        <a class="btn secondary" href="#program">Посмотреть программу</a>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:15px">Оплата разовая, без подписок и обязательств. Не зайдёт — вернём деньги за встречу.</p>
+      <div class="facts">
+        <span>18 июля · 12:00 мск</span>
+        <span>Онлайн в Zoom · 3 часа</span>
+        <span>Раз в неделю</span>
+        <span>До 20 человек</span>
+      </div>
+    </div>
+    <figure class="hero-visual">
+      <img src="assets/zoom-warm.webp" alt="Групповая онлайн-встреча Процесс: Доверие" fetchpriority="high">
+      <span class="zoom-badge">Zoom · живой круг</span>
+      <figcaption class="hero-note">В одиночку можно годами думать о своём сценарии. В группе он начинает проявляться вживую.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Узнаёшь себя?</h2>
+        <p>Если хотя бы одна карточка откликается — это уже материал для встречи.</p>
+      </div>
+      <div class="grid cards-4">
+        <article class="card recognition-card">
+          <div>
+            <h3>Жду подвоха</h3>
+            <p>Он ответил суше обычного — и внутри уже собирается дело: улики, прошлые эпизоды, мотив. Потом выяснится: он просто устал.</p>
+          </div>
+          <div class="reactions" aria-label="Реакции">
+            <button class="reaction" type="button" data-reaction-card="podvoh" data-reaction-type="heart" data-reaction-base="12" aria-pressed="false">❤️ <span data-reaction-count>12</span></button>
+            <button class="reaction" type="button" data-reaction-card="podvoh" data-reaction-type="fire" data-reaction-base="7" aria-pressed="false">🔥 <span data-reaction-count>7</span></button>
+          </div>
+        </article>
+        <article class="card recognition-card">
+          <div>
+            <h3>Соглашаюсь — потом злюсь</h3>
+            <p>Не хочу — но киваю. Потом злюсь на другого и стыжусь себя: почему я опять не сказал, как есть?</p>
+          </div>
+          <div class="reactions" aria-label="Реакции">
+            <button class="reaction" type="button" data-reaction-card="agree" data-reaction-type="heart" data-reaction-base="11" aria-pressed="false">❤️ <span data-reaction-count>11</span></button>
+            <button class="reaction" type="button" data-reaction-card="agree" data-reaction-type="fire" data-reaction-base="6" aria-pressed="false">🔥 <span data-reaction-count>6</span></button>
+          </div>
+        </article>
+        <article class="card recognition-card">
+          <div>
+            <h3>Проверяю</h3>
+            <p>Перечитать переписку, задать контрольный вопрос, глянуть, когда был в сети. На минуту легче. Потом тревога начинает новый круг.</p>
+          </div>
+          <div class="reactions" aria-label="Реакции">
+            <button class="reaction" type="button" data-reaction-card="checking" data-reaction-type="heart" data-reaction-base="9" aria-pressed="false">❤️ <span data-reaction-count>9</span></button>
+            <button class="reaction" type="button" data-reaction-card="checking" data-reaction-type="fire" data-reaction-base="5" aria-pressed="false">🔥 <span data-reaction-count>5</span></button>
+          </div>
+        </article>
+        <article class="card recognition-card">
+          <div>
+            <h3>Тяну всё сам</h3>
+            <p>Попросить — будто признаться в слабости. Проще молча вывезти самому, а потом удивляться усталости и обиде.</p>
+          </div>
+          <div class="reactions" aria-label="Реакции">
+            <button class="reaction" type="button" data-reaction-card="self" data-reaction-type="heart" data-reaction-base="10" aria-pressed="false">❤️ <span data-reaction-count>10</span></button>
+            <button class="reaction" type="button" data-reaction-card="self" data-reaction-type="fire" data-reaction-base="4" aria-pressed="false">🔥 <span data-reaction-count>4</span></button>
+          </div>
+        </article>
+        <article class="card recognition-card">
+          <div>
+            <h3>Не могу расслабиться</h3>
+            <p>Всё спокойно, никто не нападает. А тело всегда наготове: расслабишься — прилетит. Даже отдых приходится заслуживать.</p>
+          </div>
+          <div class="reactions" aria-label="Реакции">
+            <button class="reaction" type="button" data-reaction-card="relax" data-reaction-type="heart" data-reaction-base="14" aria-pressed="false">❤️ <span data-reaction-count>14</span></button>
+            <button class="reaction" type="button" data-reaction-card="relax" data-reaction-type="fire" data-reaction-base="8" aria-pressed="false">🔥 <span data-reaction-count>8</span></button>
+          </div>
+        </article>
+        <article class="card recognition-card">
+          <div>
+            <h3>Закрываюсь</h3>
+            <p>«Ты как?» — «Нормально». Разговор ещё идёт, а меня в нём уже нет — ушёл туда, где не достанут.</p>
+          </div>
+          <div class="reactions" aria-label="Реакции">
+            <button class="reaction" type="button" data-reaction-card="closed" data-reaction-type="heart" data-reaction-base="8" aria-pressed="false">❤️ <span data-reaction-count>8</span></button>
+            <button class="reaction" type="button" data-reaction-card="closed" data-reaction-type="fire" data-reaction-base="5" aria-pressed="false">🔥 <span data-reaction-count>5</span></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Как это устроено</h2>
+        <p>Когда-то я защищался от «ножа в спину». Теперь начинаю видеть нож там, где возникает хотя бы капля близости. А когда другой устаёт от проверок и отдаляется — недоверие получает доказательство: «ну вот, я же говорил».</p>
+        <p>Снаружи эта защита носит две маски. Выглядят противоположно, а итог один: близости не случается.</p>
+      </div>
+      <div class="grid cards-2">
+        <article class="card"><h3>Вцепиться</h3><p>Проверять, требовать гарантий, держать всё на себе. Похоже на силу и ответственность. Но рука, которая не разжимается, не может ничего принять.</p></article>
+        <article class="card"><h3>Раствориться</h3><p>Соглашаться, подстраиваться, ждать, что само образуется. Похоже на доверчивость. Но это не доверие — это исчезновение из контакта.</p></article>
+      </div>
+      <p class="muted" style="margin-top:16px;max-width:760px">Чаще всего обе маски живут в одном человеке: на работе — вцепиться, в близости — раствориться. Или наоборот.</p>
+      <div class="answer-grid" style="margin-top:26px">
+        <div class="answer-card" style="background:var(--accent);border-color:var(--accent)">
+          <h2 style="color:#fff">Задача не в том, чтобы стать доверчивым</h2>
+          <p style="color:#E7F4F1">Защита включилась не случайно: когда-то она была способом выжить. Поэтому «просто расслабься» и «просто скажи нет» не работают — приказ предаёт собственную осторожность, и напряжения становится только больше.</p>
+          <p style="color:#E7F4F1">Нам важно увидеть место, где осторожность уже не бережёт, а снова собирает сцену, в которой доверять нельзя.</p>
+        </div>
+        <div class="answer-card" style="background:linear-gradient(180deg,#fff 0%,var(--accent-soft) 100%)">
+          <h2>Присутствие: быть в близости, не хватая</h2>
+          <p>Не вцепиться и не раствориться — третье. Как птица на ладони: снизу твёрдо, сверху никто не сжимает. Она там не по приказу.</p>
+          <p>Этому не научишься по совету — только на опыте. Этим и занимаемся на встречах.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>С чем сюда приходят</h2>
+        <p>Поводы у всех разные, а цикл под ними один и тот же. На встрече это становится видно.</p>
+      </div>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>Близость</h3>
+          <p>«Внутри — океан любви, но и страха тоже. И не получается не проверять, не контролировать, не соглашаться.» Пауза в переписке — как приговор. Помогаю всем — и обижаюсь, что не ценят.</p>
+        </article>
+        <article class="card">
+          <h3>Отношение к себе</h3>
+          <p>«Живу как проект, который надо всё время чинить.» Отдых надо заслужить, сильное чувство выглядит как сбой, а расслабиться страшно — будто потеряешь контроль.</p>
+        </article>
+        <article class="card">
+          <h3>Перемены</h3>
+          <p>«По-старому больше не могу, а как иначе — не получается ощутить.» Желание не отличить от страха и долга. Наступает паралич выбора: вместо шага — бесконечный анализ.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap meet-grid">
+      <figure class="photo-card">
+        <img src="assets/online-board-group.webp" alt="Онлайн-доска и участники встречи Процесс: Доверие">
+        <figcaption>Не лекция и не чат: доска, люди, ситуации, отклики и паузы.</figcaption>
+      </figure>
+      <div>
+        <div class="section-head">
+          <h2>Как проходит встреча</h2>
+          <p>Можно прийти без готового запроса. Достаточно одной ситуации, которая повторяется, цепляет или не отпускает.</p>
+        </div>
+        <div class="steps-row">
+          <article class="small-step"><b>1</b><h3>Метафора цикла</h3><p class="muted">Общий образ, через который каждый вспоминает свой опыт — и который помогает увидеть цикл целиком.</p></article>
+          <article class="small-step"><b>2</b><h3>Свои ситуации</h3><p class="muted">Каждый достаёт несколько ситуаций — тех самых, которые в одиночку можно крутить годами.</p></article>
+          <article class="small-step"><b>3</b><h3>Тройки</h3><p class="muted">Группа делится на команды по три-четыре человека. Каждый рассказывает свои ситуации и слышит чужие: тот же цикл — другие лица.</p></article>
+          <article class="small-step"><b>4</b><h3>Общий круг</h3><p class="muted">Команды приносят в круг самое сильное. Метафора даёт каркас, а двадцать-тридцать живых историй наполняют его: за три часа проживаешь цикл десятки раз и нащупываешь его границы.</p></article>
+        </div>
+        <p class="muted" style="margin-top:14px">Это не пересказ прошлого: защита становится видимой здесь и сейчас — и с этим уже можно работать.</p>
+        <p class="muted" style="margin-top:10px">Какая метафора будет на встрече — заранее не раскрываем: образ работает сильнее, когда встречает тебя впервые. Да, это просьба о небольшом доверии авансом — мы понимаем, как она звучит для того, кто привык всё проверять. Поэтому вход — одна встреча, без обязательств.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Три призмы, через которые учимся доверять</h2>
+        <p>Каждая встреча самостоятельна и смотрит на доверие через одну из трёх призм.</p>
+      </div>
+      <div class="grid cards-3">
+        <article class="card">
+          <h3>Опора — доверие себе</h3>
+          <p>Когда собственный голос теряется за тревогой и чужими ожиданиями, а внутри — страх не выдержать. Про то, как отличать своё от навязанного и возвращать внутреннюю опору — доверие к своим чувствам.</p>
+        </article>
+        <article class="card">
+          <h3>Встреча — доверие другому</h3>
+          <p>Когда вместо живого человека видишь свой страх о нём, важное застревает в горле, а тепло не доходит — «это он из вежливости». Про то, как видеть, слышать и танцевать с другим — живым, а не выдуманным.</p>
+        </article>
+        <article class="card">
+          <h3>Основание — доверие миру</h3>
+          <p>Когда кажется, что всё держится только твоим усилием: расслабишься — утонешь, отпустишь — рухнет. Про опору, которая не заключает договоров: гравитация не обещает держать — она держит.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Что меняется</h2>
+        <p>Мы не обещаем новую личность. Меняется конкретное: насколько рано ты замечаешь свой цикл — и что успеваешь сделать иначе.</p>
+      </div>
+      <div class="grid cards-3">
+        <article class="card"><h3>После 1 встречи</h3><p>Цикл получает имя и границы: ты увидел его в двух десятках чужих историй. «Со мной что-то не так» превращается в «вот как это устроено» — и «я не один такой». Уходишь со следующим посильным шагом.</p></article>
+        <article class="card"><h3>После 6 встреч</h3><p>Ловишь защиту в моменте — в паузе, в сжатом теле. И появляется первое другое: не уходишь в себя после неловкой паузы, говоришь, что на самом деле беспокоит, просишь о помощи, не прокручиваешь сценарии в голове.</p></article>
+        <article class="card"><h3>После 12 встреч</h3><p>Меняется жизнь между встречами: кто-то перестаёт перечитывать переписку, кто-то выходит из отношений, державшихся на недоверии, кто-то перестаёт прятать себя настоящего — сначала это больно, потом свободно. И остаётся среда, где о важном говорят каждую неделю.</p></article>
+      </div>
+      <div class="quotes-grid">
+        <blockquote>«Это действительно помогает лучше понять себя, посмотреть со стороны… после занятия у меня случился инсайт.»<span class="src">Из обратной связи участников</span></blockquote>
+        <blockquote>«Здесь я могу быть собой и проявлять те чувства и эмоции, которые не всегда можно так открыто проявить в обычной жизни.»<span class="src">Из обратной связи участников</span></blockquote>
+        <blockquote>«Голова где-то очистилась, а где-то наполнилась. Ухожу с тёплыми чувствами.»<span class="src">Из финального круга</span></blockquote>
+        <blockquote>«Такой близости, откровенности, теплоты и понимания я не испытывала никогда.»<span class="src">Из обратной связи участников</span></blockquote>
+        <blockquote>«С каждым занятием всё больше нового узнавала о себе, возникали инсайты… я сама изнутри намного многограннее.»<span class="src">Из обратной связи участников</span></blockquote>
+        <blockquote>«Регулярные сессии помогли мне чаще включать осознанность действий. Я чувствую себя лучше, чем год назад.»<span class="src">Из обратной связи участников</span></blockquote>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:15px">Отзывы публикуем без имён — это часть правила круга: сказанное на встрече не выносится наружу. Даже хорошее.</p>
+      <div class="stat-bar"><b>8,9 / 10</b><p>«время на занятии летело, а не тянулось» — по 28 анонимным ответам</p></div>
+      <div class="photo-strip">
+        <figure class="photo-card">
+          <img src="assets/live-room.webp" alt="Живая групповая встреча в круге">
+          <figcaption>Десятки ситуаций вместо одного примера: видно, как похожий цикл живёт у разных людей.</figcaption>
+        </figure>
+        <div class="compact-band">
+          <h3>Не надо быть готовым открыться сразу</h3>
+          <p class="muted">Можно входить постепенно: слушать, выбирать, чем делиться, замечать, где защита срабатывает уже в самой группе.</p>
+          <div class="reactions"><span class="reaction">«не уходить в себя»</span><span class="reaction">«быть собой»</span><span class="reaction">«расслабиться внутри группы»</span></div>
+        </div>
+      </div>
+      <div class="actions" style="margin-top:24px"><a class="btn primary" href="https://payform.ru/tkbOtCN/">Прийти 18 июля — 1900 ₽</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Чем это не является</h2>
+        <p>Так проще понять формат без лишней серьёзности и без обещаний, которых здесь нет.</p>
+      </div>
+      <div class="compact-grid">
+        <article class="card"><h3>Не курс и не поток</h3><p>Каждая встреча самостоятельна. Приходи на одну — дальше решишь.</p></article>
+        <article class="card"><h3>Не терапия и не тренинг</h3><p>Никто не разбирает тебя и не даёт правильных ответов. Материал — твой опыт, и распоряжаешься им ты.</p></article>
+        <article class="card"><h3>Не лекция</h3><p>Ведущий не рассказывает, как жить. Его роль — собрать среду, где опыт каждого начинает работать на всех.</p></article>
+        <article class="card"><h3>Не эзотерика</h3><p>Метафоры здесь — инструмент мышления, а не мистика. Никаких гуру и истин, с которыми нужно согласиться.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Кто ведёт процесс</h2>
+      </div>
+      <div class="authors-grid">
+        <article class="author-card">
+          <img src="assets/ed.webp" alt="Эд — ведущий Процесса: Доверие">
+          <p><b>Эд — ведущий и архитектор среды.</b> Ведёт группы два года — больше ста живых кругов; сейчас — две группы в неделю, офлайн и онлайн. За плечами 7 лет преподавания, 1 400+ часов разборов один на один и курпатовская методология мышления.</p>
+        </article>
+        <article class="author-card">
+          <img src="assets/maxim.webp" alt="Максим Плаксин — автор метафор">
+          <p><b>Максим Плаксин — автор метафор.</b> Основатель giper.fm. Метафоры — внутренний язык его команды в турбулентные годы; этот процесс опирается на них с его согласия.</p>
+        </article>
+        <article class="author-card">
+          <img src="assets/nastya.webp" alt="Настя Балаева — со-архитектор среды">
+          <p><b>Настя Балаева — со-архитектор среды.</b> Ex-Лаборатория нейронаук Сбера, автор курса по нейромаркетингу для МФТИ и Сбера. Помогает собирать архитектуру встреч.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Формат и стоимость</h2>
+        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — суббота, 18 июля, 12:00 мск. Мест до 20, группа собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
+      </div>
+      <div class="facts"><span>18 июля · 12:00 мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 20 человек</span></div>
+      <div class="pricing">
+        <article class="price-card">
+          <h3>Двенадцать встреч</h3>
+          <div class="price">17 900 ₽</div>
+          <p class="price-sub">≈1490 ₽ за встречу · вместо <s>22 800 ₽</s></p>
+          <p class="muted">Горизонт, о котором участники говорят «я нашла себя»: меньше контроля и проверок, больше себя настоящего.</p>
+          <div class="actions"><a class="btn primary" href="https://payform.ru/i5bYl83/">Взять 12 встреч за 17 900₽</a></div>
+        </article>
+        <article class="price-card featured">
+          <h3>Шесть встреч</h3>
+          <div class="price">9900 ₽</div>
+          <p class="price-sub">1650 ₽ за встречу · вместо <s>11 400 ₽</s></p>
+          <p class="muted">Научиться ловить защиту в моменте — в паузе, в теле, до сорванного разговора.</p>
+          <div class="actions"><a class="btn primary" href="https://payform.ru/k8bYl9a/">Взять 6 встреч за 9900₽</a></div>
+        </article>
+        <article class="price-card">
+          <h3>Одна встреча</h3>
+          <div class="price">1900 ₽</div>
+          <p class="muted">Увидеть свой цикл со стороны и унести следующий шаг. Достаточно побывать — остальное сделает среда. Решишь идти дальше — в течение 24 часов эти 1900 ₽ зачтутся в абонемент.</p>
+          <div class="actions"><a class="btn primary" href="https://payform.ru/tkbOtCN/">Записаться за 1900₽</a><a class="btn secondary" href="https://t.me/ed_educate">Задать вопрос</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Вопросы</h2>
+      <details><summary>Кто обычно приходит?</summary><p>Люди 25–45, которые уже что-то читали или проходили о себе: специалисты, предприниматели, помогающие практики. На каждой встрече есть те, кто пришёл впервые, — закрытой компании тут нет, группа каждый раз собирается заново.</p></details>
+      <details><summary>Сколько человек будет на встрече?</summary><p>По-разному: от четырёх до двадцати. Механика собирается в любом составе — тройки и общий круг работают и вчетвером, а времени на твои ситуации в маленькой группе даже больше. Если записалось меньше трёх, встречу переносим и возвращаем деньги.</p></details>
+      <details><summary>Придётся говорить на камеру перед всеми?</summary><p>Камера и голос понадобятся, но основная работа идёт в тройках и четвёрках — это камерно, не перед всей группой. В общий круг команды выходят вместе, втроём: это заметно проще, чем звучит. Чем делиться и насколько глубоко — всегда решаешь ты.</p></details>
+      <details><summary>А если меня накроет прямо на встрече?</summary><p>Формат дозирует глубину: никто не разбирает одного человека перед всеми и не копает без запроса. Если поднялось сильное — можно выключить камеру или выйти со встречи, это нормально: Эд после встречи сам напишет. Для острых состояний этот формат не подходит — там нужна индивидуальная помощь.</p></details>
+      <details><summary>Это записывается?</summary><p>Обсуждения в тройках не записываются, а личный запрос, который ты формулируешь, остаётся у тебя. Записываются только выступления команд в общем круге. И действует правило круга: сказанное на встрече не выносится наружу.</p></details>
+      <details><summary>Как часто проходят встречи?</summary><p>Раз в неделю, онлайн. Если встреча сдвигается — группа узнаёт заранее в Telegram-канале.</p></details>
+      <details><summary>Можно прийти без готового запроса?</summary><p>Да. Не обязательно заранее понимать, «с чем именно работать». Иногда достаточно одной ситуации, которая повторяется, цепляет или не отпускает.</p></details>
+      <details><summary>Как подготовиться?</summary><p>Специально — никак: материал встречи — твой собственный опыт. Перед встречей в канале группы появится короткий разогрев минут на пять. Этого достаточно.</p></details>
+      <details><summary>Можно прийти один раз?</summary><p>Да. Одна встреча — нормальный вход. Если зацепит, можно взять абонемент — шесть или двенадцать встреч.</p></details>
+      <details><summary>Оплатил — что дальше?</summary><p>Сразу после оплаты откроется Telegram-канал группы: там ссылка на Zoom и напоминания. Если переадресация не сработала — напиши Эду лично: <a href="https://t.me/ed_educate">t.me/ed_educate</a>, добавим вручную.</p></details>
+      <details><summary>А если мне не зайдёт?</summary><p>Напиши Эду после встречи — вернём деньги. Без анкет и выяснений: формат правда подходит не всем, и это нормально.</p></details>
+      <details><summary>Это терапия?</summary><p>Нет. Это групповая практика с фасилитацией, темой встречи и отражением группы. Она не заменяет индивидуальную терапию, психиатрическую или кризисную помощь.</p></details>
+      <details><summary>Если сейчас острый кризис?</summary><p>Лучше идти в индивидуальную или кризисную помощь. Здесь нет диагностики, лечения и экстренной поддержки.</p></details>
+      <details><summary>А если я пропущу неделю?</summary><p>Встречи из абонемента не сгорают: это количество встреч, а не жёсткие даты. Пропустил неделю — просто приходишь на следующую.</p></details>
+      <details><summary>Можно присоединиться не с первой встречи?</summary><p>Да. Каждая встреча самостоятельна — присоединиться можно с любой недели.</p></details>
+      <details><summary>Чем это отличается от разговора с друзьями?</summary><p>Друзья поддерживают, советуют или занимают сторону — и обычно это разговор об одной ситуации. Здесь метафора задаёт каркас цикла, а группа наполняет его двумя-тремя десятками живых историй. Чужой опыт резонирует: вспоминаешь своё — то, чего в одиночку из себя не достал бы. Так паттерн схватывается за одну встречу, а не за месяцы разговоров.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap narrow">
+      <h2>Можно прийти с одним запросом</h2>
+      <p class="hero-sub">Где ты проверяешь, контролируешь и ждёшь подвоха — или соглашаешься, тянешь всё сам и исчезаешь из контакта.</p>
+      <p class="hero-sub" style="margin-top:10px">Пойти подумать — это тот же цикл: ещё один круг анализа вместо шага. Одна встреча даст анализу то, чего ему не хватает, — материал.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://payform.ru/tkbOtCN/">Записаться за 1900₽</a>
+        <a class="btn secondary" href="https://t.me/ed_educate">Задать вопрос перед записью</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Вопрос перед записью: <a href="https://t.me/ed_educate">t.me/ed_educate</a></p>
+    <p style="margin-top:6px"><a href="privacy.html">Политика обработки данных</a></p>
+    <p style="margin-top:6px">«Процесс: Доверие» — образовательная групповая практика. Не является медицинской или психотерапевтической услугой.</p>
+  </div>
+</footer>
+
+<a class="telegram-float" href="https://t.me/ed_educate" aria-label="Написать Эду в Telegram">Написать в Telegram</a>
+
+<div class="cookie-consent" data-cookie-consent hidden>
+  <div class="cookie-actions">
+    <p class="cookie-copy">Используем cookie и Яндекс Метрику для аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой данных</a>.</p>
+    <button class="cookie-btn" type="button" data-cookie-close>Понятно</button>
+  </div>
+</div>
+
+<script src="js/privacy.js" defer></script>
+</body>
+</html>
