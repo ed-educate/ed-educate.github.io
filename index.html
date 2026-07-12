@@ -78,14 +78,21 @@
     text-transform:uppercase;
   }
   .hero{padding:54px 0 50px;border-bottom:1px solid var(--line)}
-  .hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr);gap:38px;align-items:center}
-  .hero-lead{margin-top:18px;max-width:720px;font-size:clamp(21px,2.05vw,27px);line-height:1.38;color:#3A352E}
+  .hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr);grid-template-areas:"copy visual";gap:38px;align-items:center}
+  .hero-copy{grid-area:copy}
+  .hero h1{font-size:clamp(30px,calc(18px + 1.25vw),36px);line-height:1.1;letter-spacing:-.018em;text-wrap:balance}
+  .hero-lead{margin-top:18px;max-width:720px;font-size:clamp(19px,1.8vw,23px);line-height:1.42;color:#3A352E}
   .hero-sub{margin-top:16px;max-width:680px;font-size:17px;color:var(--muted)}
-  .hero-visual{position:relative;border-radius:30px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .hero-visual{grid-area:visual;border-radius:30px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
   .hero-visual img{width:100%;aspect-ratio:16/10;object-fit:cover}
-  .zoom-badge{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:rgba(255,255,255,.9);padding:7px 12px;color:#2D2924;font-size:13px;font-weight:800;box-shadow:0 8px 22px rgba(33,30,26,.12)}
-  .zoom-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:#35A66B}
-  .hero-note{position:absolute;left:14px;right:14px;bottom:14px;border-radius:18px;background:rgba(30,90,94,.92);color:#fff;padding:13px 15px;font-size:14px;line-height:1.35}
+  .hero-visual-meta{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:nowrap;padding:7px 10px;background:var(--card)}
+  .process-badge{display:inline-flex;align-items:center;border:1px solid var(--accent);border-radius:999px;padding:3px 7px;color:var(--accent);font-size:9.5px;font-weight:800;letter-spacing:.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap}
+  .hero-process-label{display:none}
+  .hero-note{display:inline-flex;align-items:center;gap:5px;color:#4B4540;font-size:10.5px;font-weight:750;line-height:1.2;white-space:nowrap}
+  .hero-note::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:#35A66B}
+  .hero-meta{margin-top:22px;font-size:17px;font-weight:800;line-height:1.4;color:#38332D}
+  .hero-guarantee{margin-top:12px;max-width:600px;font-size:15px;color:var(--muted)}
+  .hero-program-link{display:inline-flex;margin-top:10px;font-size:15px;font-weight:750;text-underline-offset:4px}
   .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
   .btn{
     display:inline-flex;
@@ -295,35 +302,76 @@
     letter-spacing:.04em;
   }
   @media (prefers-reduced-motion:no-preference){
-    .hero h1,.hero-lead,.hero-sub,.actions,.facts,.hero-visual{animation:rise .55s ease both}
-    .hero-lead{animation-delay:.04s}
-    .hero-sub{animation-delay:.08s}
-    .actions{animation-delay:.12s}
-    .facts{animation-delay:.16s}
-    .hero-visual{animation-delay:.18s}
+    .hero-visual,.hero h1,.hero-lead,.hero-meta,.hero .actions,.hero-guarantee,.hero-program-link{animation:rise .55s ease both}
+    .hero h1{animation-delay:.04s}
+    .hero-lead{animation-delay:.08s}
+    .hero-meta{animation-delay:.12s}
+    .hero .actions{animation-delay:.16s}
+    .hero-guarantee{animation-delay:.2s}
+    .hero-program-link{animation-delay:.24s}
     @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  }
+  @media(min-width:941px){
+    .hero{padding:48px 0 54px}
+    .hero-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,4vw,60px);align-items:start}
+    .hero-copy{padding-top:2px}
+    .hero-process-label{
+      display:inline-flex;
+      align-items:center;
+      width:max-content;
+      max-width:100%;
+      margin-bottom:18px;
+      border:1.5px solid var(--accent);
+      border-radius:999px;
+      padding:6px 12px;
+      color:var(--accent);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.1em;
+      line-height:1.2;
+      text-transform:uppercase;
+    }
+    .hero h1{font-size:clamp(32px,2.35vw,36px)}
+    .hero-lead{margin-top:20px;font-size:clamp(18px,1.4vw,21px)}
+    .hero-meta{margin-top:20px}
+    .hero .actions{margin-top:22px}
+    .hero-visual{border-radius:26px}
+    .hero-visual img{aspect-ratio:800/475}
+    .hero-visual-meta{justify-content:flex-end;min-height:32px}
+    .hero-visual .process-badge{display:none}
   }
   @media(max-width:940px){
     .cards-4{grid-template-columns:1fr 1fr}
-    .hero-layout,.answer-grid,.meet-grid,.photo-strip,.authors-grid,.pricing,.method-flow{grid-template-columns:1fr}
+    .hero-layout{grid-template-columns:1fr;grid-template-areas:"visual" "copy";gap:28px}
+    .hero-copy,.hero-visual{width:100%;max-width:720px;margin-left:auto;margin-right:auto}
+    .hero-visual img{height:clamp(180px,min(48vw,36dvh),360px);aspect-ratio:auto;object-fit:cover;object-position:center}
+    .answer-grid,.meet-grid,.photo-strip,.authors-grid,.pricing,.method-flow{grid-template-columns:1fr}
     .steps-row,.compact-grid{grid-template-columns:1fr}
     .cookie-consent{bottom:74px}
+  }
+  @media(min-width:941px) and (max-width:1100px){
+    .hero h1{font-size:30px}
   }
   @media(max-width:620px){
     body{font-size:16px}
     .wrap{padding:0 16px}
     section{padding:46px 0}
-    .hero{padding:38px 0 34px}
+    .hero{padding:12px 0 28px}
+    .hero-layout{gap:18px}
     .eyebrow{font-size:12px;padding:6px 14px;margin-bottom:18px}
-    h1{font-size:33px}
-    .hero-lead{font-size:22px}
+    .hero h1{font-size:clamp(24px,6vw,28px);line-height:1.08}
+    .hero-lead{margin-top:10px;font-size:clamp(16px,4vw,17px);line-height:1.4}
     .hero-sub{font-size:17px}
     .actions{display:grid}
-    .btn{width:100%;min-height:52px;border-radius:16px}
+    .btn{width:100%;min-height:48px;border-radius:15px;padding:12px 18px;font-size:15px}
     .facts span{white-space:normal}
     .cards-4,.cards-3,.cards-2{grid-template-columns:1fr}
-    .hero-visual img{aspect-ratio:16/10}
-    .hero-note{position:static;border-radius:0}
+    .hero-visual{border-radius:24px}
+    .hero-visual img{height:clamp(160px,min(54vw,27dvh),218px);aspect-ratio:auto;object-position:center}
+    .hero-visual-meta{gap:5px;padding:6px 9px}
+    .hero-meta{margin-top:14px;font-size:15px;line-height:1.35}
+    .hero .actions{margin-top:14px}
+    .hero-guarantee{margin-top:8px;font-size:12.5px;line-height:1.35;white-space:nowrap}
     .recognition-card{min-height:0}
     .small-step{min-height:0}
     .price{font-size:36px}
@@ -342,27 +390,23 @@
 
 <header class="hero">
   <div class="wrap hero-layout">
-    <div>
-      <span class="eyebrow">Процесс: Доверие</span>
-      <h1>Я всё про себя понимаю. И всё равно проверяю, закрываюсь и жду подвоха.</h1>
-      <p class="hero-lead">Групповая встреча, где видишь свой цикл недоверия со стороны — и уходишь со следующим посильным шагом.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://payform.ru/tkbOtCN/">Записаться за 1900₽</a>
-        <a class="btn secondary" href="#program">Посмотреть программу</a>
-      </div>
-      <p class="muted" style="margin-top:12px;font-size:15px">Оплата разовая, без подписок и обязательств. Не зайдёт — вернём деньги за встречу.</p>
-      <div class="facts">
-        <span>18 июля · 12:00 мск</span>
-        <span>Онлайн в Zoom · 3 часа</span>
-        <span>Раз в неделю</span>
-        <span>До 20 человек</span>
-      </div>
-    </div>
     <figure class="hero-visual">
       <img src="assets/zoom-warm.webp" alt="Групповая онлайн-встреча Процесс: Доверие" fetchpriority="high">
-      <span class="zoom-badge">Zoom · живой круг</span>
-      <figcaption class="hero-note">В одиночку можно годами думать о своём сценарии. В группе он начинает проявляться вживую.</figcaption>
+      <figcaption class="hero-visual-meta">
+        <span class="process-badge">Процесс: Доверие</span>
+        <span class="hero-note">Живая группа · до 20 участников</span>
+      </figcaption>
     </figure>
+    <div class="hero-copy">
+      <span class="hero-process-label">Процесс: Доверие</span>
+      <h1>Я всё про себя понимаю. И всё равно проверяю, закрываюсь и жду подвоха.</h1>
+      <p class="hero-lead">За 3 часа увидишь со стороны, как запускается твой сценарий недоверия, и выберешь один посильный шаг.</p>
+      <p class="hero-meta">18 июля, 12:00 МСК · Zoom · 3 часа</p>
+      <div class="actions">
+        <a class="btn primary" href="https://payform.ru/tkbOtCN/">Записаться на встречу — 1900 ₽</a>
+      </div>
+      <p class="hero-guarantee">Разовая оплата · не подойдёт — вернём деньги</p>
+    </div>
   </div>
 </header>
 
