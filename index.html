@@ -215,6 +215,7 @@
   .cycle-route-question{padding-top:5px;font-family:Georgia,"Times New Roman",serif;font-size:18px!important;line-height:1.4!important;color:var(--ink)!important}
   .route-options{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .route-options span{border:1px solid rgba(30,90,94,.22);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.68);color:var(--accent);font-size:13.5px;font-weight:750;line-height:1.25}
+  .mobile-only{display:none}
   .answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
   .answer-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
   .answer-card.accent{background:#F7EBDD}
@@ -446,11 +447,51 @@
     .facts span{white-space:normal}
     .cards-4,.cards-3,.cards-2{grid-template-columns:1fr}
     .cycle-head{margin-bottom:22px}
-    .cycle-map,.cycle-route{border-radius:22px;padding:20px}
-    .cycle-map-label{margin-bottom:2px}
-    .cycle-confirm{grid-template-columns:1fr;gap:11px;padding:17px}
+    .desktop-only{display:none!important}
+    .mobile-only{display:block}
+    .cycle-layout{gap:14px}
+    .cycle-map{
+      border:0;
+      border-radius:0;
+      padding:0;
+      background:transparent;
+      box-shadow:none;
+    }
+    .cycle-map-label{display:none}
+    .cycle-flow{margin-top:0}
+    .cycle-step,
+    .cycle-step:last-child{
+      padding:14px 0;
+      border-left:0;
+      border-bottom:1px solid var(--line);
+    }
+    .cycle-step:first-child{padding-top:0}
+    .cycle-step::before,
+    .cycle-step:not(:last-child)::after{display:none}
+    .cycle-step-label{font-size:11px}
+    .cycle-step h3{margin:4px 0 3px;font-size:19px;line-height:1.25}
+    .cycle-step p{font-size:15px;line-height:1.45}
+    .cycle-confirm{
+      grid-template-columns:1fr;
+      gap:5px;
+      margin-top:14px;
+      border-radius:18px;
+      padding:17px 18px;
+    }
+    .cycle-confirm-label{display:none}
     .cycle-confirm strong{font-size:22px}
-    .cycle-route h3{font-size:23px}
+    .cycle-confirm p{font-size:14.5px}
+    .cycle-route{
+      display:block;
+      border-color:rgba(30,90,94,.18);
+      border-radius:18px;
+      padding:18px;
+      background:var(--accent-soft);
+      box-shadow:none;
+    }
+    .cycle-route-label{display:none}
+    .cycle-route h3{margin:0 0 7px;font-size:21px}
+    .cycle-route-mobile-copy{font-size:15px!important;line-height:1.5!important;color:#4F4941!important}
     .hero-visual{border-radius:24px}
     .hero-visual img{height:clamp(160px,min(54vw,27dvh),218px);aspect-ratio:auto;object-position:center}
     .hero-visual-meta{gap:5px;padding:6px 9px;align-items:flex-start}
@@ -491,7 +532,7 @@
       <img src="assets/zoom-warm.webp" alt="Групповая онлайн-встреча Процесс: Доверие" width="800" height="475" fetchpriority="high">
       <figcaption class="hero-visual-meta">
         <span class="process-badge">Процесс: Доверие</span>
-        <span class="hero-note">Живая группа · до 20 участников</span>
+        <span class="hero-note">Живая группа · до 7 участников</span>
       </figcaption>
     </figure>
     <div class="hero-copy">
@@ -596,21 +637,23 @@
             </article>
             <article class="cycle-step">
               <span class="cycle-step-label">2 · Версия</span>
-              <h3>Я быстро решаю, что это значит</h3>
+              <h3>Я <span class="desktop-only">быстро </span>решаю, что это значит</h3>
               <p>«Ему всё равно». «На него нельзя положиться».</p>
             </article>
             <article class="cycle-step">
               <span class="cycle-step-label">3 · Привычный шаг</span>
-              <h3>Делаю так, чтобы стало спокойнее</h3>
-              <div class="cycle-poles">
+              <h3 class="desktop-only">Делаю так, чтобы стало спокойнее</h3>
+              <h3 class="mobile-only">Контролирую или замолкаю</h3>
+              <div class="cycle-poles desktop-only">
                 <div class="cycle-pole"><strong>Контролирую</strong><span>Проверяю, давлю, решаю сам.</span></div>
                 <div class="cycle-pole"><strong>Замолкаю</strong><span>Не спрашиваю, не говорю важное.</span></div>
               </div>
             </article>
             <article class="cycle-step">
               <span class="cycle-step-label">4 · Ответ</span>
-              <h3>Другой отвечает уже на контроль или молчание</h3>
-              <p>Отдаляется, ждёт указаний или так и не понимает, что мне было нужно.</p>
+              <h3 class="desktop-only">Другой отвечает уже на контроль или молчание</h3>
+              <h3 class="mobile-only">Другой отдаляется или ждёт указаний</h3>
+              <p class="desktop-only">Отдаляется, ждёт указаний или так и не понимает, что мне было нужно.</p>
             </article>
           </div>
           <div class="cycle-confirm">
@@ -618,15 +661,16 @@
               <span class="cycle-confirm-label">Круг замыкается</span>
               <strong>«Ну вот. Я же говорил»</strong>
             </div>
-            <p>Моя версия кажется фактом. В следующий раз круг запускается ещё быстрее.</p>
+            <p><span class="desktop-only">Моя версия кажется фактом. В следующий раз круг запускается ещё быстрее.</span><span class="mobile-only">Моя версия начинает казаться фактом.</span></p>
           </div>
         </div>
         <aside class="cycle-route">
           <div class="cycle-route-heading">
             <span class="cycle-route-label">На встрече</span>
-            <h3>Появляется другой маршрут</h3>
+            <h3 class="desktop-only">Появляется другой маршрут</h3>
+            <h3 class="mobile-only">Где появляется выбор</h3>
           </div>
-          <div class="cycle-route-body">
+          <div class="cycle-route-body desktop-only">
             <p><strong>Он не лежит ровно посередине между контролем и молчанием.</strong> Всё зависит от ситуации, другого человека и того, что происходит между вами.</p>
             <p>На встрече один и тот же круг видно сразу в разных ситуациях. Кто-то узнаёт свою реакцию, кто-то замечает место выбора, а кто-то рассказывает, как у него уже получилось иначе.</p>
             <p class="cycle-route-question">Не «что со мной не так?», а «что ещё можно сделать?»</p>
@@ -637,6 +681,7 @@
               <span>не спешить с выводом</span>
             </div>
           </div>
+          <p class="cycle-route-mobile-copy mobile-only">На встрече ищем момент, в котором можно не повторять привычную реакцию: спросить прямо, назвать важное, договориться или не спешить с выводом.</p>
         </aside>
       </div>
     </div>
@@ -680,10 +725,8 @@
           <article class="small-step"><b>1</b><h3>Метафора цикла</h3><p class="muted">Ведущий предлагает образ и показывает, как устроен этот круг. Метафора даёт общий каркас, к которому можно прикладывать разные ситуации.</p></article>
           <article class="small-step"><b>2</b><h3>Свои ситуации</h3><p class="muted">Каждый вспоминает несколько эпизодов, в которых узнаёт части этого круга. Можно выбрать простую ситуацию и не рассказывать больше, чем хочется.</p></article>
           <article class="small-step"><b>3</b><h3>Тройки</h3><p class="muted">В группах по три-четыре человека чужие ситуации показывают, как тот же круг складывается у разных людей. Запутанное и случайное начинает обретать форму.</p></article>
-          <article class="small-step"><b>4</b><h3>Общий круг</h3><p class="muted">Команды делятся общими наблюдениями — без личных подробностей. В большой группе набирается до нескольких десятков эпизодов; в небольшой их меньше, зато на каждый больше времени.</p></article>
+          <article class="small-step"><b>4</b><h3>Общий круг</h3><p class="muted">Команды делятся общими наблюдениями — без личных подробностей. В группе до семи человек остаётся достаточно разных примеров и больше времени на ситуацию каждого.</p></article>
         </div>
-        <p class="muted" style="margin-top:14px">Метафора даёт каркас. Ситуации других людей наполняют его живым опытом: видно, как один и тот же круг чувствуется изнутри, как выглядит со стороны и чем заканчивается. За одну встречу сложная штука становится объёмной — не потому что ты «всё понял», а потому что увидел её с разных сторон.</p>
-        <p class="muted" style="margin-top:10px">Метафору заранее не раскрываем: для неё важна первая встреча с образом. При этом все шаги описаны выше, а прийти можно один раз, без дальнейших обязательств.</p>
       </div>
     </div>
   </section>
@@ -788,9 +831,9 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Формат и стоимость</h2>
-        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — суббота, 18 июля, 12:00 мск. Мест до 20, группа собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
+        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — суббота, 18 июля, 12:00 мск. Группа до 7 человек, состав собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
       </div>
-      <div class="facts"><span>18 июля · 12:00 мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 20 человек</span></div>
+      <div class="facts"><span>18 июля · 12:00 мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 7 человек</span></div>
       <div class="pricing">
         <article class="price-card">
           <h3>Двенадцать встреч</h3>
@@ -820,7 +863,7 @@
     <div class="wrap">
       <h2>Вопросы</h2>
       <details><summary>Кто обычно приходит?</summary><p>Взрослые 25–45 лет: специалисты, предприниматели, люди из помогающих профессий и все, кому знакомы сложности с доверием, контролем и прямыми разговорами. Специальная подготовка не нужна.</p></details>
-      <details><summary>Сколько человек будет на встрече?</summary><p>По-разному: от трёх до двадцати. Формат работает при любом составе, а в небольшой группе времени на каждую ситуацию даже больше. Если записалось меньше трёх, встречу переносим и возвращаем деньги.</p></details>
+      <details><summary>Сколько человек будет на встрече?</summary><p>До 7 человек. Небольшая группа — часть формата: так у каждого остаётся больше времени на свою ситуацию. Если записалось меньше трёх, встречу переносим и возвращаем деньги.</p></details>
       <details><summary>Придётся говорить на камеру перед всеми?</summary><p>Камера и голос понадобятся для работы в малых группах. Перед всеми говорить в одиночку не нужно: команды выходят в общий круг вместе. Чем делиться, всегда решаешь ты.</p></details>
       <details><summary>Можно сделать паузу во время встречи?</summary><p>Да. Можно выключить камеру, выйти на несколько минут или пропустить вопрос. Никто не заставляет отвечать или рассказывать больше, чем ты хочешь.</p></details>
       <details><summary>Это записывается?</summary><p>Обсуждения в тройках не записываются, а выбранная тобой ситуация остаётся в малой группе. В общем круге записываются только выступления команд с общими выводами — без личных подробностей.</p></details>
