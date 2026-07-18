@@ -94,6 +94,28 @@
   .hero-note{display:inline-flex;align-items:center;gap:5px;color:#4B4540;font-size:12px;font-weight:750;line-height:1.2;white-space:nowrap}
   .hero-note::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:#35A66B}
   .hero-meta{margin-top:22px;font-size:17px;font-weight:800;line-height:1.4;color:#38332D}
+  .signup-deadline{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    width:min(100%,600px);
+    margin-top:14px;
+    border:1px solid rgba(30,90,94,.2);
+    border-radius:15px;
+    padding:11px 13px;
+    background:var(--accent-soft);
+    color:#38332D;
+    font-size:14px;
+    line-height:1.35;
+  }
+  .signup-deadline-label{min-width:0}
+  .signup-countdown{
+    flex:0 0 auto;
+    color:var(--accent-dark);
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
   .hero-guarantee{margin-top:12px;max-width:600px;font-size:15px;color:var(--muted)}
   .hero-program-link{display:inline-flex;margin-top:10px;font-size:15px;font-weight:750;text-underline-offset:4px}
   .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
@@ -369,13 +391,14 @@
     letter-spacing:.04em;
   }
   @media (prefers-reduced-motion:no-preference){
-    .hero-visual,.hero h1,.hero-lead,.hero-meta,.hero .actions,.hero-guarantee,.hero-program-link{animation:rise .55s ease both}
+    .hero-visual,.hero h1,.hero-lead,.hero-meta,.signup-deadline,.hero .actions,.hero-guarantee,.hero-program-link{animation:rise .55s ease both}
     .hero h1{animation-delay:.04s}
     .hero-lead{animation-delay:.08s}
     .hero-meta{animation-delay:.12s}
-    .hero .actions{animation-delay:.16s}
-    .hero-guarantee{animation-delay:.2s}
-    .hero-program-link{animation-delay:.24s}
+    .signup-deadline{animation-delay:.16s}
+    .hero .actions{animation-delay:.2s}
+    .hero-guarantee{animation-delay:.24s}
+    .hero-program-link{animation-delay:.28s}
     @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   }
   @media(min-width:941px){
@@ -497,6 +520,7 @@
     .hero-visual-meta{gap:5px;padding:6px 9px;align-items:flex-start}
     .hero-note{white-space:normal;text-align:right}
     .hero-meta{margin-top:14px;font-size:15px;line-height:1.35}
+    .signup-deadline{flex-direction:column;align-items:flex-start;gap:4px;margin-top:10px;padding:10px 11px;font-size:13px}
     .hero .actions{margin-top:14px}
     .hero-guarantee{margin-top:8px;font-size:14px;line-height:1.45;white-space:normal}
     .recognition-card{min-height:0}
@@ -539,7 +563,11 @@
       <span class="hero-process-label">Процесс: Доверие · групповая практика</span>
       <h1>Я всё про себя понимаю — и всё равно перепроверяю, закрываюсь и жду подвоха.</h1>
       <p class="hero-lead">За 3 часа разберёшь одну повторяющуюся ситуацию, увидишь, где всё начинается, и выберешь один посильный шаг.</p>
-      <p class="hero-meta">18 июля, 12:00 МСК · Zoom · 3 часа</p>
+      <p class="hero-meta"><time data-session-date>Ближайшая суббота</time>, 12:00 МСК · Zoom · 3 часа</p>
+      <div class="signup-deadline" data-signup-deadline>
+        <span class="signup-deadline-label">Запись до пятницы, <time data-cutoff-date>накануне встречи</time>, 24:00 МСК</span>
+        <strong class="signup-countdown">Осталось <span data-signup-countdown role="timer" aria-live="off">—</span></strong>
+      </div>
       <div class="actions">
         <a class="btn primary" href="https://payform.ru/cpc16wd/">Записаться на встречу — 1 900 ₽</a>
       </div>
@@ -786,7 +814,7 @@
           <div class="reactions"><span class="reaction">«не уходить в себя»</span><span class="reaction">«быть собой»</span><span class="reaction">«расслабиться внутри группы»</span></div>
         </div>
       </div>
-      <div class="actions" style="margin-top:24px"><a class="btn primary" href="https://payform.ru/cpc16wd/">Прийти 18 июля — 1900 ₽</a></div>
+      <div class="actions" style="margin-top:24px"><a class="btn primary" href="https://payform.ru/cpc16wd/">Прийти <time data-session-date>в ближайшую субботу</time> — 1900 ₽</a></div>
     </div>
   </section>
 
@@ -831,9 +859,9 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Формат и стоимость</h2>
-        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — суббота, 18 июля, 12:00 мск. Группа до 9 человек, состав собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
+        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — в субботу, <time data-session-date>дату уточняем</time>, 12:00 мск. Запись открыта до пятницы, <time data-cutoff-date>накануне встречи</time>, 24:00 мск. Группа до 9 человек, состав собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
       </div>
-      <div class="facts"><span>18 июля · 12:00 мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 9 человек</span></div>
+      <div class="facts"><span><time data-session-date>Ближайшая суббота</time> · 12:00 мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 9 человек</span></div>
       <div class="pricing">
         <article class="price-card">
           <h3>Двенадцать встреч</h3>
@@ -912,5 +940,6 @@
 </div>
 
 <script src="js/privacy.js" defer></script>
+<script src="js/schedule.js" defer></script>
 </body>
 </html>
