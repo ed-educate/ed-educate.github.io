@@ -3,10 +3,7 @@
 
   var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
   var HOUR_MS = 60 * 60 * 1000;
-  var REFERENCE_CUTOFF_MS = Date.parse("2026-07-17T21:00:00Z");
-  var ONE_OFF_ACTIVE_FROM_MS = Date.parse("2026-07-25T21:00:00Z");
-  var ONE_OFF_CUTOFF_MS = Date.parse("2026-08-04T21:00:00Z");
-  var ONE_OFF_SESSION_START_MS = Date.parse("2026-08-05T16:00:00Z");
+  var FIRST_CUTOFF_MS = Date.parse("2026-08-04T21:00:00Z");
   var MOSCOW_TIME_ZONE = "Europe/Moscow";
 
   var dateFormatter = new Intl.DateTimeFormat("ru-RU", {
@@ -16,27 +13,18 @@
   });
 
   function getSchedule(nowMs) {
-    if (nowMs >= ONE_OFF_ACTIVE_FROM_MS && nowMs < ONE_OFF_CUTOFF_MS) {
-      return {
-        cutoffMs: ONE_OFF_CUTOFF_MS,
-        sessionStartMs: ONE_OFF_SESSION_START_MS,
-        sessionWeekday: "среду",
-        sessionWeekdayTitle: "Среда",
-        cutoffWeekday: "вторника",
-        sessionTime: "19:00"
-      };
-    }
-
-    var weeksSinceReference = Math.floor((nowMs - REFERENCE_CUTOFF_MS) / WEEK_MS) + 1;
-    var cutoffMs = REFERENCE_CUTOFF_MS + weeksSinceReference * WEEK_MS;
+    var weeksSinceFirst = nowMs < FIRST_CUTOFF_MS
+      ? 0
+      : Math.floor((nowMs - FIRST_CUTOFF_MS) / WEEK_MS) + 1;
+    var cutoffMs = FIRST_CUTOFF_MS + weeksSinceFirst * WEEK_MS;
 
     return {
       cutoffMs: cutoffMs,
-      sessionStartMs: cutoffMs + 12 * HOUR_MS,
-      sessionWeekday: "субботу",
-      sessionWeekdayTitle: "Суббота",
-      cutoffWeekday: "пятницы",
-      sessionTime: "12:00"
+      sessionStartMs: cutoffMs + 19 * HOUR_MS,
+      sessionWeekday: "среду",
+      sessionWeekdayTitle: "Среда",
+      cutoffWeekday: "вторника",
+      sessionTime: "19:00"
     };
   }
 
@@ -107,10 +95,7 @@
 
   if (typeof module !== "undefined" && module.exports) {
     module.exports = {
-      REFERENCE_CUTOFF_MS: REFERENCE_CUTOFF_MS,
-      ONE_OFF_ACTIVE_FROM_MS: ONE_OFF_ACTIVE_FROM_MS,
-      ONE_OFF_CUTOFF_MS: ONE_OFF_CUTOFF_MS,
-      ONE_OFF_SESSION_START_MS: ONE_OFF_SESSION_START_MS,
+      FIRST_CUTOFF_MS: FIRST_CUTOFF_MS,
       WEEK_MS: WEEK_MS,
       formatCountdown: formatCountdown,
       getSchedule: getSchedule
