@@ -314,6 +314,7 @@
   .author-card img{width:82px;height:82px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin-bottom:14px}
   .author-card p{color:var(--muted);font-size:15.5px}
   .author-card b{color:var(--ink)}
+  .author-card .author-stats{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--accent);font-size:14px;font-weight:800;line-height:1.5}
   .pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
   .price-card{display:flex;flex-direction:column;width:100%;max-width:760px;margin-inline:auto;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:var(--shadow)}
   .price-card.featured{border:2px solid var(--accent)}
@@ -563,9 +564,9 @@
       <span class="hero-process-label">Процесс: Доверие · групповая практика</span>
       <h1>Я всё про себя понимаю — и всё равно перепроверяю, закрываюсь и жду подвоха.</h1>
       <p class="hero-lead">За 3 часа разберёшь одну повторяющуюся ситуацию, увидишь, где всё начинается, и выберешь один посильный шаг.</p>
-      <p class="hero-meta"><time data-session-date>Ближайшая встреча</time>, 12:00 МСК · Zoom · 3 часа</p>
+      <p class="hero-meta"><span data-session-weekday-title>Среда</span>, <time data-session-date>5 августа</time> · <span data-session-time>19:00</span> МСК · Zoom · 3 часа</p>
       <div class="signup-deadline" data-signup-deadline>
-        <span class="signup-deadline-label">Запись до <span data-cutoff-weekday>дня накануне</span>, <time data-cutoff-date>накануне встречи</time>, 24:00 МСК</span>
+        <span class="signup-deadline-label">Запись до <span data-cutoff-weekday>вторника</span>, <time data-cutoff-date>4 августа</time>, 24:00 МСК</span>
         <strong class="signup-countdown">Осталось <span data-signup-countdown role="timer" aria-live="off">—</span></strong>
       </div>
       <div class="actions">
@@ -841,15 +842,16 @@
       <div class="authors-grid">
         <article class="author-card">
           <img src="assets/ed.webp" alt="Эд — ведущий Процесса: Доверие" width="200" height="200" loading="lazy">
-          <p><b>Эд — ведущий встреч.</b> Семь лет преподаёт взрослым, два года ведёт группы — больше ста встреч онлайн и офлайн. Задаёт структуру и помогает участникам замечать связи между ситуациями.</p>
+          <p><b>Эд — ведущий и архитектор встреч.</b> Высшее медицинское образование. Преподаёт в сообществе <a href="https://vsmysle.spb.ru/" target="_blank" rel="noopener noreferrer">«ВСмысле»</a>. Задаёт структуру и помогает участникам замечать связи между ситуациями.</p>
+          <p class="author-stats">778 часов личных сессий · 208 групповых встреч · 2&nbsp;261 участников встреч</p>
         </article>
         <article class="author-card">
           <img src="assets/maxim.webp" alt="Максим Плаксин — автор метафор" width="200" height="200" loading="lazy">
-          <p><b>Максим Плаксин — автор метафор, которые используются на встречах.</b> Основатель giper.fm. Изначально эти образы появились как язык для командных разговоров и решений.</p>
+          <p><b>Максим Плаксин — автор метафор.</b> Основатель giper.fm (выручка группы в 2025 — 37,6 млрд ₽). Метафоры — внутренний язык его команды в самые турбулентные годы. Группа ведётся с его согласия.</p>
         </article>
         <article class="author-card">
           <img src="assets/nastya.webp" alt="Настя Балаева — помогает собирать структуру встреч" width="200" height="200" loading="lazy">
-          <p><b>Настя Балаева помогает собирать структуру встреч и заданий.</b> Работала в Лаборатории нейронаук Сбера, автор курса по нейромаркетингу для МФТИ и Сбера.</p>
+          <p><b>Настя Балаева — со-архитектор среды.</b> Ex-Лаборатория нейронаук Сбера, автор курса по нейромаркетингу для МФТИ и Сбера. Прорабатывает архитектуру встреч.</p>
         </article>
       </div>
     </div>
@@ -859,9 +861,9 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Формат и стоимость</h2>
-        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — в <span data-session-weekday>субботу</span>, <time data-session-date>дату уточняем</time>, 12:00 мск. Запись открыта до <span data-cutoff-weekday>пятницы</span>, <time data-cutoff-date>накануне встречи</time>, 24:00 мск. Группа до 9 человек, состав собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
+        <p>Онлайн в Zoom, раз в неделю. Ближайшая встреча — в <span data-session-weekday>среду</span>, <time data-session-date>5 августа</time>, <span data-session-time>19:00</span> мск. Запись открыта до <span data-cutoff-weekday>вторника</span>, <time data-cutoff-date>4 августа</time>, 24:00 мск. Группа до 9 человек, состав собирается заново каждую неделю. Цикл, который ты узнал выше, сам не остановится: он подтверждает себя, пока на него не посмотришь со стороны.</p>
       </div>
-      <div class="facts"><span><time data-session-date>Ближайшая встреча</time> · 12:00 мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 9 человек</span></div>
+      <div class="facts"><span><span data-session-weekday-title>Среда</span>, <time data-session-date>5 августа</time> · <span data-session-time>19:00</span> мск</span><span>Раз в неделю</span><span>3 часа</span><span>До 9 человек</span></div>
       <div class="pricing">
         <article class="price-card">
           <h3>Двенадцать встреч</h3>

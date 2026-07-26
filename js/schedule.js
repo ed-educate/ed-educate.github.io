@@ -4,8 +4,9 @@
   var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
   var HOUR_MS = 60 * 60 * 1000;
   var REFERENCE_CUTOFF_MS = Date.parse("2026-07-17T21:00:00Z");
-  var ONE_OFF_ACTIVE_FROM_MS = REFERENCE_CUTOFF_MS;
-  var ONE_OFF_CUTOFF_MS = Date.parse("2026-07-25T21:00:00Z");
+  var ONE_OFF_ACTIVE_FROM_MS = Date.parse("2026-07-25T21:00:00Z");
+  var ONE_OFF_CUTOFF_MS = Date.parse("2026-08-04T21:00:00Z");
+  var ONE_OFF_SESSION_START_MS = Date.parse("2026-08-05T16:00:00Z");
   var MOSCOW_TIME_ZONE = "Europe/Moscow";
 
   var dateFormatter = new Intl.DateTimeFormat("ru-RU", {
@@ -18,9 +19,11 @@
     if (nowMs >= ONE_OFF_ACTIVE_FROM_MS && nowMs < ONE_OFF_CUTOFF_MS) {
       return {
         cutoffMs: ONE_OFF_CUTOFF_MS,
-        sessionStartMs: ONE_OFF_CUTOFF_MS + 12 * HOUR_MS,
-        sessionWeekday: "воскресенье",
-        cutoffWeekday: "субботы"
+        sessionStartMs: ONE_OFF_SESSION_START_MS,
+        sessionWeekday: "среду",
+        sessionWeekdayTitle: "Среда",
+        cutoffWeekday: "вторника",
+        sessionTime: "19:00"
       };
     }
 
@@ -31,7 +34,9 @@
       cutoffMs: cutoffMs,
       sessionStartMs: cutoffMs + 12 * HOUR_MS,
       sessionWeekday: "субботу",
-      cutoffWeekday: "пятницы"
+      sessionWeekdayTitle: "Суббота",
+      cutoffWeekday: "пятницы",
+      sessionTime: "12:00"
     };
   }
 
@@ -82,7 +87,9 @@
     updateTimeElements("[data-session-date]", schedule.sessionStartMs);
     updateTimeElements("[data-cutoff-date]", schedule.cutoffMs, schedule.cutoffMs - 1);
     updateTextElements("[data-session-weekday]", schedule.sessionWeekday);
+    updateTextElements("[data-session-weekday-title]", schedule.sessionWeekdayTitle);
     updateTextElements("[data-cutoff-weekday]", schedule.cutoffWeekday);
+    updateTextElements("[data-session-time]", schedule.sessionTime);
 
     document.querySelectorAll("[data-signup-countdown]").forEach(function (element) {
       element.textContent = formatCountdown(schedule.cutoffMs - nowMs);
@@ -103,6 +110,7 @@
       REFERENCE_CUTOFF_MS: REFERENCE_CUTOFF_MS,
       ONE_OFF_ACTIVE_FROM_MS: ONE_OFF_ACTIVE_FROM_MS,
       ONE_OFF_CUTOFF_MS: ONE_OFF_CUTOFF_MS,
+      ONE_OFF_SESSION_START_MS: ONE_OFF_SESSION_START_MS,
       WEEK_MS: WEEK_MS,
       formatCountdown: formatCountdown,
       getSchedule: getSchedule
