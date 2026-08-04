@@ -3,7 +3,7 @@
 
   var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
   var HOUR_MS = 60 * 60 * 1000;
-  var FIRST_CUTOFF_MS = Date.parse("2026-08-04T21:00:00Z");
+  var FIRST_CUTOFF_MS = Date.parse("2026-08-11T21:00:00Z");
   var MOSCOW_TIME_ZONE = "Europe/Moscow";
 
   var dateFormatter = new Intl.DateTimeFormat("ru-RU", {
