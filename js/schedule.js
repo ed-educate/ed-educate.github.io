@@ -24,7 +24,7 @@
       sessionWeekday: "среду",
       sessionWeekdayTitle: "Среда",
       cutoffWeekday: "вторника",
-      sessionTime: "19:00"
+      sessionTime: "19:30"
     };
   }
 
