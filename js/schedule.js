@@ -2,7 +2,8 @@
   "use strict";
 
   var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-  var HOUR_MS = 60 * 60 * 1000;
+  var MINUTE_MS = 60 * 1000;
+  var HOUR_MS = 60 * MINUTE_MS;
   var FIRST_CUTOFF_MS = Date.parse("2026-08-11T21:00:00Z");
   var MOSCOW_TIME_ZONE = "Europe/Moscow";
 
@@ -20,11 +21,11 @@
 
     return {
       cutoffMs: cutoffMs,
-      sessionStartMs: cutoffMs + 19 * HOUR_MS,
+      sessionStartMs: cutoffMs + 19 * HOUR_MS + 25 * MINUTE_MS,
       sessionWeekday: "среду",
       sessionWeekdayTitle: "Среда",
       cutoffWeekday: "вторника",
-      sessionTime: "19:30"
+      sessionTime: "19:25"
     };
   }
 
