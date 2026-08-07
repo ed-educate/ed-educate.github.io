@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ментализация — как слушать, не отвечая за другого</title>
+<link rel="canonical" href="https://ed-educate.github.io/sluh">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>
+  if (window.location.pathname.endsWith('.html')) {
+    window.history.replaceState(null, '', window.location.pathname.slice(0, -5) + window.location.search + window.location.hash);
+  }
+</script>
+<meta name="description" content="Как мозг достраивает услышанное, почему схема и собственное эхо заглушают другого и что значит оставить место его ответу.">
+<meta property="og:title" content="Ментализация — как слушать, не отвечая за другого">
+<meta property="og:description" content="Свист, который становится речью, треугольники с намерениями и два способа перестать слышать другого.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ed-educate.github.io/sluh">
+<style>
+  :root{
+    --ink:#262220; --ink-soft:#5b544c; --paper:#fbf9f4;
+    --gold:#a8742f; --gold-soft:#c39a5b; --sand:#efe7d8; --line:#ddd3c2;
+    --cream:#f4efe6; --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  html{overflow-x:hidden;}
+  body{margin:0; overflow-x:hidden; background:var(--paper); color:var(--ink);
+    font-family:"PT Serif",Georgia,"Times New Roman",serif; font-size:17px; line-height:1.68;}
+  .page{width:100%; max-width:46rem; margin:0 auto; padding:4.5rem 1.5rem 5rem;}
+  .kicker{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem;}
+  h1{font-size:3rem; line-height:1.05; font-weight:700; margin:0 0 .6rem; letter-spacing:-.01em;}
+  .subtitle{font-style:italic; color:var(--ink-soft); font-size:1.15rem; margin-bottom:3.2rem;}
+  h2{font-size:1.05rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; margin:3.6rem 0 1.15rem; line-height:1.45;}
+  h2 .num{color:var(--gold); margin-right:.55em; font-weight:400;}
+  p{margin:0 0 1.08rem;}
+  a{color:var(--gold);}
+  figure{margin:2rem 0; padding:0; max-width:100%;}
+  figcaption{font-size:.8rem; color:var(--ink-soft); margin-top:.7rem; line-height:1.5;}
+  .card{max-width:100%; overflow:hidden; background:var(--white); border:1px solid var(--line); border-radius:10px; padding:1.5rem 1.7rem;}
+  .fig-title{font-weight:700; font-size:1.02rem; margin-bottom:.4rem;}
+  .fig-sub{font-size:.85rem; color:var(--ink-soft); margin-bottom:1.1rem; line-height:1.5;}
+  .fig-read{font-size:.85rem; color:var(--ink-soft); line-height:1.5; margin:.9rem 0 0; padding-top:.9rem; border-top:1px dashed var(--line);}
+  img,video{display:block; width:100%; max-width:100%; height:auto;}
+  .card img,.card video{border-radius:6px;}
+  video{background:#000;}
+  .hinge{font-size:1.12rem; line-height:1.58; margin:2.2rem 0; padding-left:1.2rem; border-left:3px solid var(--gold);}
+  .audio-lab{max-width:100%; overflow:hidden; margin:2rem 0; padding:1.6rem; background:var(--white); border:1px solid var(--line); border-radius:10px;}
+  .audio-lab h3{font-size:1.05rem; margin:0 0 .4rem;}
+  .audio-lab .intro{font-size:.88rem; color:var(--ink-soft); margin-bottom:1.35rem;}
+  .lab-step{padding:1rem 0; border-top:1px dashed var(--line);}
+  .lab-step:first-of-type{border-top:0; padding-top:0;}
+  .lab-step b{display:block; margin-bottom:.45rem;}
+  .lab-step audio{width:100%; max-width:100%; height:42px; display:block; margin:.65rem 0;}
+  .lab-step p{font-size:.92rem; margin-bottom:.65rem;}
+  .lab-step p:last-child{margin-bottom:0;}
+  .step-btn,.btn-ghost{font:inherit; font-size:.9rem; color:var(--gold); background:transparent;
+    border:1px solid var(--gold-soft); border-radius:8px; padding:.58rem 1.15rem; cursor:pointer;}
+  .step-btn:hover,.btn-ghost:hover{background:var(--gold); color:#fff; border-color:var(--gold);}
+  [hidden]{display:none !important;}
+  .reveal{text-align:center; margin-top:1.1rem;}
+  .neuro-figure{margin:1.8rem 0 2rem; padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:10px;}
+  .neuro-kicker,.response-title{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:700;}
+  .experiment-route{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:.7rem; align-items:stretch; margin:1rem 0 1.5rem;}
+  .route-stage{min-width:0; padding:1rem .75rem; text-align:center; background:var(--paper); border-radius:8px;}
+  .route-stage svg{display:block; width:100%; height:5.2rem; margin:0 auto .65rem; color:var(--ink);}
+  .route-stage b{display:block; font-size:.83rem; line-height:1.35;}
+  .route-stage span{display:block; margin-top:.25rem; font-size:.7rem; line-height:1.4; color:var(--ink-soft);}
+  .route-arrow{align-self:center; color:var(--gold-soft); font-size:1.5rem;}
+  .response-title{margin-bottom:.8rem;}
+  .spike-pair{display:grid; grid-template-columns:1fr 1fr; gap:.9rem;}
+  .spike-case{padding:1rem; background:var(--cream); border-radius:8px;}
+  .spike-case b{display:block; font-size:.82rem; color:var(--ink-soft); margin-bottom:.45rem;}
+  .spike-case svg{display:block; width:100%; height:auto;}
+  .spike-label{font-size:.74rem; color:var(--ink-soft); margin-top:.35rem;}
+  .distortions,.duo{display:grid; grid-template-columns:1fr 1fr; gap:.9rem; margin:1.7rem 0;}
+  .distortions>div,.duo>div{padding:1.15rem 1.25rem; border:1px solid var(--line); border-radius:9px; background:var(--white);}
+  .distortions b,.duo b{display:block; color:var(--gold); margin-bottom:.65rem; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase;}
+  .distortions p,.duo p{font-size:.95rem; margin:0; line-height:1.7;}
+  .duo i{color:var(--ink-soft);}
+  .history{margin:1.8rem 0; padding:1.35rem 1.5rem; background:var(--cream); border-radius:9px;}
+  .history p:last-child{margin-bottom:0;}
+  .gap{height:2rem;}
+  .divider{text-align:center; color:var(--gold); letter-spacing:.8em; font-size:1rem; margin:0 0 2.2rem;}
+  .metaphor{margin-top:2.4rem; background:var(--sand); border-radius:12px; padding:2.8rem 2.4rem 2.4rem;}
+  .metaphor .m-title{text-align:center; font-size:.95rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:1.6rem;}
+  .metaphor .m-epigraph{text-align:center; font-style:italic; margin-bottom:1.2rem; line-height:1.7;}
+  .metaphor .m-gesture{text-align:center; font-weight:700; margin-bottom:2rem;}
+  .metaphor p{font-size:.97em;}
+  .metaphor .m-formula{font-weight:700; margin-top:1.6rem; margin-bottom:0;}
+  .invite{max-width:42rem; margin:4.5rem auto 0; padding:2.5rem 2.4rem; background:var(--cream); border-radius:12px;}
+  .invite .label{text-align:center; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
+  .invite h3{text-align:center; font-size:1.5rem; line-height:1.3; margin:0 0 1.35rem; font-weight:700;}
+  .invite-action{text-align:center; margin-top:1.7rem;}
+  .btn{display:inline-block; background:var(--gold); color:#fff; text-decoration:none; padding:.9rem 2.2rem; border-radius:8px; font-size:1.02rem; font-weight:700;}
+  .btn:hover{background:#96662a;}
+  .sources{margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line);}
+  .sources h3{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin:0 0 .9rem;}
+  .sources ol{margin:0; padding-left:1.2rem;}
+  .sources li{font-size:.82rem; color:var(--ink-soft); line-height:1.55; margin-bottom:.45rem;}
+  .sources a{color:var(--gold); text-decoration:none; border-bottom:1px dotted var(--gold-soft);}
+  .footer{margin-top:3rem; text-align:center; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);}
+  @media(max-width:620px){
+    body{font-size:16px;}
+    .page{padding:3rem 1rem 4rem;}
+    h1{font-size:2.35rem;}
+    .subtitle{margin-bottom:2.6rem;}
+    .card,.audio-lab{padding:1.05rem;}
+    .neuro-figure{padding:1rem;}
+    .experiment-route{grid-template-columns:1fr;}
+    .route-arrow{transform:rotate(90deg); justify-self:center; line-height:.7;}
+    .spike-pair{grid-template-columns:1fr;}
+    .distortions,.duo{grid-template-columns:1fr;}
+    .metaphor{padding:2.1rem 1.25rem;}
+    .invite{padding:2.1rem 1.25rem;}
+    .step-btn,.btn-ghost,.btn{max-width:100%;}
+  }
+  @media print{
+    body{background:#fff; font-size:11.5pt;}
+    .page{max-width:100%; padding:0;}
+    @page{margin:2cm 2.2cm;}
+    .metaphor,figure{break-inside:avoid;}
+    .step-btn,.btn-ghost,video,audio{display:none;}
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+<div class="kicker">Процесс: Доверие · метафора «Слух»</div>
+<h1>Ментализация</h1>
+<div class="subtitle">Как слушать, не отвечая за другого</div>
+
+<h2><span class="num">I</span>Мозг приносит версию</h2>
+
+<p>В 1981 году психологи Роберт Ремез, Филип Рубин, Дэвид Пизони и Томас Каррелл сделали странную запись. Они заменили человеческий голос тремя чистыми тонами, которые повторяли движение важных речевых частот. От голоса остался меняющийся свист. Можно ли в нём услышать речь?</p>
+
+<p>Попробуй тот же эффект на нашей записи.</p>
+
+<div class="audio-lab">
+  <div class="lab-step">
+    <b>Прослушай запись</b>
+    <p>Есть ли здесь речь? Если слышится фраза — какие слова удалось разобрать?</p>
+    <audio controls preload="metadata">
+      <source src="assets/sluh/sine-wave-speech.mp3" type="audio/mpeg">
+    </audio>
+    <button class="step-btn" id="show-audio-step-2" type="button">Открыть второй шаг</button>
+  </div>
+
+  <div class="lab-step" id="audio-step-2" hidden>
+    <b>Теперь — та же фраза обычным голосом</b>
+    <audio controls preload="metadata">
+      <source src="assets/sluh/clear-speech.mp3" type="audio/mpeg">
+    </audio>
+    <p>«Он ответил коротко, потому что очень устал».</p>
+    <button class="step-btn" id="show-audio-step-3" type="button">Вернуться к первой записи</button>
+  </div>
+
+  <div class="lab-step" id="audio-step-3" hidden>
+    <b>Прослушай первую запись ещё раз</b>
+    <audio controls preload="metadata">
+      <source src="assets/sluh/sine-wave-speech.mp3" type="audio/mpeg">
+    </audio>
+    <p>Запись осталась прежней. Но теперь в свисте можно расслышать слова.</p>
+  </div>
+</div>
+
+<p>Когда слушателям не говорили, что в тонах скрыта речь, они описывали запись как фантастические звуки, музыку или компьютерные сигналы. Когда исследователи сказали, что это фраза, слова начали проступать сквозь свист. Звук не изменился. Изменилось то, как его слушали.</p>
+
+<p>Со зрением происходит то же самое. Посмотри на два слова:</p>
+
+<figure>
+  <div class="card">
+    <img src="assets/sluh/letters.png" alt="Слова ТЕНЬ и ИГЛА с одинаковым неопределённым знаком">
+    <div class="fig-read">В слове «ТЕНЬ» знак читается как «Н», в слове «ИГЛА» — как «И». На обеих позициях стоит одна и та же фигура.</div>
+  </div>
+</figure>
+
+<p>Внутри слова мы почти не замечаем неопределённости. Смысл целого подсказывает, какую букву увидеть: не нейтральный знак, а «Н» или «И».</p>
+
+<p>Теперь ещё один опыт. Сначала попробуй понять, что изображено в пятнах. Затем открой исходную фотографию и вернись назад.</p>
+
+<figure>
+  <div class="card">
+    <div class="fig-title">Что здесь нарисовано?</div>
+    <img id="mooney-img" src="assets/sluh/cow-spots.png" data-original="assets/sluh/cow-original.jpeg" alt="Чёрно-белые пятна">
+    <div class="reveal">
+      <button id="mooney-btn" class="btn-ghost" type="button">Показать оригинал</button>
+    </div>
+  </div>
+</figure>
+
+<p>После оригинала в пятнах не изменился ни один пиксель. Но теперь корову почти невозможно развидеть: взгляд сам собирает из пятен её голову, спину и ноги. Нового изображения не появилось. Изменилось то, что мозг приносит к этим пятнам.</p>
+
+<p>Первую подсказку дали опыты с отдельными нейронами. В 1959 году нейрофизиологи Дэвид Хьюбел и Торстен Визел ввели тонкий электрод в зрительную кору кошки. На экран перед ней они проецировали пятна света и записывали импульсы одной клетки. Пятна почти не вызывали ответа. Но однажды Хьюбел вдвигал в проектор новую стеклянную пластинку. Её ровный край спроецировался на экран как тонкая наклонная граница между светом и тенью. Пока пластинка двигалась, эта линия смещалась по экрану — и нейрон заработал как пулемёт. Клетка отвечала не просто на свет, а на линию в определённом месте и под определённым углом.</p>
+
+<p>Позже Хьюбел и Визел стали менять длину такой линии. Они оставляли прежними её место и наклон, но показывали то короткую полоску, то длинную. Короткая помещалась в область, где свет возбуждал нейрон, и тот отвечал часто. У длинной полоски концы заходили в соседние области, где свет, наоборот, подавлял ответ. Поэтому эффект назвали <b>концевым торможением</b>: середина линии возбуждала нейрон, а её удалённые концы его притормаживали.</p>
+
+<figure class="neuro-figure" aria-label="Как исследователи измеряли реакцию нейрона зрительной коры кошки на короткую и длинную полоску">
+  <div class="neuro-kicker">Как проходил опыт</div>
+  <div class="experiment-route">
+    <div class="route-stage">
+      <svg viewBox="0 0 180 100" role="img" aria-label="Полоска света на экране">
+        <rect x="17" y="10" width="146" height="80" rx="7" fill="#efe7d8" stroke="currentColor" stroke-width="2"/>
+        <line x1="68" y1="70" x2="112" y2="30" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+      <b>Полоска на экране</b>
+      <span>её двигают, поворачивают и делают длиннее или короче</span>
+    </div>
+    <div class="route-arrow" aria-hidden="true">→</div>
+    <div class="route-stage">
+      <svg viewBox="0 0 180 100" role="img" aria-label="Кошка и электрод в зрительной коре">
+        <path d="M34 62C34 47 45 36 59 31L55 13L77 27C96 23 119 29 132 43C145 57 143 78 130 88H61C44 88 32 78 34 62Z" fill="#efe7d8" stroke="currentColor" stroke-width="2"/>
+        <path d="M35 59L20 67L36 73" fill="#efe7d8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="56" cy="55" r="5" fill="currentColor"/>
+        <line x1="145" y1="7" x2="118" y2="39" stroke="#a8742f" stroke-width="3"/>
+        <circle cx="118" cy="39" r="4" fill="#a8742f"/>
+      </svg>
+      <b>Тонкий электрод</b>
+      <span>снимает сигнал в зрительной коре</span>
+    </div>
+    <div class="route-arrow" aria-hidden="true">→</div>
+    <div class="route-stage">
+      <svg viewBox="0 0 180 100" role="img" aria-label="Запись электрических импульсов нейрона">
+        <rect x="12" y="12" width="156" height="76" rx="7" fill="#efe7d8" stroke="currentColor" stroke-width="2"/>
+        <path d="M26 62H48L54 30L60 75L67 52H89L95 22L102 77L109 52H132L138 34L144 62H156" fill="none" stroke="#a8742f" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+      <b>Импульсы нейрона</b>
+      <span>видны и слышны как щелчки</span>
+    </div>
+  </div>
+
+  <div class="response-title">Что обнаружили</div>
+  <div class="spike-pair">
+    <div class="spike-case">
+      <b>Короткая полоска</b>
+      <svg viewBox="0 0 320 115" role="img" aria-label="Короткая полоска и частые импульсы">
+        <rect x="1" y="1" width="318" height="64" rx="7" fill="#fbf9f4" stroke="#ddd3c2"/>
+        <line x1="122" y1="33" x2="198" y2="33" stroke="#262220" stroke-width="8" stroke-linecap="round"/>
+        <path d="M8 102H312M24 102V76M43 102V70M64 102V79M79 102V66M102 102V74M121 102V68M141 102V78M162 102V65M181 102V72M204 102V77M224 102V67M246 102V75M267 102V69M294 102V80" fill="none" stroke="#a8742f" stroke-width="3"/>
+      </svg>
+      <div class="spike-label">частые импульсы</div>
+    </div>
+    <div class="spike-case">
+      <b>Та же полоска, но длиннее</b>
+      <svg viewBox="0 0 320 115" role="img" aria-label="Длинная линия и редкие импульсы">
+        <rect x="1" y="1" width="318" height="64" rx="7" fill="#fbf9f4" stroke="#ddd3c2"/>
+        <line x1="37" y1="33" x2="283" y2="33" stroke="#262220" stroke-width="8" stroke-linecap="round"/>
+        <path d="M8 102H312M52 102V76M137 102V68M231 102V78M287 102V72" fill="none" stroke="#a8742f" stroke-width="3"/>
+      </svg>
+      <div class="spike-label">редкие импульсы</div>
+    </div>
+  </div>
+  <figcaption>В этом сравнении меняется только длина полоски: место и наклон остаются прежними. Вертикальные штрихи — отдельные импульсы нейрона, а не условная шкала «силы».</figcaption>
+</figure>
+
+<p>В 1986 году Юрген Больц и Чарльз Гилберт решили выяснить, откуда берётся это торможение. Шестой слой зрительной коры посылает множество связей в четвёртый — туда, где исследователи записывали нейроны. Через тонкую микропипетку они под давлением ввели в небольшой участок шестого слоя ГАМК — вещество, которым нейроны приглушают активность соседних клеток. Пока ГАМК действовала, этот участок почти замолкал; затем его работа восстанавливалась.</p>
+
+<p>Пока они продолжали записывать клетки четвёртого слоя, им снова показывали короткую и длинную версии одной полоски. До введения ГАМК нейрон часто отвечал на короткую и заметно слабее — на длинную. Когда шестой слой замолкал, эта разница исчезала. При этом нейрон по-прежнему различал наклон и направление движения. Значит, ГАМК не выключила зрение вообще. Изменилось именно отношение нейрона к длине полоски. Опыт показал: шестой слой влияет на концевое торможение.</p>
+
+<p>Больц и Гилберт спрашивали, откуда приходит торможение. Но зачем зрительной системе вообще ослаблять ответ на продолжение линии? В 1999 году нейробиолог Раджеш Рао и специалист по компьютерному зрению Дана Баллард предложили возможный ответ. Они обучили математическую модель на фотографиях природы. Модель искала повторяющиеся связи между соседними линиями и пыталась предугадать продолжение каждой из них. Когда верхние уровни модели могли передавать догадку нижним, 28 из 32 искусственных нейронов сильнее отвечали на линию, которая неожиданно обрывалась, и слабее — на ту же линию, продолженную дальше. После отключения этого обратного пути такой ответ сохранился только у пяти.</p>
+
+<p>Рао и Баллард объяснили результат так: высшие уровни зрительной системы посылают вниз версию «линия продолжится». Продолжение совпадает с версией — и ответ слабеет. Неожиданный обрыв с ней не сходится — и импульсов становится больше. Модель не доказала, что мозг устроен именно так. Она показала, как концевое торможение могло бы возникать из сравнения догадки с новым сигналом.</p>
+
+<p>Но работает ли ожидание так же в человеческом мозге? В 2020 году Фрейзер Эйткен и его коллеги пригласили восемнадцать человек на исследование в томографе. Синяя точка предвещала полосы одного наклона, оранжевая — другого. В четверти попыток ожидаемый круг не появлялся вовсе.</p>
+
+<figure>
+  <div class="card">
+    <div class="fig-title">Когда ожидаемая картинка не появляется</div>
+    <div class="fig-sub">Синяя точка предвещает один наклон полос, оранжевая — другой. В большинстве попыток круг появляется, в четверти — экран остаётся пустым.</div>
+    <img src="assets/sluh/aitken-2020-fig1.png" alt="Схема опыта Эйткена: синяя и оранжевая точки предсказывают наклон полосатого круга, а в четверти попыток круг не появляется">
+    <div class="fig-read">Схема исследования Фрейзера Эйткена и его коллег, 2020.</div>
+  </div>
+</figure>
+
+<p>Когда круг не появлялся, перед глазами участников оставался пустой экран. Однако томограф обнаруживал в глубоких слоях зрительной коры тот же рисунок активности, который соответствовал ожидаемому наклону. Полос никто не показывал, но мозг уже приготовился их увидеть.</p>
+
+<p>Эти опыты не дают окончательного ответа о том, как устроено восприятие. Но вместе они поддерживают простую мысль: на восприятие влияет не только сигнал от глаз или ушей, но и то, что мозг уже ожидает. Один из способов объяснить это — <b>предиктивное кодирование</b>: мозг предлагает версию того, что находится перед нами сейчас, и меняет её, когда новый сигнал с ней не сходится. «Предиктивное» здесь не значит «предсказывающее будущее». Эту работу мы уже почувствовали на себе: свист стал речью, неопределённый знак — буквой, а пятна — коровой.</p>
+
+<div class="hinge">То же происходит в разговоре. Человек ещё не договорил, а мозг уже предлагает версию того, что он чувствует и зачем это говорит. Обычно такая догадка помогает понимать друг друга. Но иногда мы перестаём слышать человека и начинаем отвечать собственной версии.</div>
+
+<h2><span class="num">II</span>Два искажения</h2>
+
+<p>С предметами всё относительно просто: можно показать исходную фотографию и увидеть, что именно достроил мозг. С человеком сложнее. У нас нет снимка его внутреннего мира, с которым можно свериться. Есть слова, паузы, движения — и догадка о том, что за ними стоит.</p>
+
+<p>В 1944 году психологи Фриц Хайдер и Марианна Зиммель показали людям короткое видео. На экране движутся два треугольника и кружок, рядом — прямоугольник с дверью.</p>
+
+<div class="audio-lab">
+  <h3>Полторы минуты и три шага</h3>
+  <div class="intro">Сначала посмотри видео. Потом попробуй пересказать его с одним ограничением.</div>
+
+  <div class="lab-step">
+    <b>1. Посмотри видео</b>
+    <video controls preload="metadata">
+      <source src="assets/sluh/triangles.mp4" type="video/mp4">
+    </video>
+    <button class="step-btn" id="show-tri-2" type="button">Открыть второй шаг</button>
+  </div>
+
+  <div class="lab-step" id="tri-step-2" hidden>
+    <b>2. Перескажи, что там случилось</b>
+    <p>Не пользуйся словами «хочет», «боится», «гонится», «прячется», «злится» и другими словами о намерениях или чувствах.</p>
+    <button class="step-btn" id="show-tri-3" type="button">Открыть третий шаг</button>
+  </div>
+
+  <div class="lab-step" id="tri-step-3" hidden>
+    <b>3. Получилось?</b>
+    <p>Без таких слов пересказ почти разваливается. В исходном опыте тридцать три человека из тридцати четырёх рассказали историю о характерах и намерениях фигур. Только один описал их движение.</p>
+  </div>
+</div>
+
+<p>На экране были только геометрические фигуры. Но в нашей голове появился нападающий, испуганный герой, погоня и укрытие. Мозг не просто увидел движение — он создал целую мелодраму и населил её чувствами.</p>
+
+<p>Хичкок показал тот же переход уже на человеческом лице. Он поставил один и тот же кадр со своим нейтральным выражением после двух разных сцен.</p>
+
+<figure>
+  <div class="card">
+    <video controls preload="metadata">
+      <source src="assets/sluh/hitchcock.mp4" type="video/mp4">
+    </video>
+    <div class="fig-read">Альфред Хичкок в передаче «Telescope», Си-би-си, 1964. Говорит по-английски.</div>
+  </div>
+</figure>
+
+<p>Лицо не меняется, а выражение будто меняется. После одного кадра мы видим одно чувство, после другого — другое. Контекст приносит версию, и версия становится тем, что нам словно бы непосредственно показало лицо.</p>
+
+<p>В отношениях таким контекстом становится всё, что уже случалось между нами. Близкий пишет короткое «ок». Мы слышим не две буквы, а усталость, раздражение, холодность или спешку. Без этой догадки разговор был бы невозможен. Но именно здесь мы можем попасть в два искажения.</p>
+
+<div class="distortions">
+  <div>
+    <b>Схема · застывший снимок</b>
+    <p>Мы как будто однажды сфотографировали человека и теперь приносим этот снимок на каждый разговор. Когда-то он ушёл от конфликта — значит, он всегда избегает. В детстве ему не хватало близости — значит, мы заранее знаем смысл каждого его слова. Но человек на снимке не растёт, не учится, не устаёт именно сегодня и не решает поступить иначе. Схема экономит усилие: живого человека больше не нужно узнавать заново.</p>
+  </div>
+  <div>
+    <b>Фантом · собственное эхо</b>
+    <p>Здесь вместо снимка появляется голос из прошлого. Иногда он действует как ожог: похожая интонация касается старой боли, и тело уже ждёт отвержения. Иногда фантом рождается из надежды: простая теплота звучит как обещание близости. Другой ещё ничего не решил, а мы уже слышим собственный страх или желание его голосом — и отвечаем своему эху.</p>
+  </div>
+</div>
+
+<p>Чужой голос могут заглушить и страх, и надежда. В одном случае мы заранее слышим отвержение, в другом — обещание близости. <b>Схема оставляет человека в прошлом, а фантом заставляет его говорить голосом нашего прошлого. В обоих случаях настоящий ответ уже ничего не меняет.</b></p>
+
+<h2><span class="num">III</span>Ментализация: версия, которую можно изменить</h2>
+
+<p>Если перестать строить версии невозможно, а принять свою версию за человека опасно, нам нужна не ещё одна, более правильная догадка. Нужно другое отношение к любой догадке.</p>
+
+<div class="history">
+  <p>Чтобы понять, как человек учится отличать собственное переживание от происходящего снаружи, клинические психологи и психоаналитики Мэри Таргет и Питер Фонаги обратились к развитию ребёнка. В 1996 году они описали этот процесс, опираясь на исследования детской игры, развития мышления и клинические наблюдения.</p>
+
+  <p>Один режим проще всего представить так. Ребёнок просыпается ночью и уверен, что под кроватью чудовище. Он не думает: «Мне представилось чудовище, поэтому я испугался». Для него страх и опасность совпали: <i>если мне страшно, значит чудовище здесь</i>. Таргет и Фонаги назвали это <b>психической эквивалентностью</b> — внутреннее переживается как точный слепок внешнего мира.</p>
+
+  <p>Другой режим Таргет и Фонаги назвали <b>«режимом понарошку»</b>. Название взято из игры, где палка становится лошадью, а коробка — домом. Ребёнок может держать сразу две версии: это лошадь в игре и палка в действительности. Беда начинается не в воображении, а когда объяснение теряет связь с реальностью. Можно долго и убедительно говорить о чувствах, но ни собственное переживание, ни ответ другого уже ничего в нём не меняют.</p>
+
+  <p>Постепенно ребёнок учится связывать внутреннее и внешнее, не путая их: чудовища в комнате может не быть, а страх при этом настоящий. Мысль влияет на то, что я вижу, но не становится самим миром. Ответ другого влияет на моё понимание, но не стирает мой опыт.</p>
+</div>
+
+<p>Во взрослом разговоре эта граница выглядит знакомо. «Мне страшно» легко превращается в «он хочет меня бросить» — так собственное переживание становится фактом о другом. Или мы строим настолько убедительное объяснение человека, что его живой ответ уже не может ничего изменить. В первом случае звучит фантом, во втором человек застывает в схеме.</p>
+
+<p>Способность понимать свои и чужие поступки через возможные мысли и чувства, не принимая объяснение за факт, Фонаги и Таргет назвали <b>ментализацией</b>. Позже Фонаги и психиатр Энтони Бейтман построили на ней психотерапевтический подход. Терапевт в нём не разгадывает скрытый «настоящий мотив» человека. Он помогает замедлиться, отделить увиденное от додуманного, заметить собственное состояние и услышать, меняет ли ответ другого первую версию.</p>
+
+<p><b>Ментализация — не чтение мыслей.</b> Чтение мыслей обещает угадать, что у человека внутри. Ментализация начинается с признания: внутрь другого я не вижу. Я могу лишь строить версии о его мыслях, чувствах и намерениях — и допускать, что ошибся.</p>
+
+<p><b>Это не то же самое, что эмпатия.</b> Можно остро почувствовать чужую боль и неверно понять, из-за чего она возникла. Эмпатия даёт отклик на переживание. При ментализации мы замечаем и другого, и собственную реакцию, а его слова могут изменить наше объяснение.</p>
+
+<p><b>Это не оправдание и не доверчивость.</b> Понять, что человеком двигало, не значит согласиться с его поступком. Можно услышать ответ, увидеть повторяющееся поведение и всё равно отойти или поставить границу.</p>
+
+<p><b>И это не вечное сомнение.</b> Ментализация не требует после каждого «ок» устраивать расследование. Иногда достаточно заметить: «Сейчас я уже отвечаю на то, чего он ещё не сказал». Иногда действительно стоит спросить. Ближе всего ментализация не к точной расшифровке, а к разговору, в котором чужой ответ ещё способен сообщить тебе что-то новое.</p>
+
+<div class="duo">
+  <div>
+    <b>Ответ уже написан</b>
+    <p>— Ок.<br>
+    <i>Ему всё равно.</i><br>
+    — Ну и отлично. Больше не буду отвлекать.</p>
+  </div>
+  <div>
+    <b>Ответ ещё может прозвучать</b>
+    <p>— Ок.<br>
+    <i>Мне послышалось «отстань». Но это пока моя версия.</i><br>
+    — Слушай, твоё «ок» прозвучало для меня холодно. Что ты сейчас имел в виду?</p>
+  </div>
+</div>
+
+<p>Во втором разговоре догадка тоже есть. Разница не в спокойствии и не в правильной формулировке. Разница в том, что ответ другого ещё способен изменить понимание.</p>
+
+<p>Но как заметить это в живом разговоре? Как услышать момент, когда знание о человеке превратилось в застывший снимок? Как отличить его голос от собственного эха — особенно если эхо звучит убедительнее? И как оставить место чужому ответу, не отказываясь от памяти и собственных границ?</p>
+
+<div class="gap"></div>
+<div class="divider">· · ·</div>
+
+<div class="metaphor">
+  <div class="m-title">Слух</div>
+  <div class="m-epigraph">Знакомый голос.<br>Непредсказуемый ответ.</div>
+  <div class="m-gesture">Слушай, не отвечая за другого.</div>
+
+  <p>Объяснить человека до конца — значит перестать его слушать. Ты знаешь его травмы, паттерны, привычные реакции и уже заранее понимаешь, почему он скажет именно это. Любое слово занимает приготовленное место и становится подтверждением схемы. Чем точнее объяснение, тем меньше приходится слушать; чем меньше слушаешь, тем безошибочнее кажется объяснение. Но механизм не выбирает и не отвечает — он только срабатывает.</p>
+
+  <p>Но и слышать в другом собственный страх или надежду — значит слушать не его, а собственное эхо. В молчании тебе слышится отвержение, в тепле — обещание, в паузе — потеря интереса, в несогласии — предательство. Чем внимательнее вслушиваешься в эхо, тем больше находишь ему подтверждений; чем больше подтверждений находишь, тем труднее расслышать чужой голос. Фантом всегда говорит то, чего ты боялся или на что надеялся, потому что отвечаешь за него ты.</p>
+
+  <p>Настоящее слушание начинается там, где твоё понимание остаётся открытым чужому ответу. Ты помнишь прежние разговоры, замечаешь повторения и узнаёшь знакомую интонацию, но не превращаешь их в реплику, написанную заранее. Если смысл непонятен, ты спрашиваешь; если ответ неожиданен, позволяешь ему войти в твоё понимание, не отказываясь от памяти и собственных границ. Так слушание размыкает круг: чужой ответ меняет твоё представление, а изменённое представление позволяет иначе услышать следующий ответ.</p>
+
+  <p class="m-formula">Доверять другому — не значит знать, что он ответит. Это значит слушать так, чтобы его ответ всё ещё мог изменить твоё понимание.</p>
+</div>
+
+<div class="invite">
+  <div class="label">Продолжить в живом разговоре</div>
+  <h3>Услышать ответ, которого ты не написал заранее</h3>
+  <p>Эта статья может помочь заметить схему и собственное эхо. Но текст не возразит тебе, не переспросит и не заметит того, что пропустил ты. Чтобы поймать момент, когда ты уже ответил за другого, нужен живой разговор.</p>
+
+  <p>На встречу «Процесса: Доверие» можно прийти со своим запросом. Вместо общих рассуждений ты рассказываешь о конкретной ситуации: что именно было сказано, что услышал ты и что успел додумать сам. Остальные помогают отделить слова человека от твоей версии — без попытки угадать мотивы того, кого рядом нет.</p>
+
+  <p>В конце ты выбираешь, что делать дальше: спросить, дослушать, обозначить границу или закончить разговор. Другие участники могут заметить то, что ты пропустил, но решение всё равно остаётся за тобой.</p>
+
+  <p>Встречаемся в Zoom. Сначала разбираем одну метафору, затем делимся на тройки и работаем каждый со своим запросом. В конце снова собираемся всей группой. Каждая встреча самостоятельна.</p>
+
+  <div class="invite-action"><a class="btn" href="https://ed-educate.github.io/#join">Посмотреть формат встречи</a></div>
+</div>
+
+<div class="sources">
+  <h3>Источники</h3>
+  <ol>
+    <li>Remez R. E., Rubin P. E., Pisoni D. B., Carrell T. D. (1981). <a href="https://doi.org/10.1126/science.7233191">Speech Perception Without Traditional Speech Cues</a>. Science.</li>
+    <li>Davis M. — <a href="https://www.mrc-cbu.cam.ac.uk/personal/matt.davis/sine-wave-speech/">An Introduction to Sine-Wave Speech</a>, MRC Cognition and Brain Sciences Unit, Cambridge. Записи в письме наши: голос Эда; синусоидальная версия получена анализом формант.</li>
+    <li>Hubel D. H., Wiesel T. N. (1959). <a href="https://doi.org/10.1113/jphysiol.1959.sp006308">Receptive fields of single neurones in the cat's striate cortex</a>. The Journal of Physiology.</li>
+    <li>Hubel D. H., Wiesel T. N. (1965). <a href="https://doi.org/10.1152/jn.1965.28.2.229">Receptive fields and functional architecture in two nonstriate visual areas of the cat</a>. Journal of Neurophysiology — описание клеток с концевым торможением.</li>
+    <li>National Eye Institute (2013). <a href="https://www.nei.nih.gov/research-and-training/research-news/remembering-visionary-neuroscientist-david-hubel">Remembering visionary neuroscientist David Hubel</a> — история случайного наблюдения с краем стеклянной пластинки.</li>
+    <li>Bolz J., Gilbert C. D. (1986). <a href="https://doi.org/10.1038/320362a0">Generation of end-inhibition in the visual cortex via interlaminar connections</a>. Nature.</li>
+    <li>Rao R. P. N., Ballard D. H. (1999). <a href="https://doi.org/10.1038/4580">Predictive coding in the visual cortex</a>. Nature Neuroscience.</li>
+    <li>Aitken F. et al. (2020). <a href="https://doi.org/10.1371/journal.pbio.3001023">Prior expectations evoke stimulus-specific activity in the deep layers of the primary visual cortex</a>. PLOS Biology.</li>
+    <li>Heider F., Simmel M. (1944). <a href="https://doi.org/10.2307/1416950">An Experimental Study of Apparent Behavior</a>. American Journal of Psychology.</li>
+    <li>Target M., Fonagy P. (1996). <a href="https://pubmed.ncbi.nlm.nih.gov/8818764/">Playing with reality: II. The development of psychic reality from a theoretical perspective</a>. International Journal of Psychoanalysis.</li>
+    <li>Fonagy P., Luyten P. (2009). <a href="https://discovery.ucl.ac.uk/id/eprint/168730/">A developmental, mentalization-based approach to the understanding and treatment of borderline personality disorder</a>. Development and Psychopathology.</li>
+    <li>Baumeister R. F. et al. (2001). <a href="https://research.vu.nl/en/publications/bad-is-stronger-than-good-2/">Bad is stronger than good</a>. Review of General Psychology.</li>
+    <li>«Telescope: A Talk with Hitchcock» — <a href="https://www.imdb.com/title/tt0251424/">передача Си-би-си, 1964</a>.</li>
+    <li>Двухтоновая картинка сделана нами по способу из работы Reining &amp; Wallis (2024): <a href="https://doi.org/10.7717/peerj.18059">The role of object knowledge in visual recognition</a>. PeerJ.</li>
+  </ol>
+</div>
+
+<div class="footer">Процесс: Доверие · метафора «Слух»</div>
+
+</main>
+
+<script>
+(function(){
+  [['show-audio-step-2','audio-step-2'],['show-audio-step-3','audio-step-3'],
+   ['show-tri-2','tri-step-2'],['show-tri-3','tri-step-3']].forEach(function(pair){
+    var button=document.getElementById(pair[0]);
+    var section=document.getElementById(pair[1]);
+    if(button&&section){
+      button.addEventListener('click',function(){
+        section.hidden=false;
+        button.hidden=true;
+        section.scrollIntoView({behavior:'smooth',block:'center'});
+      });
+    }
+  });
+
+  var image=document.getElementById('mooney-img');
+  var button=document.getElementById('mooney-btn');
+  if(!image||!button) return;
+  var spots=image.getAttribute('src');
+  var original=image.getAttribute('data-original');
+  var shown=false;
+  button.addEventListener('click',function(){
+    shown=!shown;
+    image.setAttribute('src',shown?original:spots);
+    image.setAttribute('alt',shown?'Исходная фотография коровы':'Чёрно-белые пятна');
+    button.textContent=shown?'Вернуть пятна':'Показать оригинал';
+  });
+})();
+</script>
+
+</body>
+</html>
