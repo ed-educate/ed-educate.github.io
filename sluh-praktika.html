@@ -53,6 +53,14 @@
   .step-btn,.btn-ghost{font:inherit; font-size:.9rem; color:var(--gold); background:transparent;
     border:1px solid var(--gold-soft); border-radius:8px; padding:.58rem 1.15rem; cursor:pointer;}
   .step-btn:hover,.btn-ghost:hover{background:var(--gold); color:#fff; border-color:var(--gold);}
+  .choice-row{display:flex; flex-wrap:wrap; gap:.65rem; margin-top:.85rem;}
+  .choice-btn{flex:1 1 10rem; min-width:0; font:inherit; font-size:.88rem; line-height:1.35;
+    color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:8px;
+    padding:.72rem .9rem; cursor:pointer; text-align:center;}
+  .choice-btn:hover,.choice-btn[aria-pressed="true"]{color:#fff; background:var(--gold); border-color:var(--gold);}
+  .choice-result{margin-top:1rem; padding:1rem 1.1rem; background:var(--cream); border-radius:8px;}
+  .choice-result p{font-size:.9rem; margin-bottom:.7rem;}
+  .choice-result p:last-child{margin-bottom:0;}
   [hidden]{display:none !important;}
   .reveal{text-align:center; margin-top:1.1rem;}
   .neuro-figure{margin:1.8rem 0 2rem; padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:10px;}
@@ -134,6 +142,7 @@
     .metaphor{padding:2.1rem 1.25rem;}
     .invite{padding:2.1rem 1.25rem;}
     .step-btn,.btn-ghost,.btn{max-width:100%;}
+    .choice-row{display:grid; grid-template-columns:1fr;}
   }
   @media print{
     body{background:#fff; font-size:11.5pt;}
@@ -213,126 +222,61 @@
 
 <p>После оригинала в пятнах не изменился ни один пиксель. Но теперь корову почти невозможно развидеть: взгляд сам собирает из пятен её голову, спину и ноги. Нового изображения не появилось. Изменилось то, что мозг приносит к этим пятнам.</p>
 
-<p>Первую подсказку дали опыты с отдельными нейронами. В 1959 году нейрофизиологи Дэвид Хьюбел и Торстен Визел ввели тонкий электрод в зрительную кору кошки. На экран перед ней они проецировали пятна света и записывали импульсы одной клетки. Пятна почти не вызывали ответа. Но однажды Хьюбел вдвигал в проектор новую стеклянную пластинку. Её ровный край спроецировался на экран как тонкая наклонная граница между светом и тенью. Пока пластинка двигалась, эта линия смещалась по экрану — и нейрон заработал как пулемёт. Клетка отвечала не просто на свет, а на линию в определённом месте и под определённым углом.</p>
+<p>Свист, знак и пятна остались прежними. Но после подсказки мозг услышал в свисте фразу, увидел в знаке букву, а в пятнах — корову.</p>
 
-<p>Позже Хьюбел и Визел стали менять длину такой линии. Они оставляли прежними её место и наклон, но показывали то короткую полоску, то длинную. Короткая помещалась в область, где свет возбуждал нейрон, и тот отвечал часто. У длинной полоски концы заходили в соседние области, где свет, наоборот, подавлял ответ. Поэтому эффект назвали <b>концевым торможением</b>: середина линии возбуждала нейрон, а её удалённые концы его притормаживали.</p>
+<p>Учёные объясняют эту работу по-разному. Одно из объяснений — <b>предиктивное кодирование</b>. Мозг не ждёт, пока мир сложится в ясную картину. Он заранее предполагает, что происходит, и сверяет догадку с новыми звуками и образами. Если новые данные не подтверждают догадку, её приходится менять.</p>
 
-<figure class="neuro-figure" aria-label="Как исследователи измеряли реакцию нейрона зрительной коры кошки на короткую и длинную полоску">
-  <div class="neuro-kicker">Как проходил опыт</div>
-  <div class="experiment-route">
-    <div class="route-stage">
-      <svg viewBox="0 0 180 100" role="img" aria-label="Полоска света на экране">
-        <rect x="17" y="10" width="146" height="80" rx="7" fill="#efe7d8" stroke="currentColor" stroke-width="2"/>
-        <line x1="68" y1="70" x2="112" y2="30" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      </svg>
-      <b>Полоска на экране</b>
-      <span>её двигают, поворачивают и делают длиннее или короче</span>
-    </div>
-    <div class="route-arrow" aria-hidden="true">→</div>
-    <div class="route-stage">
-      <svg viewBox="0 0 180 100" role="img" aria-label="Кошка и электрод в зрительной коре">
-        <path d="M34 62C34 47 45 36 59 31L55 13L77 27C96 23 119 29 132 43C145 57 143 78 130 88H61C44 88 32 78 34 62Z" fill="#efe7d8" stroke="currentColor" stroke-width="2"/>
-        <path d="M35 59L20 67L36 73" fill="#efe7d8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        <circle cx="56" cy="55" r="5" fill="currentColor"/>
-        <line x1="145" y1="7" x2="118" y2="39" stroke="#a8742f" stroke-width="3"/>
-        <circle cx="118" cy="39" r="4" fill="#a8742f"/>
-      </svg>
-      <b>Тонкий электрод</b>
-      <span>снимает сигнал в зрительной коре</span>
-    </div>
-    <div class="route-arrow" aria-hidden="true">→</div>
-    <div class="route-stage">
-      <svg viewBox="0 0 180 100" role="img" aria-label="Запись электрических импульсов нейрона">
-        <rect x="12" y="12" width="156" height="76" rx="7" fill="#efe7d8" stroke="currentColor" stroke-width="2"/>
-        <path d="M26 62H48L54 30L60 75L67 52H89L95 22L102 77L109 52H132L138 34L144 62H156" fill="none" stroke="#a8742f" stroke-width="3" stroke-linejoin="round"/>
-      </svg>
-      <b>Импульсы нейрона</b>
-      <span>видны и слышны как щелчки</span>
-    </div>
-  </div>
+<p>Обычно это помогает: мы узнаём речь в шуме и целое по нескольким признакам. Но иногда догадка звучит громче самого сигнала, и додуманное кажется частью того, что мы действительно увидели или услышали.</p>
 
-  <div class="response-title">Что обнаружили</div>
-  <div class="spike-pair">
-    <div class="spike-case">
-      <b>Короткая полоска</b>
-      <svg viewBox="0 0 320 115" role="img" aria-label="Короткая полоска и частые импульсы">
-        <rect x="1" y="1" width="318" height="64" rx="7" fill="#fbf9f4" stroke="#ddd3c2"/>
-        <line x1="122" y1="33" x2="198" y2="33" stroke="#262220" stroke-width="8" stroke-linecap="round"/>
-        <path d="M8 102H312M24 102V76M43 102V70M64 102V79M79 102V66M102 102V74M121 102V68M141 102V78M162 102V65M181 102V72M204 102V77M224 102V67M246 102V75M267 102V69M294 102V80" fill="none" stroke="#a8742f" stroke-width="3"/>
-      </svg>
-      <div class="spike-label">частые импульсы</div>
-    </div>
-    <div class="spike-case">
-      <b>Та же полоска, но длиннее</b>
-      <svg viewBox="0 0 320 115" role="img" aria-label="Длинная линия и редкие импульсы">
-        <rect x="1" y="1" width="318" height="64" rx="7" fill="#fbf9f4" stroke="#ddd3c2"/>
-        <line x1="37" y1="33" x2="283" y2="33" stroke="#262220" stroke-width="8" stroke-linecap="round"/>
-        <path d="M8 102H312M52 102V76M137 102V68M231 102V78M287 102V72" fill="none" stroke="#a8742f" stroke-width="3"/>
-      </svg>
-      <div class="spike-label">редкие импульсы</div>
-    </div>
-  </div>
-  <figcaption>В этом сравнении меняется только длина полоски: место и наклон остаются прежними. Вертикальные штрихи — отдельные импульсы нейрона, а не условная шкала «силы».</figcaption>
-</figure>
+<div class="hinge">С картинкой всё просто: можно открыть оригинал и проверить, что мозг достроил. С человеком так не получится — его внутренний мир нельзя показать как фотографию. Мы слышим слова, замечаем паузу или взгляд и сразу решаем: обиделся, устал, врёт, избегает. Догадка возникает сама. Беда начинается, когда она перестаёт быть догадкой и мы отвечаем не человеку, а своему объяснению.</div>
 
-<p>В 1986 году Юрген Больц и Чарльз Гилберт решили выяснить, откуда берётся это торможение. Шестой слой зрительной коры посылает множество связей в четвёртый — туда, где исследователи записывали нейроны. Через тонкую микропипетку они под давлением ввели в небольшой участок шестого слоя ГАМК — вещество, которым нейроны приглушают активность соседних клеток. Пока ГАМК действовала, этот участок почти замолкал; затем его работа восстанавливалась.</p>
-
-<p>Пока они продолжали записывать клетки четвёртого слоя, им снова показывали короткую и длинную версии одной полоски. До введения ГАМК нейрон часто отвечал на короткую и заметно слабее — на длинную. Когда шестой слой замолкал, эта разница исчезала. При этом нейрон по-прежнему различал наклон и направление движения. Значит, ГАМК не выключила зрение вообще. Изменилось именно отношение нейрона к длине полоски. Опыт показал: шестой слой влияет на концевое торможение.</p>
-
-<p>Больц и Гилберт спрашивали, откуда приходит торможение. Но зачем зрительной системе вообще ослаблять ответ на продолжение линии? В 1999 году нейробиолог Раджеш Рао и специалист по компьютерному зрению Дана Баллард предложили возможный ответ. Они обучили математическую модель на фотографиях природы. Модель искала повторяющиеся связи между соседними линиями и пыталась предугадать продолжение каждой из них. Когда верхние уровни модели могли передавать догадку нижним, 28 из 32 искусственных нейронов сильнее отвечали на линию, которая неожиданно обрывалась, и слабее — на ту же линию, продолженную дальше. После отключения этого обратного пути такой ответ сохранился только у пяти.</p>
-
-<p>Рао и Баллард объяснили результат так: высшие уровни зрительной системы посылают вниз версию «линия продолжится». Продолжение совпадает с версией — и ответ слабеет. Неожиданный обрыв с ней не сходится — и импульсов становится больше. Модель не доказала, что мозг устроен именно так. Она показала, как концевое торможение могло бы возникать из сравнения догадки с новым сигналом.</p>
-
-<p>Но работает ли ожидание так же в человеческом мозге? В 2020 году Фрейзер Эйткен и его коллеги пригласили восемнадцать человек на исследование в томографе. Синяя точка предвещала полосы одного наклона, оранжевая — другого. В четверти попыток ожидаемый круг не появлялся вовсе.</p>
-
-<figure>
-  <div class="card">
-    <div class="fig-title">Когда ожидаемая картинка не появляется</div>
-    <div class="fig-sub">Синяя точка предвещает один наклон полос, оранжевая — другой. В большинстве попыток круг появляется, в четверти — экран остаётся пустым.</div>
-    <img src="assets/sluh/aitken-2020-fig1.png" alt="Схема опыта Эйткена: синяя и оранжевая точки предсказывают наклон полосатого круга, а в четверти попыток круг не появляется">
-    <div class="fig-read">Схема исследования Фрейзера Эйткена и его коллег, 2020.</div>
-  </div>
-</figure>
-
-<p>Когда круг не появлялся, перед глазами участников оставался пустой экран. Однако томограф обнаруживал в глубоких слоях зрительной коры тот же рисунок активности, который соответствовал ожидаемому наклону. Полос никто не показывал, но мозг уже приготовился их увидеть.</p>
-
-<p>Эти опыты не дают окончательного ответа о том, как устроено восприятие. Но вместе они поддерживают простую мысль: на восприятие влияет не только сигнал от глаз или ушей, но и то, что мозг уже ожидает. Один из способов объяснить это — <b>предиктивное кодирование</b>: мозг предлагает версию того, что находится перед нами сейчас, и меняет её, когда новый сигнал с ней не сходится. «Предиктивное» здесь не значит «предсказывающее будущее». Эту работу мы уже почувствовали на себе: свист стал речью, неопределённый знак — буквой, а пятна — коровой.</p>
-
-<div class="hinge">То же происходит в разговоре. Человек ещё не договорил, а мозг уже предлагает версию того, что он чувствует и зачем это говорит. Обычно такая догадка помогает понимать друг друга. Но иногда мы перестаём слышать человека и начинаем отвечать собственной версии.</div>
-
-<h2><span class="num">II</span>Два искажения</h2>
-
-<p>С предметами всё относительно просто: можно показать исходную фотографию и увидеть, что именно достроил мозг. С человеком сложнее. У нас нет снимка его внутреннего мира, с которым можно свериться. Есть слова, паузы, движения — и догадка о том, что за ними стоит.</p>
+<h2><span class="num">II</span>Откуда у треугольников взялись намерения</h2>
 
 <p>В 1944 году психологи Фриц Хайдер и Марианна Зиммель показали людям короткое видео. На экране движутся два треугольника и кружок, рядом — прямоугольник с дверью.</p>
 
 <div class="audio-lab">
-  <h3>Полторы минуты и три шага</h3>
-  <div class="intro">Сначала посмотри видео. Потом попробуй пересказать его с одним ограничением.</div>
+  <h3>Полторы минуты — четыре шага</h3>
+  <div class="intro">Писать ничего не нужно. Просто смотри и открывай шаги по одному.</div>
 
   <div class="lab-step">
-    <b>1. Посмотри видео</b>
+    <b>1. Посмотри видео до конца</b>
     <video controls preload="metadata">
       <source src="assets/sluh/triangles.mp4" type="video/mp4">
     </video>
-    <button class="step-btn" id="show-tri-2" type="button">Открыть второй шаг</button>
+    <button class="step-btn" id="show-tri-2" type="button">Посмотрел — дальше</button>
   </div>
 
   <div class="lab-step" id="tri-step-2" hidden>
-    <b>2. Перескажи, что там случилось</b>
-    <p>Не пользуйся словами «хочет», «боится», «гонится», «прячется», «злится» и другими словами о намерениях или чувствах.</p>
-    <button class="step-btn" id="show-tri-3" type="button">Открыть третий шаг</button>
+    <b>2. Скажи про себя, что произошло</b>
+    <p>Сформулируй одну фразу так, будто рассказываешь тому, кто не видел ролик.</p>
+    <button class="step-btn" id="show-tri-3" type="button">Фраза есть</button>
   </div>
 
   <div class="lab-step" id="tri-step-3" hidden>
-    <b>3. Получилось?</b>
-    <p>Без таких слов пересказ почти разваливается. В исходном опыте тридцать три человека из тридцати четырёх рассказали историю о характерах и намерениях фигур. Только один описал их движение.</p>
+    <b>3. Оставь только то, что было видно</b>
+    <p>Перескажи ещё раз, но без «напал», «испугался», «погнался», «спрятался» и других слов о чувствах, характерах и намерениях фигур.</p>
+    <button class="step-btn" id="show-tri-4" type="button">Попробовал</button>
+  </div>
+
+  <div class="lab-step" id="tri-step-4" hidden>
+    <b>4. Что получилось?</b>
+    <p>Выбери то, что ближе. Здесь нет правильного ответа.</p>
+    <div class="choice-row" role="group" aria-label="Что получилось после второго пересказа">
+      <button class="choice-btn" type="button" data-tri-outcome="story" aria-pressed="false">История осталась</button>
+      <button class="choice-btn" type="button" data-tri-outcome="movement" aria-pressed="false">Остались только движения</button>
+      <button class="choice-btn" type="button" data-tri-outcome="unsure" aria-pressed="false">Не уверен</button>
+    </div>
+    <div class="choice-result" id="tri-result" aria-live="polite" hidden>
+      <p id="tri-result-personal"></p>
+      <p>Важно заметить границу: движения были на экране, а характеры и намерения появились уже в нашем рассказе.</p>
+      <p>В исходном опыте 33 человека из 34 рассказали о характерах и намерениях фигур. Только один человек просто описал, как они двигались.</p>
+    </div>
   </div>
 </div>
 
-<p>На экране были только геометрические фигуры. Но в нашей голове появился нападающий, испуганный герой, погоня и укрытие. Мозг не просто увидел движение — он создал целую мелодраму и населил её чувствами.</p>
+<p>Мы увидели больше, чем было показано. На экране двигались фигуры, а в рассказе появились нападающий, испуганный герой, погоня и укрытие. Переход от движения к намерению происходит так быстро, что мы обычно его не замечаем.</p>
 
-<p>Хичкок показал тот же переход уже на человеческом лице. Он поставил один и тот же кадр со своим нейтральным выражением после двух разных сцен.</p>
+<p>С человеческим лицом мы поступаем похоже. Хичкок поставил один и тот же кадр со своим нейтральным выражением после двух разных сцен.</p>
 
 <figure>
   <div class="card">
@@ -343,9 +287,11 @@
   </div>
 </figure>
 
-<p>Лицо не меняется, а выражение будто меняется. После одного кадра мы видим одно чувство, после другого — другое. Контекст приносит версию, и версия становится тем, что нам словно бы непосредственно показало лицо.</p>
+<p>Лицо остаётся тем же, но после разных сцен мы видим в нём разные чувства. Они не написаны на лице — их подсказывает соседний кадр.</p>
 
-<p>В отношениях таким контекстом становится всё, что уже случалось между нами. Близкий пишет короткое «ок». Мы слышим не две буквы, а усталость, раздражение, холодность или спешку. Без этой догадки разговор был бы невозможен. Но именно здесь мы можем попасть в два искажения.</p>
+<p>В отношениях роль соседнего кадра играет всё, что уже было между нами. Близкий пишет короткое «ок». Мы слышим не две буквы, а усталость, раздражение, холодность или спешку. Мы всё равно достраиваем смысл. Но иногда наше объяснение заглушает то, что человек скажет дальше.</p>
+
+<h2><span class="num">III</span>Два искажения</h2>
 
 <div class="distortions">
   <div>
@@ -360,7 +306,7 @@
 
 <p>Чужой голос могут заглушить и страх, и надежда. В одном случае мы заранее слышим отвержение, в другом — обещание близости. <b>Схема оставляет человека в прошлом, а фантом заставляет его говорить голосом нашего прошлого. В обоих случаях настоящий ответ уже ничего не меняет.</b></p>
 
-<h2><span class="num">III</span>Ментализация: версия, которую можно изменить</h2>
+<h2><span class="num">IV</span>Ментализация: версия, которую можно изменить</h2>
 
 <p>Если перестать строить версии невозможно, а принять свою версию за человека опасно, нам нужна не ещё одна, более правильная догадка. Нужно другое отношение к любой догадке.</p>
 
@@ -501,12 +447,7 @@
   <ol>
     <li>Remez R. E., Rubin P. E., Pisoni D. B., Carrell T. D. (1981). <a href="https://doi.org/10.1126/science.7233191">Speech Perception Without Traditional Speech Cues</a>. Science.</li>
     <li>Davis M. — <a href="https://www.mrc-cbu.cam.ac.uk/personal/matt.davis/sine-wave-speech/">An Introduction to Sine-Wave Speech</a>, MRC Cognition and Brain Sciences Unit, Cambridge. Записи в письме наши: голос Эда; синусоидальная версия получена анализом формант.</li>
-    <li>Hubel D. H., Wiesel T. N. (1959). <a href="https://doi.org/10.1113/jphysiol.1959.sp006308">Receptive fields of single neurones in the cat's striate cortex</a>. The Journal of Physiology.</li>
-    <li>Hubel D. H., Wiesel T. N. (1965). <a href="https://doi.org/10.1152/jn.1965.28.2.229">Receptive fields and functional architecture in two nonstriate visual areas of the cat</a>. Journal of Neurophysiology — описание клеток с концевым торможением.</li>
-    <li>National Eye Institute (2013). <a href="https://www.nei.nih.gov/research-and-training/research-news/remembering-visionary-neuroscientist-david-hubel">Remembering visionary neuroscientist David Hubel</a> — история случайного наблюдения с краем стеклянной пластинки.</li>
-    <li>Bolz J., Gilbert C. D. (1986). <a href="https://doi.org/10.1038/320362a0">Generation of end-inhibition in the visual cortex via interlaminar connections</a>. Nature.</li>
     <li>Rao R. P. N., Ballard D. H. (1999). <a href="https://doi.org/10.1038/4580">Predictive coding in the visual cortex</a>. Nature Neuroscience.</li>
-    <li>Aitken F. et al. (2020). <a href="https://doi.org/10.1371/journal.pbio.3001023">Prior expectations evoke stimulus-specific activity in the deep layers of the primary visual cortex</a>. PLOS Biology.</li>
     <li>Heider F., Simmel M. (1944). <a href="https://doi.org/10.2307/1416950">An Experimental Study of Apparent Behavior</a>. American Journal of Psychology.</li>
     <li>Target M., Fonagy P. (1996). <a href="https://pubmed.ncbi.nlm.nih.gov/8818764/">Playing with reality: II. The development of psychic reality from a theoretical perspective</a>. International Journal of Psychoanalysis.</li>
     <li>Fonagy P., Luyten P. (2009). <a href="https://discovery.ucl.ac.uk/id/eprint/168730/">A developmental, mentalization-based approach to the understanding and treatment of borderline personality disorder</a>. Development and Psychopathology.</li>
@@ -523,7 +464,7 @@
 <script>
 (function(){
   [['show-audio-step-2','audio-step-2'],['show-audio-step-3','audio-step-3'],
-   ['show-tri-2','tri-step-2'],['show-tri-3','tri-step-3']].forEach(function(pair){
+   ['show-tri-2','tri-step-2'],['show-tri-3','tri-step-3'],['show-tri-4','tri-step-4']].forEach(function(pair){
     var button=document.getElementById(pair[0]);
     var section=document.getElementById(pair[1]);
     if(button&&section){
@@ -533,6 +474,26 @@
         section.scrollIntoView({behavior:'smooth',block:'center'});
       });
     }
+  });
+
+  var outcomeText={
+    story:'История часто прячется в глаголах: «напал», «погнался», «спрятался» уже приписывают фигурам намерения. Если заменить их описанием движения, рассказ почти исчезает.',
+    movement:'На экране двигались фигуры. Погоню, страх и нападение мы добавили сами.',
+    unsure:'Если трудно решить, это тоже наблюдение: движение и намерение сливаются так быстро, что границу между ними не сразу удаётся заметить.'
+  };
+  var outcomeButtons=document.querySelectorAll('[data-tri-outcome]');
+  var outcomeResult=document.getElementById('tri-result');
+  var outcomePersonal=document.getElementById('tri-result-personal');
+  outcomeButtons.forEach(function(choice){
+    choice.addEventListener('click',function(){
+      outcomeButtons.forEach(function(item){ item.setAttribute('aria-pressed','false'); });
+      choice.setAttribute('aria-pressed','true');
+      if(outcomePersonal) outcomePersonal.textContent=outcomeText[choice.getAttribute('data-tri-outcome')];
+      if(outcomeResult){
+        outcomeResult.hidden=false;
+        outcomeResult.scrollIntoView({behavior:'smooth',block:'nearest'});
+      }
+    });
   });
 
   var gateButton=document.getElementById('open-practice');
