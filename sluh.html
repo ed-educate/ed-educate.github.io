@@ -98,9 +98,19 @@
   .invite{max-width:42rem; margin:4.5rem auto 0; padding:2.5rem 2.4rem; background:var(--cream); border-radius:12px;}
   .invite .label{text-align:center; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
   .invite h3{text-align:center; font-size:1.5rem; line-height:1.3; margin:0 0 1.35rem; font-weight:700;}
-  .invite-action{text-align:center; margin-top:1.7rem;}
+  .theme-window{margin:1.8rem 0 0; padding:1.2rem 1.3rem; background:var(--sand); border-radius:10px;}
+  .theme-window-label{display:block; margin-bottom:.35rem; color:var(--gold); font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;}
+  .theme-window>strong{display:block; font-size:1.1rem; line-height:1.45;}
+  .theme-deadline,.theme-cadence{font-size:.88rem!important; color:var(--ink-soft); line-height:1.55;}
+  .theme-deadline{margin:.35rem 0 0!important;}
+  .theme-countdown{display:flex; justify-content:space-between; gap:1rem; margin-top:.9rem; padding-top:.85rem; border-top:1px solid var(--line); font-size:.9rem; line-height:1.4;}
+  .theme-countdown strong{color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .theme-cadence{margin:.7rem 0 0!important;}
+  .invite-actions{display:flex; flex-direction:column; align-items:center; gap:.75rem; margin-top:1.7rem; text-align:center;}
   .btn{display:inline-block; background:var(--gold); color:#fff; text-decoration:none; padding:.9rem 2.2rem; border-radius:8px; font-size:1.02rem; font-weight:700;}
   .btn:hover{background:#96662a;}
+  .invite-secondary{color:var(--gold); font-size:.9rem; font-weight:700; text-underline-offset:3px;}
+  .invite .fine{text-align:center; margin:1rem 0 0; color:var(--ink-soft); font-size:.82rem;}
   .sources{margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line);}
   .sources h3{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin:0 0 .9rem;}
   .sources ol{margin:0; padding-left:1.2rem;}
@@ -348,16 +358,29 @@
 
 <div class="invite">
   <div class="label">Продолжить в живом разговоре</div>
-  <h3>Услышать ответ, которого ты не написал заранее</h3>
-  <p>Эта статья может помочь заметить схему и собственное эхо. Но текст не возразит тебе, не переспросит и не заметит того, что пропустил ты. Чтобы поймать момент, когда ты уже ответил за другого, нужен живой разговор.</p>
+  <h3>Разобрать разговор, в котором ты уже ответил за другого</h3>
+  <p>Статья помогает заметить схему и собственное эхо, но текст не возразит и не переспросит. На встрече можно принести один конкретный разговор: что в нём было сказано, что услышал ты и что успел додумать.</p>
 
-  <p>На встречу «Процесса: Доверие» можно прийти со своим запросом. Вместо общих рассуждений ты рассказываешь о конкретной ситуации: что именно было сказано, что услышал ты и что успел додумать сам. Остальные помогают отделить слова человека от твоей версии — без попытки угадать мотивы того, кого рядом нет.</p>
+  <p>Группа помогает отделить слова другого от твоей версии — без попытки угадать его мотивы. В конце ты сам выбираешь следующий шаг: спросить, дослушать, обозначить границу или закончить разговор.</p>
 
-  <p>В конце ты выбираешь, что делать дальше: спросить, дослушать, обозначить границу или закончить разговор. Другие участники могут заметить то, что ты пропустил, но решение всё равно остаётся за тобой.</p>
+  <p>Встреча проходит в Zoom и длится три часа; в группе до 12 человек. Каждая встреча самостоятельна.</p>
 
-  <p>Встречаемся в Zoom. Сначала разбираем одну метафору, затем делимся на тройки и работаем каждый со своим запросом. В конце снова собираемся всей группой. Каждая встреча самостоятельна.</p>
+  <div class="theme-window" data-theme-schedule="sluh">
+    <span class="theme-window-label" data-theme-window-label>Расписание темы</span>
+    <strong><time data-theme-date>Актуальная дата</time> · <span data-theme-time>19:25</span> мск</strong>
+    <p class="theme-deadline" data-theme-deadline hidden>Запись открыта до <time data-theme-cutoff-date>вторника</time>, 24:00 мск.</p>
+    <div class="theme-countdown">
+      <span data-theme-countdown-label>До встречи</span>
+      <strong data-theme-countdown role="timer" aria-live="off">Рассчитываем…</strong>
+    </div>
+    <p class="theme-cadence" data-theme-cadence>Тема возвращается раз в семь недель.</p>
+  </div>
 
-  <div class="invite-action"><a class="btn" href="https://ed-educate.github.io/#join">Посмотреть формат встречи</a></div>
+  <div class="invite-actions">
+    <a class="btn" data-theme-primary href="https://payform.ru/f0cdnIX/">Прийти на ближайшую встречу — 1 900 ₽</a>
+    <a class="invite-secondary" href="https://ed-educate.github.io/#join">Сначала посмотреть формат и стоимость</a>
+  </div>
+  <p class="fine">Если формат не подойдёт, вернём деньги без анкет и выяснений.</p>
 </div>
 
 <div class="sources">
@@ -428,6 +451,8 @@
   });
 })();
 </script>
+
+<script src="/js/schedule.js?v=20260810-theme-cycle" defer></script>
 
 </body>
 </html>

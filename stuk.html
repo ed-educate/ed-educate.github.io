@@ -84,21 +84,23 @@
   .metaphor p{font-size:.97em;}
   .metaphor .m-formula{font-weight:700; margin-top:1.6rem; margin-bottom:0;}
 
-  .invite{margin-top:4.5rem;}
-  .invite .label{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
-  .invite h3{font-size:1.5rem; line-height:1.3; margin:0 0 1.1rem; font-weight:700;}
+  .invite{max-width:42rem; margin:4.5rem auto 0; padding:2.5rem 2.4rem; background:#F4EFE6; border-radius:12px;}
+  .invite .label{text-align:center; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
+  .invite h3{text-align:center; font-size:1.5rem; line-height:1.3; margin:0 0 1.35rem; font-weight:700;}
   .invite p{font-size:1rem; margin:0 0 1rem;}
-  .invite .when{
-    margin:1.8rem 0; padding:1rem 1.2rem; background:var(--sand); border-radius:10px;
-    font-size:.95rem; line-height:1.7;
-  }
-  .invite .when b{display:block; font-size:1.05rem; margin-bottom:.2rem;}
-  .btn{
-    display:inline-block; background:var(--gold); color:#fff; text-decoration:none;
-    padding:.9rem 2.2rem; border-radius:8px; font-size:1.02rem; font-weight:700;
-  }
+  .theme-window{margin:1.8rem 0 0; padding:1.2rem 1.3rem; background:var(--sand); border-radius:10px;}
+  .theme-window-label{display:block; margin-bottom:.35rem; color:var(--gold); font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;}
+  .theme-window>strong{display:block; font-size:1.1rem; line-height:1.45;}
+  .theme-deadline,.theme-cadence{font-size:.88rem!important; color:var(--ink-soft); line-height:1.55;}
+  .theme-deadline{margin:.35rem 0 0!important;}
+  .theme-countdown{display:flex; justify-content:space-between; gap:1rem; margin-top:.9rem; padding-top:.85rem; border-top:1px solid var(--line); font-size:.9rem; line-height:1.4;}
+  .theme-countdown strong{color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .theme-cadence{margin:.7rem 0 0!important;}
+  .invite-actions{display:flex; flex-direction:column; align-items:center; gap:.75rem; margin-top:1.7rem; text-align:center;}
+  .btn{display:inline-block; background:var(--gold); color:#fff; text-decoration:none; padding:.9rem 2.2rem; border-radius:8px; font-size:1.02rem; font-weight:700;}
   .btn:hover{background:#96662a;}
-  .invite .fine{font-size:.82rem; color:var(--ink-soft); margin:1rem 0 0;}
+  .invite-secondary{color:var(--gold); font-size:.9rem; font-weight:700; text-underline-offset:3px;}
+  .invite .fine{text-align:center; margin:1rem 0 0; color:var(--ink-soft); font-size:.82rem;}
 
   .sources{margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line);}
   .sources h3{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin:0 0 .9rem;}
@@ -337,24 +339,31 @@
 </div>
 
 <div class="invite">
-  <div class="label">Попробовать на своём опыте</div>
-  <h3>Прочитать о стуке мало — важно услышать свой внутренний стук</h3>
+  <div class="label">Продолжить в живом разговоре</div>
+  <h3>Расслышать, что внутри уже просит ответа</h3>
 
-  <p>Знание само по себе ничего не меняет — это один из главных выводов исследований Джендлина. Изменения начинаются, когда человек разбирает конкретную ситуацию и пробует понять, что именно тогда давало о себе знать.</p>
+  <p>Статья даёт имя внутреннему стуку. На встрече можно принести одну конкретную ситуацию: ту, где ты не заметил внутренний сигнал, подчинился первому импульсу или пока не нашёл точных слов для того, что чувствуешь.</p>
 
-  <p>Этим мы и занимаемся на встрече. Каждый приносит конкретные ситуации из своей жизни: где не замечал внутренний сигнал, пока он не стал слишком громким; где подчинился первому импульсу; где сумел остановиться и прислушаться. Дальше работаем в малых группах — чужие истории помогают увидеть то, что трудно заметить в собственной: изнутри многое просто не видно.</p>
+  <p>В малой группе ты подбираешь слова к тому, что уже ощущается, но ещё не стало ясным. Другие помогают заметить то, что трудно увидеть изнутри, но не анализируют тебя и не решают за тебя. Следующий шаг остаётся твоим.</p>
 
-  <p>Три часа, до девяти человек. Никто не анализирует тебя со стороны и не выдаёт правильных ответов: материал — твой собственный опыт, и только ты решаешь, что с ним делать.</p>
+  <p>Встреча проходит в Zoom и длится три часа; в группе до 12 человек. Каждая встреча самостоятельна.</p>
 
-  <div class="when">
-    <b>В эту среду, 5 августа, тема встречи — «Стук»</b>
-    19:30 мск · Zoom · 3 часа · группа до 9 человек · запись до вторника, 4 августа.<br>
-    Следующий «Стук» — только через 12 недель.
+  <div class="theme-window" data-theme-schedule="stuk">
+    <span class="theme-window-label" data-theme-window-label>Расписание темы</span>
+    <strong><time data-theme-date>Актуальная дата</time> · <span data-theme-time>19:25</span> мск</strong>
+    <p class="theme-deadline" data-theme-deadline hidden>Запись открыта до <time data-theme-cutoff-date>вторника</time>, 24:00 мск.</p>
+    <div class="theme-countdown">
+      <span data-theme-countdown-label>До встречи</span>
+      <strong data-theme-countdown role="timer" aria-live="off">Рассчитываем…</strong>
+    </div>
+    <p class="theme-cadence" data-theme-cadence>Тема возвращается раз в семь недель.</p>
   </div>
 
-  <a class="btn" href="https://payform.ru/cpc16wd/">Записаться на встречу</a>
-
-  <p class="fine">Одна встреча — 1 900 ₽. Не подойдёт формат — вернём деньги без анкет и выяснений.</p>
+  <div class="invite-actions">
+    <a class="btn" data-theme-primary href="https://payform.ru/f0cdnIX/">Прийти на ближайшую встречу — 1 900 ₽</a>
+    <a class="invite-secondary" href="https://ed-educate.github.io/#join">Сначала посмотреть формат и стоимость</a>
+  </div>
+  <p class="fine">Если формат не подойдёт, вернём деньги без анкет и выяснений.</p>
 </div>
 
 <div class="sources">
@@ -373,5 +382,7 @@
 <div class="footer">Процесс: Доверие · метафора «Стук»</div>
 
 </div>
+
+<script src="/js/schedule.js?v=20260810-theme-cycle" defer></script>
 </body>
 </html>
