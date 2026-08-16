@@ -84,10 +84,11 @@
   .metaphor p{font-size:.97em;}
   .metaphor .m-formula{font-weight:700; margin-top:1.6rem; margin-bottom:0;}
 
-  .invite{margin-top:4.5rem;}
-  .invite .label{font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
-  .invite h3{font-size:1.5rem; line-height:1.3; margin:0 0 1.1rem; font-weight:700;}
+  .invite{max-width:42rem; margin:4.5rem auto 0; padding:2.5rem 2.4rem; background:#fff; border-radius:12px;}
+  .invite .label{text-align:center; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
+  .invite h3{text-align:center; font-size:1.5rem; line-height:1.3; margin:0 0 1.35rem; font-weight:700;}
   .invite p{font-size:1rem; margin:0 0 1rem;}
+  .invite-action{text-align:center; margin-top:1.7rem;}
   .invite .when{
     margin:1.8rem 0; padding:1rem 1.2rem; background:var(--sand); border-radius:10px;
     font-size:.95rem; line-height:1.7;
@@ -106,6 +107,10 @@
   .sources li{font-size:.82rem; color:var(--ink-soft); line-height:1.55; margin-bottom:.45rem;}
   .sources a{color:var(--gold); text-decoration:none; border-bottom:1px dotted var(--gold-soft);}
   .footer{margin-top:3rem; text-align:center; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);}
+  @media(max-width:600px){
+    .invite{padding:2.1rem 1.25rem;}
+    .btn{max-width:100%;}
+  }
   @media print{
     body{background:#fff; font-size:11.5pt;}
     .page{max-width:100%; padding:0;}
@@ -337,24 +342,17 @@
 </div>
 
 <div class="invite">
-  <div class="label">Попробовать на своём опыте</div>
-  <h3>Прочитать о стуке мало — важно услышать свой внутренний стук</h3>
+  <div class="label">Продолжить в живом разговоре</div>
+  <h3>Расслышать, что внутри уже просит ответа</h3>
+  <p>Эта статья может помочь заметить внутренний стук и подобрать к нему первые слова. Но текст не услышит паузу, не задаст уточняющий вопрос и не заметит того, что пропустил ты. Чтобы понять, о чём говорит чувство и как на него ответить, нужен живой разговор.</p>
 
-  <p>Знание само по себе ничего не меняет — это один из главных выводов исследований Джендлина. Изменения начинаются, когда человек разбирает конкретную ситуацию и пробует понять, что именно тогда давало о себе знать.</p>
+  <p>На встречу «Процесса: Доверие» можно прийти со своим запросом. Вместо общих рассуждений ты рассказываешь о конкретной ситуации: что произошло, что ты почувствовал и что успел сделать. Остальные помогают отделить внутренний сигнал от первой реакции — без анализа тебя со стороны и без готовых ответов.</p>
 
-  <p>Этим мы и занимаемся на встрече. Каждый приносит конкретные ситуации из своей жизни: где не замечал внутренний сигнал, пока он не стал слишком громким; где подчинился первому импульсу; где сумел остановиться и прислушаться. Дальше работаем в малых группах — чужие истории помогают увидеть то, что трудно заметить в собственной: изнутри многое просто не видно.</p>
+  <p>В конце ты выбираешь, что делать дальше: прислушаться, назвать чувство, обозначить границу или ничего пока не менять. Другие участники могут заметить то, что ты пропустил, но решение всё равно остаётся за тобой.</p>
 
-  <p>Три часа, до девяти человек. Никто не анализирует тебя со стороны и не выдаёт правильных ответов: материал — твой собственный опыт, и только ты решаешь, что с ним делать.</p>
+  <p>Встречаемся в Zoom. Сначала разбираем одну метафору, затем делимся на тройки и работаем каждый со своим запросом. В конце снова собираемся всей группой. Каждая встреча самостоятельна.</p>
 
-  <div class="when">
-    <b>В эту среду, 5 августа, тема встречи — «Стук»</b>
-    19:30 мск · Zoom · 3 часа · группа до 9 человек · запись до вторника, 4 августа.<br>
-    Следующий «Стук» — только через 12 недель.
-  </div>
-
-  <a class="btn" href="https://payform.ru/cpc16wd/">Записаться на встречу</a>
-
-  <p class="fine">Одна встреча — 1 900 ₽. Не подойдёт формат — вернём деньги без анкет и выяснений.</p>
+  <div class="invite-action"><a class="btn" href="https://ed-educate.github.io/#join">Посмотреть формат встречи</a></div>
 </div>
 
 <div class="sources">
