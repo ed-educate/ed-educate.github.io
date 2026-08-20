@@ -5,6 +5,9 @@
   var MINUTE_MS = 60 * 1000;
   var HOUR_MS = 60 * MINUTE_MS;
   var FIRST_CUTOFF_MS = Date.parse("2026-08-11T21:00:00Z");
+  var RESCHEDULE_WINDOW_START_MS = Date.parse("2026-08-18T21:00:00Z");
+  var RESCHEDULED_CUTOFF_MS = Date.parse("2026-08-29T21:00:00Z");
+  var RESCHEDULED_SESSION_START_MS = Date.parse("2026-08-30T09:00:00Z");
   var MOSCOW_TIME_ZONE = "Europe/Moscow";
 
   var dateFormatter = new Intl.DateTimeFormat("ru-RU", {
@@ -13,7 +16,7 @@
     timeZone: MOSCOW_TIME_ZONE
   });
 
-  function getSchedule(nowMs) {
+  function getRegularSchedule(nowMs) {
     var weeksSinceFirst = nowMs < FIRST_CUTOFF_MS
       ? 0
       : Math.floor((nowMs - FIRST_CUTOFF_MS) / WEEK_MS) + 1;
@@ -27,6 +30,21 @@
       cutoffWeekday: "вторника",
       sessionTime: "19:25"
     };
+  }
+
+  function getSchedule(nowMs) {
+    if (nowMs >= RESCHEDULE_WINDOW_START_MS && nowMs < RESCHEDULED_CUTOFF_MS) {
+      return {
+        cutoffMs: RESCHEDULED_CUTOFF_MS,
+        sessionStartMs: RESCHEDULED_SESSION_START_MS,
+        sessionWeekday: "воскресенье",
+        sessionWeekdayTitle: "Воскресенье",
+        cutoffWeekday: "субботы",
+        sessionTime: "12:00"
+      };
+    }
+
+    return getRegularSchedule(nowMs);
   }
 
   function getDayWord(days) {
@@ -97,6 +115,9 @@
   if (typeof module !== "undefined" && module.exports) {
     module.exports = {
       FIRST_CUTOFF_MS: FIRST_CUTOFF_MS,
+      RESCHEDULE_WINDOW_START_MS: RESCHEDULE_WINDOW_START_MS,
+      RESCHEDULED_CUTOFF_MS: RESCHEDULED_CUTOFF_MS,
+      RESCHEDULED_SESSION_START_MS: RESCHEDULED_SESSION_START_MS,
       WEEK_MS: WEEK_MS,
       formatCountdown: formatCountdown,
       getSchedule: getSchedule
