@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
+<title>Туман · Где мой шаг? — материал занятия</title>
+<link rel="canonical" href="https://ed-educate.github.io/tuman-praktika"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<script>
+  if(window.location.protocol!=="file:"&&window.location.pathname.endsWith(".html")){
+    window.history.replaceState(null,"",window.location.pathname.slice(0,-5)+window.location.search+window.location.hash);
+  }
+</script>
+<meta name="description" content="О доверии, которое начинается раньше уверенности, и шаге, который не требует гарантий."/>
+<meta property="og:title" content="Туман · Где мой шаг? — материал занятия"/>
+<meta property="og:description" content="О доверии, которое начинается раньше уверенности, и шаге, который не требует гарантий."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://ed-educate.github.io/tuman-praktika"/>
+<meta name="source-sha256" content="16bb0244265030862e879c5b344966cec8ad8132a49cfd7a5f9f1400818c65f2"/>
+<style>
+
+  :root{
+    --ink:#262220; --ink-soft:#5b544c; --paper:#FBF9F4;
+    --gold:#A8742F; --gold-soft:#C39A5B; --sand:#EFE7D8; --line:#DDD3C2;
+    --white:#fff; --pale:#F7F2E9; --deep:#7C5221; --green:#738067;
+    --rose:#B78A78; --mist:#EEEDEA; --mist-deep:#D9D8D4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"PT Serif",Georgia,"Times New Roman",serif;font-size:17px;line-height:1.7}
+  .page{max-width:48rem;margin:0 auto;padding:4.6rem 1.5rem 5rem}
+  .article-header{margin-bottom:3.5rem}
+  .kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.15rem}
+  h1{font-size:clamp(2.35rem,6vw,3.4rem);line-height:1.04;font-weight:700;margin:0 0 .8rem;letter-spacing:-.022em;text-wrap:balance}
+  .subtitle{font-style:italic;color:var(--ink-soft);font-size:1.16rem;max-width:40rem}
+  h2{font-size:1.16rem;line-height:1.35;letter-spacing:.07em;text-transform:uppercase;margin:3.7rem 0 1.25rem;text-wrap:balance}
+  h3{font-size:1.3rem;line-height:1.35;margin:2.4rem 0 .7rem}
+  h4{font-size:1.08rem;line-height:1.4;margin:1.4rem 0 .7rem}
+  p{margin:0 0 1.08rem}
+  a{color:var(--deep);text-underline-offset:.16em;text-decoration-thickness:1px}
+  blockquote{margin:1.45rem 0;padding:.15rem 0 .15rem 1.35rem;border-left:3px solid var(--gold-soft);color:var(--ink-soft)}
+  blockquote p{margin:0 0 .65rem} blockquote p:last-child{margin-bottom:0}
+  ul,ol{padding-left:1.35rem} li{margin-bottom:.55rem}
+  hr{border:0;height:1px;background:var(--line);margin:3.2rem auto;width:42%}
+  .locked-article>h2:first-child{margin-top:0}
+
+  .artifact{margin:2rem 0 2.25rem}
+  .artifact figcaption{font-size:.78rem;line-height:1.5;color:var(--ink-soft);margin:0 0 .75rem}
+  .archive-card{position:relative;overflow:hidden;padding:1.55rem 1.7rem;background:linear-gradient(135deg,#F1EEE7,#E4DFD5);border:1px solid #D5CDBF;border-radius:12px}
+  .archive-card:after{content:"";position:absolute;width:10rem;height:10rem;right:-4.5rem;top:-5rem;border:1px solid rgba(168,116,47,.22);border-radius:50%}
+  .archive-date{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);margin-bottom:.75rem}
+  .archive-original{font-size:.88rem;color:var(--ink-soft);margin-bottom:.5rem}
+  .archive-struck{font-size:1.22rem;line-height:1.5;font-style:italic;text-decoration-line:line-through;text-decoration-color:var(--gold);text-decoration-thickness:2px}
+  .archive-note{margin-top:.85rem;font-size:.7rem;color:var(--ink-soft)}
+
+  .study-timeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.65rem;align-items:stretch;padding:1.35rem;background:var(--white);border:1px solid var(--line);border-radius:12px}
+  .timeline-step{display:flex;flex-direction:column;justify-content:center;min-height:6.4rem;padding:.8rem;background:var(--pale);border-radius:9px;text-align:center}
+  .timeline-step b{font-size:.87rem;color:var(--deep);margin-bottom:.3rem}.timeline-step span{font-size:.76rem;line-height:1.42;color:var(--ink-soft)}
+  .timeline-arrow{align-self:center;color:var(--gold);font-size:1.25rem}
+
+  .device-study{display:flex;align-items:center;justify-content:center;gap:2rem;padding:1.5rem;background:var(--white);border:1px solid var(--line);border-radius:12px}
+  .device{position:relative;width:6.2rem;height:8.4rem;padding:.65rem;border:5px solid #5E5A55;border-radius:14px;background:#8F8D87;box-shadow:0 12px 24px rgba(38,34,32,.12)}
+  .device-screen{display:flex;flex-direction:column;justify-content:center;height:5.65rem;padding:.45rem;background:#C5CDBB;border:2px solid #747A6E;text-align:center;font-family:Arial,sans-serif;color:#33392f}
+  .device-screen b{font-size:.66rem;margin-bottom:.55rem}.device-screen span{font-size:.62rem;line-height:1.45}
+  .device i{display:block;width:.7rem;height:.7rem;margin:.42rem auto 0;border:1px solid #494642;border-radius:50%}
+  .device-facts{display:flex;flex-direction:column;gap:.25rem}.device-facts b{font-size:1.45rem;color:var(--deep)}.device-facts span{font-size:.9rem;color:var(--ink-soft)}
+
+  .research-chart{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1.25rem;background:var(--white);border:1px solid var(--line);border-radius:12px}
+  .chart-panel{padding:1rem .85rem .8rem;background:var(--pale);border-radius:9px}
+  .chart-title{min-height:2.5rem;font-size:.79rem;line-height:1.35;text-align:center;font-weight:700;margin-bottom:.65rem}
+  .plot{position:relative;height:10.5rem;margin:0 .35rem 1.05rem 1rem;border-left:1px solid #AAA092;border-bottom:1px solid #AAA092;background:repeating-linear-gradient(to bottom,transparent 0,transparent 24%,rgba(170,160,146,.18) 25%)}
+  .line{position:absolute;left:10%;width:78%;height:3px;border-radius:999px;transform-origin:left center}
+  .line:before,.line:after{content:"";position:absolute;top:-3px;width:8px;height:8px;border-radius:50%;background:inherit}.line:before{left:-2px}.line:after{right:-2px}
+  .open-safe{top:28%;background:var(--green);transform:rotate(9deg)}.armour-safe{top:43%;background:var(--rose);transform:rotate(25deg)}
+  .armour-risk{top:28%;background:var(--green);transform:rotate(12deg)}.open-risk{top:43%;background:var(--rose);transform:rotate(24deg)}
+  .legend{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;font-size:.65rem;color:var(--ink-soft)}
+  .legend span:before{content:"";display:inline-block;width:1rem;height:3px;margin-right:.3rem;vertical-align:middle}.legend .rose:before{background:var(--rose)}.legend .green:before{background:var(--green)}
+  .chart-note{grid-column:1/-1;padding-top:.15rem;text-align:center;font-size:.7rem;line-height:1.45;color:var(--ink-soft)}
+
+  .diagram-wrap{margin:1.8rem 0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--white)}
+  .diagram{margin:0;padding:1.3rem;overflow-x:auto;color:#403A35;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.71rem;line-height:1.45;-webkit-overflow-scrolling:touch}
+  .diagram code{font:inherit}
+
+  .metaphor{margin-top:4rem;padding:2.7rem 2.35rem 2.35rem;background:linear-gradient(145deg,var(--mist),#F4F2ED 62%,var(--sand));border:1px solid var(--mist-deep);border-radius:14px}
+  .metaphor h2{margin:0 0 1.8rem;text-align:center;font-size:.98rem;letter-spacing:.18em;color:var(--deep)}
+  .metaphor-opening,.practice-metaphor{text-align:left}
+  .m-title{text-align:center;font-size:.95rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1.6rem}
+  .m-epigraph{text-align:center;font-style:italic;line-height:1.7;margin-bottom:1.15rem}
+  .m-gesture{text-align:center;font-weight:700;margin-bottom:2rem}
+  .metaphor p:last-child,.practice-metaphor p:last-child{font-weight:700;margin-bottom:0}
+
+  .invite{margin:4.5rem auto 0;padding:2.55rem 2.4rem;background:var(--white);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 48px rgba(38,34,32,.06)}
+  .invite>h3{margin:0 0 .65rem;text-align:center;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  .invite>h4{margin:0 0 1.45rem;text-align:center;font-size:1.55rem}
+  .invite>p{font-size:1rem}
+  .how-it-works{margin:1.55rem 0 0;border:1px solid var(--line);border-radius:10px;background:var(--pale)}
+  .how-it-works>summary{cursor:pointer;padding:1rem 1.05rem;font-weight:700;color:var(--deep);list-style-position:inside}
+  .how-body{padding:.15rem 1.05rem 1.15rem}
+  .invite-video{width:100%;max-width:22rem;margin:1.25rem auto}
+  .invite-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#17130f;border-radius:14px;box-shadow:0 12px 34px rgba(38,34,32,.16)}
+  .video-links p{margin:.75rem 0;text-align:center;font-size:.78rem;line-height:1.55;color:var(--ink-soft)}
+  .transcript{margin-top:1rem;padding:.15rem .85rem;background:var(--white);border:1px solid var(--line);border-radius:9px}
+  .transcript>summary{cursor:pointer;padding:.75rem 0;font-weight:700;color:var(--deep)}
+  .transcript-body{padding:.15rem 0 .4rem}.transcript-body p{font-size:.91rem;line-height:1.58}.transcript-note{color:var(--ink-soft);font-style:italic}
+  .invite-booking{text-align:center;margin-top:1.4rem}.invite-booking p{margin:0}.invite-booking strong{display:block;margin-bottom:.75rem;color:var(--ink-soft);font-size:.9rem;letter-spacing:.04em}
+  .invite-booking a{display:inline-block;padding:.92rem 1.45rem;background:var(--gold);border-radius:8px;color:#fff;text-decoration:none;font-weight:700}.invite-booking a:hover{background:#96662A}
+
+  .sources{margin-top:3.2rem;padding-top:1.65rem;border-top:1px solid var(--line)}
+  .sources h3{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .9rem}
+  .sources ol{margin:0;padding-left:1.25rem}.sources li{font-size:.82rem;line-height:1.55;color:var(--ink-soft);margin-bottom:.65rem}
+  .footer{margin-top:3rem;text-align:center;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  .gate{margin:4rem 0 0;padding:2rem 1.5rem;text-align:center;background:var(--white);border:1px solid var(--line);border-radius:12px}
+  .gate .hint{font-style:italic;color:var(--ink-soft);margin-bottom:1rem}.gate button{appearance:none;border:0;border-radius:8px;background:var(--gold);color:#fff;padding:.9rem 1.7rem;font:700 1rem/1.2 Georgia,serif;cursor:pointer}.gate button:hover{background:#96662A}
+  #practice{scroll-margin-top:1.5rem;margin-top:4rem;padding-top:3.2rem;border-top:1px solid var(--line)}
+  #practice[hidden]{display:none}
+  #practice>h2{margin-top:0;font-size:2rem;letter-spacing:-.01em;text-transform:none}
+  #practice>h3{margin-top:-.25rem;color:var(--ink-soft);font-style:italic;font-weight:400}
+  #practice>h4{margin-top:2.6rem;color:var(--deep)}
+  #practice .practice-metaphor{margin:1.6rem 0;padding:2.5rem 2.2rem;background:var(--sand);border-radius:12px}
+  #practice blockquote{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold-soft);border-radius:0 10px 10px 0;padding:1.1rem 1.2rem}
+
+  @media(max-width:720px){
+    .study-timeline{grid-template-columns:1fr}.timeline-arrow{transform:rotate(90deg);justify-self:center}.timeline-step{min-height:0}
+    .research-chart{grid-template-columns:1fr}.chart-title{min-height:0}
+  }
+  @media(max-width:600px){
+    body{font-size:16.5px}.page{padding:3.2rem 1.05rem 4rem}.article-header{margin-bottom:2.8rem}
+    h2{margin-top:3.1rem}.metaphor{padding:2.25rem 1.25rem 2rem;margin-left:-.15rem;margin-right:-.15rem}
+    .invite{padding:2rem 1.1rem}.how-body{padding-left:.75rem;padding-right:.75rem}.device-study{gap:1rem;padding:1.1rem}.device-facts b{font-size:1.2rem}
+    .diagram{font-size:.65rem;padding:1rem}.archive-card{padding:1.3rem 1.15rem}.archive-struck{font-size:1.05rem}
+    #practice .practice-metaphor{padding:2.1rem 1.2rem}
+  }
+  @media print{
+    body{background:#fff;font-size:11.5pt}.page{max-width:100%;padding:0}@page{margin:2cm 2.2cm}
+    .artifact,.metaphor,.invite,.gate,.practice-metaphor{break-inside:avoid}.gate{display:none}#practice[hidden]{display:block}
+  }
+
+</style>
+
+</head>
+<body>
+
+
+<main class="page">
+  
+<header class="article-header" data-locked="header">
+  <div class="kicker">Процесс: Доверие · метафора «Туман»</div>
+  <h1>Почему мы разрушаем близость из страха быть отвергнутыми? Модель регуляции риска</h1>
+  <div class="subtitle">О доверии, которое начинается раньше уверенности, и шаге, который не требует гарантий.</div>
+</header>
+  <article class="locked-article" data-locked="article">
+    <h2>I. Кольцо на фортепиано</h2>
+<p>Копенгаген, сентябрь 1840 года.</p>
+<p>В доме статского советника Ольсена тихо. 27-летний Сёрен Кьеркегор поднимается в гостиную вслед за Региной. Ей едва исполнилось восемнадцать. Она садится за фортепиано, открывает нотную тетрадь, собираясь сыграть для гостя. Но едва её пальцы касаются клавиш, Кьеркегор с грохотом захлопывает крышку инструмента.</p>
+<p>— Мне нет дела до музыки, — говорит он, задыхаясь. — Я пришел за вами. Я искал вас два года. Выходите за меня.</p>
+<p>Это не романтический порыв. Это ультиматум. Кьеркегор два года ходил кругами, караулил её на прогулках, изводил себя подозрениями и наконец решил покончить с мучительной неопределенностью одним ударом: пан или пропал.</p>
+<p>Регина растеряна, но очарована. Через два дня она соглашается.</p>
+<p>Казалось бы — победа? Но уже на следующее утро Кьеркегора накрывает ледяной ужас. Позже в дневнике он напишет: <em>«В тот же день я понял, что совершил ошибку»</em>.</p>
+<p>Пока Регина была недосягаемым образом, он оставался в безопасности. Но в ту секунду, когда она ответила взаимностью, захлопнулась ловушка. Теперь его покой, его уязвимость, всё его нутро зависели от другого человека. От девушки, которая теперь могла разлюбить, разочароваться, увидеть его тайные страхи или сделать ему больно.</p>
+<p>И тогда Кьеркегор начинает методично разрушать эти отношения.</p>
+<p>Помолвка превращается в изощренную пытку длиной в год. Он возвращает ей кольцо. Регина плачет, умоляет его не уходить. Тогда Кьеркегор решает сыграть роль циничного негодяя: демонстративно флиртует с другими, нарочно хамит Регине при встречах, распускает о себе слухи — лишь бы она сама возненавидела его и вычеркнула из жизни.</p>
+<p>Осенью 1841 года он добивается своего: помолвка разорвана навсегда.</p>
+<p>Проходит полтора года. 17 мая 1843 года Кьеркегор открывает дневник и выводит одну-единственную фразу:</p>
+<blockquote>
+<p><strong>«Havde jeg haft Tro, da var jeg bleven hos Regine.»</strong><br />
+<em>(«Если бы у меня была вера, я остался бы с Региной»).</em></p>
+</blockquote>
+<p>А затем — резким движением, с размаху перечеркивает написанное.</p>
+<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">Søren Kierkegaards Skrifter, архив Королевской библиотеки Дании, манускрипт JJ:115.<br/> Зачёркнутая запись от 17 мая 1843 года</figcaption>
+<div class="archive-card" data-added="visual">
+  <div class="archive-date">17 мая 1843</div>
+  <div class="archive-original" lang="da">Havde jeg haft Tro, da var jeg bleven hos Regine.</div>
+  <div class="archive-struck">«Если бы у меня была вера, я остался бы с Региной».</div>
+  <div class="archive-note">Типографическая реконструкция, не факсимиле</div>
+</div></figure>
+<p>Посмотрите на эти два жеста. <strong>Он написал правду — и он же её вычеркнул.</strong></p>
+<p>Сначала он попытался вломиться в близость одним слепым прыжком, потребовав свадьбы. А когда почувствовал реальную зависимость — вторым таким же прыжком сбежал в глухую оборону, разрушив всё своими руками и решив судьбу за двоих.</p>
+<p>Как часто мы узнаем в этом себя?</p>
+<p>Почему, когда человек становится по-настоящему дорог, психика включает сирену тревоги и толкает нас либо требовать невозможных гарантий, либо первыми хлопать дверью — просто чтобы не дать другому шанса причинить нам боль?</p>
+<hr />
+<h2>II. Вечер на кухне: как рождается ледяная стена</h2>
+<p>Перенесемся из Копенгагена XIX века в обычную квартиру в наши дни.</p>
+<p>Пятница, вечер. Один партнер ждал этой встречи всю неделю, хотел поговорить, приготовил ужин, рассчитывая на тепло и контакт.</p>
+<p>Второй заходит в прихожую вымотанным. Он устал, у него был тяжелый день. Он сухо бросает «привет», тяжело опускается на стул и утыкается в телефон с отрешенным лицом. На вопрос «Как прошел день?» звучит полупустое: «Нормально».</p>
+<p>В эту секунду у первого внутри что-то обрывается. В груди поднимается предательский укол:</p>
+<ul>
+<li><em>«Я для него невидимка».</em></li>
+<li><em>«Он закрылся. Ему со мной скучно. Я в тягость».</em></li>
+<li><em>«Если я сейчас подойду, обниму его или скажу, что соскучился, а он холодно отмахнется — это будет слишком болезненно».</em></li>
+</ul>
+<p>Открытость повисает в воздухе без ответа. И защита срабатывает мгновенно: <strong>нужно закрыться раньше, чем меня ранят</strong>.</p>
+<p>Вместо того чтобы тихо обозначить свое состояние: <em>«Мне сейчас стало так одиноко рядом с тобой, побудь со мной»</em>, включается броня. Тарелка с грохотом ставится на стол, лицо превращается в ледяную маску, и звучит ядовитое:
+— Понятно. Мог бы вообще не приходить, если тебе здесь так тошно.</p>
+<p>Второй вскидывает брови и раздражается в ответ:
+— Да что опять не так?! Я просто устал, у меня был адский день!
+— Да у тебя вечно на меня нет сил!</p>
+<p>Один хлопает дверью и уходит в другую комнату. Второй остается на кухне с колотящимся сердцем и горьким триумфом: <em>«Я так и знал. Я был прав. Ему на меня плевать»</em>.</p>
+<p>Ловушка захлопнулась. <strong>Человек своими руками создал ту самую пропасть и холод, которых больше всего боялся пять минут назад.</strong></p>
+<p>Почему мы это делаем? Почему в моменты острой потребности в тепле мы надеваем тяжелые доспехи, язвим или уходим в глухую оборону?</p>
+<hr />
+<h2>III. Научный тупик длиной в 40 лет: как собирался пазл</h2>
+<p>Долгие десятилетия психологи и психотерапевты пытались объяснить эту странную механику самосаботажа.</p>
+<p>В середине XX века в русле британского психоанализа родилась знаменитая <strong>Теория привязанности</strong> (<em>Attachment Theory</em>). Детский психиатр и психоаналитик Джон Боулби вместе с Мэри Эйнсворт в лондонской клинике Тависток исследовали, как дети реагируют на разлуку с родителями. Они доказали: ранний опыт закладывает глубинные страхи. Если нас отвергали или не слышали, во взрослом возрасте мы панически боимся повторения этой боли.</p>
+<p>Параллельно в социальной психологии Джон Тибо и Гарольд Келли разработали <strong>Теорию взаимозависимости</strong> (<em>Interdependence Theory</em>). Они на сотнях пар показали: живые отношения невозможны без реальной зависимости. Пока решения одного не влияют на жизнь другого — никакой близости нет. Близость начинается там, где мы даем партнеру реальную возможность нас поддержать или уронить.</p>
+<p>Но оставался нерешенный вопрос:</p>
+<blockquote>
+<p><strong>Почему взрослые, осознанные люди в стабильных отношениях в одну секунду слетают с катушек и начинают разрушать контакт из-за обычного молчания или усталого взгляда?</strong></p>
+</blockquote>
+<p>Что именно происходит в голове между моментом, когда партнер отвлекся, и моментом, когда мы надеваем броню?</p>
+<p>В 1998 году социальный психолог <strong>Сандра Мюррей</strong> (<em>Sandra Murray</em>) из Университета штата Нью-Йорк в Баффало нащупала ответ. В серии лабораторных экспериментов она открыла феномен <strong>Perceived Regard</strong> — субъективное ощущение: <em>«Насколько я верю, что партнер видит во мне безусловную ценность прямо сейчас?»</em></p>
+<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">Эксперименты Murray et al., 1998–2000, Journal of Personality and Social Psychology. <br/> Лабораторное исследование скрытых защитных реакций в паре</figcaption>
+<div class="study-timeline" data-added="visual" role="img" aria-label="Исследовательская последовательность: сомнение в собственной ценности, ожидание отвержения, защитная реакция, дистанция в паре.">
+  <div class="timeline-step"><b>Сомнение в себе</b><span>Угроза собственной ценности</span></div>
+  <div class="timeline-arrow" aria-hidden="true">→</div>
+  <div class="timeline-step"><b>Perceived regard</b><span>Как, по моему ощущению, меня видит партнёр</span></div>
+  <div class="timeline-arrow" aria-hidden="true">→</div>
+  <div class="timeline-step"><b>Защита</b><span>Приблизиться или снизить зависимость</span></div>
+</div></figure>
+<p>Оказалось, не имеет решающего значения, насколько сильно партнер любит вас объективно. Имеет значение только то, <strong>превращается ли эта любовь внутри вашей психики в чувство безопасности, на которое можно опереться</strong>.</p>
+<p>Если внутри живет глубинное сомнение в себе, мозг автоматически переводит любую чужую усталость как личное отвержение: <em>«Он молчит — значит, я не нужен»</em>. И немедленно отдает команду обороняться.</p>
+<hr />
+<h2>IV. Как работает система регуляции риска</h2>
+<p>В 2006 году Сандра Мюррей, Джон Холмс и Нэнси Коллинз объединили эти наблюдения в фундаментальную модель — <strong>Модель регуляции межличностного риска</strong> (<em>Risk-Regulation System</em>).</p>
+<p>Они показали: внутри каждого из нас работает автоматическая исполнительная система, непрерывно взвешивающая риск открытости. Она состоит из трех шагов:</p>
+<div class="diagram-wrap" data-locked="diagram"><pre class="diagram"><code>┌────────────────────────────────────────────────────────────────────────┐
+│                        ПЕТЛЯ РЕГУЛЯЦИИ РИСКА                           │
+│                                                                        │
+│   1. ОЦЕНКА РИСКА      ──► 2. ТЕЛЕСНЫЙ СИГНАЛ ──► 3. РУБИЛЬНИК СВЯЗИ   │
+│   («Опасно или нет?»)      (Спокойствие /         (Шаг навстречу /     │
+│                             Укол тревоги)          Уход в броню)       │
+│            ▲                                             │             │
+│            └─────────────── Ответ партнёра ──────────────┘             │
+└────────────────────────────────────────────────────────────────────────┘</code></pre></div>
+<ol>
+<li><strong>Оценка ситуации:</strong> Партнер нахмурился, задержался или ответил сухо. Мозг мгновенно производит расчет: <em>«Если я сейчас проявлю уязвимость и пойду навстречу — меня примут или ранят?»</em></li>
+<li><strong>Сигнал безопасности или тревоги:</strong>
+<ul>
+<li>При ощущении безопасности — тело расслабляется, разливается спокойное тепло.</li>
+<li>При ощущении угрозы — в груди или животе сжимается спазм тревоги, стыда и страха уязвимости.</li>
+</ul>
+</li>
+<li><strong>Рубильник связи:</strong>
+<ul>
+<li><em>Если безопасно:</em> мы идем на сближение. Просим о поддержке, обнимаем, делимся чувствами.</li>
+<li><em>Если тревожно:</em> система экстренно снижает зависимость. Мы надеваем маску безразличия, замыкаемся, язвим, уходим в дела или первыми провоцируем разрыв.</li>
+</ul>
+</li>
+</ol>
+<p>Главная ловушка в том, что система легко превращается в замкнутый круг.</p>
+<p>Если прошлый опыт научил нас тому, что открываться больно, радар начинает видеть опасность в каждой случайной паузе. Мы превентивно закрываемся. Партнер, сталкиваясь с нашей холодностью, тоже отстраняется. Мы видим эту дистанцию и говорим себе: <em>«Я так и знал! Никому нельзя верить!»</em> — и закрываемся еще глубже.</p>
+<p>Но что с этим делать? Снять все защиты и бросаться в доверие с головой?</p>
+<hr />
+<h2>V. «Переезжай ко мне»: две ловушки, в которые мы попадаем</h2>
+<p>Посмотрим, как эта драма выглядит на практике.</p>
+<p>У Ани заканчивается договор аренды жилья. Они с Ильёй вместе почти год. Илья предлагает: <em>«Перевози вещи ко мне. Зачем платить за две квартиры, давай жить вместе!»</em></p>
+<p>Аня любит Илью. Но при мысли о переезде внутри всё сжимается. В прежних отношениях она уже однажды отказалась от своего жилья, переехала к мужчине, полностью связала быт и бюджет — а через год осталась одна: без накоплений, без личного угла и с тяжелым чувством опустошения.</p>
+<p>Теперь Аня зажата между двумя крайностями:</p>
+<div class="diagram-wrap" data-locked="diagram"><pre class="diagram"><code>┌──────────────────────────────────────┬──────────────────────────────────────┐
+│        КРАЙНОСТЬ 1: БУНКЕР           │        КРАЙНОСТЬ 2: ОМУТ             │
+│        (Требование гарантий)         │        (Слепой прыжок)               │
+│                                      │                                      │
+│ Аня сидит в своей комнате, бесконечно│ Аня сжигает все мосты, съезжает,     │
+│ анализирует отношения, ищет подвох   │ отдает ключи и надеется, что в этот  │
+│ и ждет от Ильи 100% гарантий того,   │ раз её точно не ранят.               │
+│ что всё сложится идеально.           │                                      │
+│                                      │                                      │
+│ Итог: отношения задыхаются в подоз-  │ Итог: полная потеря автономии и дикий│
+│ рениях; партнер чувствует стену.     │ страх оказаться в ловушке.           │
+└──────────────────────────────────────┴──────────────────────────────────────┘</code></pre></div>
+<p>И глухая оборона, и слепой прыжок — это попытки справиться с одной и той же тревогой. В бункере человек изолирует себя от живой связи. В омуте — теряет почву под ногами.</p>
+<p>Возникает тупик: как сделать шаг навстречу другому, если стопроцентных гарантий не существует, а прыгать вслепую — опасно?</p>
+<hr />
+<h2>VI. 222 пары, карманные компьютеры и крах популярного мифа</h2>
+<p>Чтобы проверить, как работают эти стратегии на большой дистанции, Сандра Мюррей и её коллеги провели трехлетнее исследование.</p>
+<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">Карманный компьютер Dell Axim (2003 год).<br/> Электронный регистратор ежедневного дневника 222 пар в исследовании Murray et al.</figcaption>
+<div class="device-study" data-added="visual">
+  <div class="device" aria-hidden="true">
+    <div class="device-screen"><b>DELL AXIM</b><span>42 шкалы</span><span>каждый вечер</span></div>
+    <i></i>
+  </div>
+  <div class="device-facts">
+    <b>222 пары</b>
+    <span>14 дней ежедневных записей</span>
+    <span>3 года наблюдения</span>
+  </div>
+</div></figure>
+<p>Они пригласили <strong>222 пары молодоженов</strong> из района Баффало. Каждому выдали карманный компьютер Dell Axim со стилусом. Каждый вечер в течение двух недель устройство подавало сигнал, требуя зафиксировать: какие события произошли за день и как человек чувствовал себя по 42 шкалам.</p>
+<p>Ученые наблюдали за этими семьями <strong>три года</strong>, фиксируя уровень реального риска (частоту ссор, агрессии и обесценивания) и траекторию удовлетворенности браком.</p>
+<p>В 2013 году в <em>Journal of Experimental Social Psychology</em> были опубликованы результаты, которые разрушили популярный штамп «нужно просто всегда открывать сердце»:</p>
+<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">График из публикации Murray et al., 2013. <br/> Figure 3: Влияние уровня самозащиты на траекторию удовлетворенности браком</figcaption>
+<div class="research-chart" data-added="visual" role="img" aria-label="Две панели показывают, что последствия самозащиты зависят от реального климата риска в отношениях.">
+  <div class="chart-panel">
+    <div class="chart-title">Безопасные, тёплые отношения</div>
+    <div class="plot">
+      <i class="line open-safe"></i>
+      <i class="line armour-safe"></i>
+    </div>
+    <div class="legend"><span class="green">Мягкая открытость</span><span class="rose">Жёсткая броня</span></div>
+  </div>
+  <div class="chart-panel">
+    <div class="chart-title">Рискованные, деструктивные отношения</div>
+    <div class="plot">
+      <i class="line armour-risk"></i>
+      <i class="line open-risk"></i>
+    </div>
+    <div class="legend"><span class="rose">Слепая открытость</span><span class="green">Жёсткая броня</span></div>
+  </div>
+  <div class="chart-note">Смысловая перерисовка Figure 3: показаны направления траекторий, а не исходные значения.</div>
+</div></figure>
+<p>Исследование показало:</p>
+<ul>
+<li><strong>В безопасных отношениях</strong> чрезмерная самозащита и контроль разрушали близость. Человек не давал партнеру возможности позаботиться о себе, копил обиды и своими руками уничтожал теплый союз.</li>
+<li><strong>Но в рискованных и холодных отношениях</strong> картина менялась на противоположную. Те, кто без оглядки распахивал душу и игнорировал тревожные звонки, сталкивались с тяжелым выгоранием. В таких условиях <strong>именно дистанция, границы и осторожность сохраняли человека</strong>.</li>
+</ul>
+<p>Важно разделять контекст: если партнер систематически проявляет агрессию, унижает или манипулирует — это не «страх близости». Реальность уже дала ясный ответ, и дистанцироваться здесь — вопрос психологической безопасности.</p>
+<p>Осторожность обретает точность тогда, когда она отвечает не призракам прошлого, а тому, что реально происходит между двумя людьми.</p>
+<hr />
+<h2>VII. Зачёркнутая строка</h2>
+<p>Вернемся к дневнику Кьеркегора и его строке:<br />
+<em>«Если бы у меня была вера, я остался бы с Региной».</em></p>
+<p>Он так и не решился проверить, как сложилась бы их жизнь, если бы он не сбежал.</p>
+<p>Мы никогда не узнаем, что ответила бы Регина, если бы он пришел к ней без масок и ультиматумов и сказал: <em>«Я люблю тебя. Но внутри меня живет тяжелая тоска, и мне страшно сделать тебя несчастной. Давай попробуем узнать друг друга постепенно»</em>.</p>
+<p>Он выбрал холодную определенность разрыва вместо живой неопределенности близости.</p>
+<p>Каждый раз, когда мы стоим перед выбором — закрыться в привычной броне или рискнуть пойти навстречу, — наш ум требует карты, на которой заранее расписан весь маршрут.</p>
+<p>Но туман не дает карты.</p>
+<p>Как же двигаться сквозь неизвестность, не прячась в бункер и не бросаясь со скалы?</p>
+<hr />
+
+    <section class="metaphor"><h2>VIII. Метафора: Туман</h2>
+<div class="metaphor-opening" data-locked="metaphor-opening"><div class="m-epigraph">Твёрдое под ногой.<br/> Белое перед лицом.</div>
+<div class="m-gesture">Иди до края видимого.</div>
+</div>
+<p>Ждать, пока перед тобой откроется вся дорога до горизонта, — значит требовать у тумана карту, которой у него нет. Можно годами стоять на месте, читать книги, анализировать человека и копить сомнения. Но дорога не отвечает тому, кто не вступил на нее. Стоящий на обочине не видит дальше: он лишь глубже проваливается в собственную тревогу.</p>
+<p>Но и нестись сквозь туман с закрытыми глазами, называя это смелостью, — значит путать доверие со слепым отчаянием. Прыгнувший вслепую разбивается не потому, что мир враждебен, а потому, что сам отказался смотреть под ноги.</p>
+<p>Зрелое доверие — это не прыжок со скалы и не бегство в бункер. <strong>Это один выверенный шаг.</strong></p>
+<p>Ты опираешься на твердое под ногами — свои границы, свои ценности, свою устойчивость. Ты не требуешь клятв на всю жизнь и не отдаешь контроль над собой целиком. Но ты делаешь один реальный шаг в неизвестность — ровно настолько, чтобы позволить другому ответить.</p>
+<p>Ты не заставляешь туман рассеяться. Ты делаешь шаг — и туман послушно отступает ровно на расстояние вытянутой руки.</p>
+<blockquote>
+<p><strong>Доверие к будущему — это не знание дороги. Это шаг без гарантий, но с вниманием.</strong></p>
+</blockquote>
+</section>
+  </article>
+  <div class="gate" id="gate" data-added="gate">
+    <div class="hint">А теперь — к своим ситуациям.</div>
+    <button id="open-practice" type="button" aria-controls="practice" aria-expanded="false">Открыть практику</button>
+  </div>
+  <section id="practice" data-locked="practice" hidden><h2>Где мой шаг?</h2>
+<h3>Практика к метафоре «Туман»</h3>
+<p>Сейчас попробуй увидеть в этой метафоре механику собственных решений.</p>
+<h4>Дай себе время</h4>
+<p>На эту практику нужно около 40 минут. Не пытайся быстро «пробежать» текст или отделаться первой попавшейся мыслью. Оставайся с этой темой, пока не нащупаешь живой нерв.</p>
+<p>Если в процессе станет скучно, тревожно или захочется немедленно найти «правильный ответ», — притормози. Заметь, что прямо сейчас с тобой происходит. Возможно, именно в эту секунду ты привычно пытаешься потребовать у этой практики 100% гарантий пользы (бункер) или хочешь пролистать всё насквозь вслепую (слепой прыжок).</p>
+<hr />
+<h3>Сначала — прочитай</h3>
+<p>Прочитай метафору «Туман» медленно, целиком, пока ничего не записывая. Не пытайся анализировать. Просто замечай, какие слова вызывают сопротивление, а какие отдаются внезапным узнаванием в теле.</p>
+<div class="practice-metaphor" data-locked="practice-metaphor"><div class="m-title">Туман</div>
+<div class="m-epigraph">Твёрдое под ногой.<br/> Белое перед лицом.</div>
+<div class="m-gesture">Иди до края видимого.</div>
+<p>Ждать, пока откроется вся дорога, — значит требовать у тумана карту, которой у него нет. Ты собираешь сведения, перепроверяешь и заранее проживаешь каждый исход. Но дорога не отвечает тому, кто на неё не вступил. Стоящий на месте не видит дальше — он лишь всё подробнее изучает место, где стоит.</p>
+<p>Но и пройти туман одним рывком, называя это решительностью, — значит путать доверие со слепым отчаянием. Прыгнувший вслепую разбивается о то, чего не видел; и разбивается не потому, что дорога солгала, а потому, что не оставил себе следующего шага.</p>
+<p>Зрелое доверие — это не карта и не прыжок, а шаг. Ты знаешь, куда идёшь, и знаешь, сколько готов потерять, но что окажется под ногой — решает дорога. Ты не заставляешь туман расступиться — ты идёшь, и он отвечает.</p>
+<p>Туман не обещает рассеяться: он отступает ровно на шаг. Это не преграда, а условие движения.</p>
+<p>Доверие к будущему — это не знание дороги. Это шаг без гарантий, но с вниманием.</p></div>
+<hr />
+<h3>Потом — по одному абзацу метафоры</h3>
+<p>Теперь вернись к тексту и пройдись по каждому абзацу отдельно. Задержись на нём. Вспоминай реальные эпизоды из своей жизни и записывай их. Когда покажется, что примеров больше нет, перечитай абзац ещё раз. Только после этого переходи к следующему.</p>
+<ol>
+<li><strong>Первый абзац (Требование гарантий / Бункер):</strong><br />
+Вспомни ситуации, где ты замирал, бесконечно откладывал разговор или выбор, требовал железных гарантий, изводил себя подозрениями и контролем. Где ты так и не сделал шаг, оставшись на обочине.</li>
+<li><strong>Второй абзац (Слепой прыжок / Омут):</strong><br />
+Вспомни моменты, когда от невыносимости ожидания ты бросался в омут с головой: сжигал мосты, отдавал человеку все ключи от своей жизни, игнорировал тревожные звонки — и больно разбивался, потому что не оставил себе путей к отступлению.</li>
+<li><strong>Третий и четвертый абзацы (Живой шаг):</strong><br />
+Вспомни моменты, когда тебе удалось опереться на себя и сделать один спокойный шаг в неизвестность: сказать о важном, предложить условия, доверить человеку конкретное дело и дождаться его реального ответа, не теряя земли под ногами.</li>
+</ol>
+<hr />
+<h3>Как записывать ситуацию</h3>
+<p>Записывай так, чтобы ты мог мысленно войти в ту комнату и увидеть сцену как в кино. Дай ситуации короткое имя (день, место, время). Восстанови факты: кто где стоял, что было сказано, что сжалось внутри, какое действие последовало.</p>
+<h4>❌ Обобщение (как не надо)</h4>
+<blockquote>
+<p><em>«Я вечно боюсь близости и всё контролирую».</em><br />
+<em>«Когда мы с партнером говорим о совместном будущем, я начинаю паниковать, требовать от него обещаний, что мы никогда не расстанемся. Я ему не верю, он бесится, и мы ссоримся».</em></p>
+</blockquote>
+<h4>✅ Конкретная ситуация (как надо)</h4>
+<blockquote>
+<p><strong>«Среда, кухня, 22:30. Разговор о совместном отпуске».</strong></p>
+<p>Партнер сказал: <em>«Давай в августе снимем дом в горах на три недели»</em>.</p>
+<p>Внутри всё сковало ледяным страхом: <em>«А если мы разругаемся? А если он передумает, а я потрачу весь отпуск и деньги? Я окажусь в ловушке на три недели»</em>.</p>
+<p>Мне захотелось либо потребовать от него железных клятв, что всё пройдет идеально (бункер), либо накричать и отказаться от поездки.</p>
+<p>Я сделала вдох и сказала: <em>«Я очень хочу поехать с тобой. Но меня пугает неопределенность. Давай сейчас выберем место и внесем минимальный возвратный залог, а билеты купим через месяц, когда согласуем рабочие графики»</em>.</p>
+<p>Он ответил: <em>«Да, давай так, это разумно»</em>.</p>
+<p>Я не сбежала в оборону и не потребовала невозможного. Я сделала реальный шаг в неизвестность, оставив нам обоим возможность скорректировать маршрут.</p>
+</blockquote>
+<hr />
+<h3>Зачем нужны конкретные ситуации?</h3>
+<ul>
+<li><strong>Обобщение прячет момент выбора.</strong> В абстрактной фразе «я тревожный» нет выхода. В конкретной сцене видно, где именно ты замер от ужаса или бросился с обрыва.</li>
+<li><strong>Обобщение делает страх диагнозом.</strong> Конкретная ситуация возвращает авторство: ты видишь свои слова, интонацию и точку, где можно было поступить иначе.</li>
+<li><strong>В конкретной ситуации видно меру вверения:</strong> какую часть исхода ты доверил другому человеку, а какую оставил в своей власти.</li>
+</ul>
+</section>
+  <section class="sources" data-locked="sources"><h3>Первоисточники и литература</h3>
+<ol>
+<li><strong>Kierkegaard S. (1843).</strong> <em>Journal JJ:115, 17 May 1843</em>. Søren Kierkegaards Skrifter: критическое академическое издание Королевской библиотеки Дании; запись помечена как зачёркнутая автором.</li>
+<li><strong>Kierkegaard S. (1849).</strong> <em>Notebook 15</em>. Воспоминания о помолвке и разрыве с Региной Ольсен; Københavns Universitet.</li>
+<li><strong>Bowlby J. (1988).</strong> <em>A Secure Base: Parent-Child Attachment and Healthy Human Development</em>. Basic Books. (Психоанализ и теория привязанности).</li>
+<li><strong>Thibaut J. W., Kelley H. H. (1959).</strong> <em>The Social Psychology of Groups</em>. John Wiley &amp; Sons. (Теория взаимозависимости).</li>
+<li><strong>Murray S. L., Holmes J. G., Griffin D. W. (2000).</strong> <em>Self-Esteem and the Quest for Felt Security: How Perceived Regard Regulates Attachment Processes</em>. Journal of Personality and Social Psychology, 78(3), 478–498. (Открытие Perceived Regard).</li>
+<li><strong>Murray S. L., Holmes J. G., Collins N. L. (2006).</strong> <em>Optimizing Assurance: The Risk Regulation System in Relationships</em>. Psychological Bulletin, 132(5), 641–666. (Фундаментальная модель регуляции риска).</li>
+<li><strong>Murray S. L., Griffin D. W., Derrick J. L., English T., Cavallo J. V. (2013).</strong> <em>Cautious to a Fault: Self-Protection and the Trajectory of Marital Satisfaction</em>. Journal of Experimental Social Psychology, 49(3), 522–533. (3-летнее исследование 222 пар с КПК).</li>
+<li><strong>Murray S. L., Pascuzzi G. S. (2024).</strong> <em>Pursuing Safety in Social Connection: A Flexibly Fluid Perspective on Risk Regulation in Relationships</em>. Annual Review of Psychology, 75, 379–404.</li>
+</ol>
+</section>
+  <div class="footer">Процесс: Доверие · занятие «Туман»</div>
+</main>
+<script>
+(function(){
+  var button=document.getElementById('open-practice');
+  var practice=document.getElementById('practice');
+  var gate=document.getElementById('gate');
+  if(!button||!practice||!gate)return;
+  button.addEventListener('click',function(){
+    practice.hidden=false;
+    gate.hidden=true;
+    button.setAttribute('aria-expanded','true');
+    practice.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+})();
+</script>
+</body>
+</html>
