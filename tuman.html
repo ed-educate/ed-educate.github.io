@@ -67,17 +67,46 @@
   .device i{display:block;width:.7rem;height:.7rem;margin:.42rem auto 0;border:1px solid #494642;border-radius:50%}
   .device-facts{display:flex;flex-direction:column;gap:.25rem}.device-facts b{font-size:1.45rem;color:var(--deep)}.device-facts span{font-size:.9rem;color:var(--ink-soft)}
 
-  .research-chart{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1.25rem;background:var(--white);border:1px solid var(--line);border-radius:12px}
-  .chart-panel{padding:1rem .85rem .8rem;background:var(--pale);border-radius:9px}
-  .chart-title{min-height:2.5rem;font-size:.79rem;line-height:1.35;text-align:center;font-weight:700;margin-bottom:.65rem}
-  .plot{position:relative;height:10.5rem;margin:0 .35rem 1.05rem 1rem;border-left:1px solid #AAA092;border-bottom:1px solid #AAA092;background:repeating-linear-gradient(to bottom,transparent 0,transparent 24%,rgba(170,160,146,.18) 25%)}
-  .line{position:absolute;left:10%;width:78%;height:3px;border-radius:999px;transform-origin:left center}
-  .line:before,.line:after{content:"";position:absolute;top:-3px;width:8px;height:8px;border-radius:50%;background:inherit}.line:before{left:-2px}.line:after{right:-2px}
-  .open-safe{top:28%;background:var(--green);transform:rotate(9deg)}.armour-safe{top:43%;background:var(--rose);transform:rotate(25deg)}
-  .armour-risk{top:28%;background:var(--green);transform:rotate(12deg)}.open-risk{top:43%;background:var(--rose);transform:rotate(24deg)}
-  .legend{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;font-size:.65rem;color:var(--ink-soft)}
-  .legend span:before{content:"";display:inline-block;width:1rem;height:3px;margin-right:.3rem;vertical-align:middle}.legend .rose:before{background:var(--rose)}.legend .green:before{background:var(--green)}
-  .chart-note{grid-column:1/-1;padding-top:.15rem;text-align:center;font-size:.7rem;line-height:1.45;color:var(--ink-soft)}
+  .research-chart{padding:clamp(1rem,2.7vw,1.4rem);background:var(--white);border:1px solid var(--line);border-radius:12px;container-type:inline-size}
+  .research-chart__header{text-align:center;max-width:36rem;margin:0 auto 1rem}
+  .research-chart__eyebrow{font-family:Arial,sans-serif;font-size:.62rem;letter-spacing:.15em;color:var(--gold);font-weight:700}
+  .research-chart__title{margin:.38rem 0 .45rem;font-size:1.06rem;line-height:1.35;font-weight:700;text-wrap:balance}
+  .research-chart__method{margin:0;font-size:.72rem;line-height:1.5;color:var(--ink-soft)}
+  .research-chart__facts{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:0 0 .65rem}
+  .research-chart__facts>div{padding:.58rem .6rem;background:var(--pale);border-radius:7px;text-align:center}
+  .research-chart__facts dt{font-family:Arial,sans-serif;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  .research-chart__facts dd{margin:.15rem 0 0;font-size:.69rem;line-height:1.35;font-weight:700}
+  .chart-definitions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:0 0 .8rem}
+  .chart-definitions p{margin:0;padding:.55rem .65rem;border:1px solid rgba(170,160,146,.25);border-radius:7px;font-size:.63rem;line-height:1.45;color:var(--ink-soft)}.chart-definitions b{color:var(--ink)}
+  .chart-legend{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:.2rem 0 .8rem;font-size:.68rem;color:var(--ink-soft)}
+  .chart-legend__item{display:inline-flex;align-items:center;gap:.34rem}.chart-legend__item i{position:relative;display:inline-block;width:1.3rem;height:2px;background:var(--green)}
+  .chart-legend__item--low i:after{content:"";position:absolute;left:.5rem;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .chart-legend__item--high i{background:var(--rose)}.chart-legend__item--high i:after{content:"";position:absolute;left:.48rem;top:-4px;border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:8px solid var(--rose)}
+  .research-chart__panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+  .chart-panel{min-width:0;padding:.75rem .35rem .4rem;background:var(--pale);border-radius:9px}
+  .chart-panel__title{margin:0 0 .15rem;text-align:center;font-size:.79rem;line-height:1.35}.chart-panel__title span{display:block;font-family:Arial,sans-serif;font-size:.61rem;color:var(--ink-soft);font-weight:400}
+  .chart-svg{display:block;width:100%;height:auto;overflow:visible}
+  .chart-svg text{font-family:Arial,sans-serif;font-size:9.5px;fill:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .chart-svg .chart-y-label,.chart-svg .chart-x-label{font-size:10px;fill:var(--ink)}
+  .chart-grid line{stroke:rgba(170,160,146,.28);stroke-width:1;vector-effect:non-scaling-stroke}
+  .chart-axis line{stroke:#8F877B;stroke-width:1;vector-effect:non-scaling-stroke}
+  .chart-series{fill:none;stroke-width:2.2;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+  .chart-series--low{stroke:var(--green)}.chart-series--high{stroke:var(--rose)}
+  .chart-point--low{fill:var(--green)}.chart-point--high{fill:var(--rose)}
+  .chart-test{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin:.85rem 0 0;padding:.65rem .75rem;border-left:3px solid var(--gold);background:#FAF5EC;font-family:Arial,sans-serif;font-size:.64rem;line-height:1.4;font-variant-numeric:tabular-nums}
+  .chart-test span{color:var(--ink-soft)}.chart-test b{white-space:nowrap;color:var(--deep)}
+  .chart-table-title{margin:0 0 .35rem;font-size:.69rem;font-weight:700;color:var(--ink)}
+  .chart-stats{margin-top:.8rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .chart-stats table,.chart-values table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.61rem;line-height:1.35;font-variant-numeric:tabular-nums}
+  .chart-stats th,.chart-stats td,.chart-values th,.chart-values td{padding:.4rem .38rem;border-bottom:1px solid rgba(170,160,146,.28);text-align:right;white-space:nowrap}
+  .chart-stats th:first-child,.chart-stats td:first-child,.chart-values th:first-child,.chart-values td:first-child{text-align:left}
+  .chart-stats thead th,.chart-values thead th{color:var(--ink-soft);font-weight:400}
+  .chart-stats tbody th,.chart-values tbody th{font-weight:700}.chart-stats tbody th span,.chart-values tbody th span{display:block;font-weight:400;color:var(--ink-soft)}
+  .chart-values{margin-top:.72rem;border:1px solid var(--line);border-radius:8px;background:var(--pale)}
+  .chart-values>summary{cursor:pointer;padding:.6rem .7rem;font-size:.68rem;font-weight:700;color:var(--deep)}
+  .chart-values>summary::marker{color:var(--gold)}.chart-values__scroll{overflow-x:auto;padding:0 .55rem .55rem;-webkit-overflow-scrolling:touch}.chart-values table{min-width:34rem}
+  .chart-note{margin:.75rem 0 0;text-align:left;font-size:.62rem;line-height:1.5;color:var(--ink-soft)}
+  .chart-source{margin:.42rem 0 0;font-size:.6rem;line-height:1.5;color:var(--ink-soft)}
 
   .risk-loop-viz{margin:1.9rem 0 2.1rem;padding:1.45rem;background:var(--white);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(38,34,32,.045)}
   .risk-loop-viz figcaption{text-align:center;font-size:.75rem;letter-spacing:.16em;font-weight:700;color:var(--deep);margin-bottom:1rem}
@@ -157,7 +186,7 @@
 
   @media(max-width:720px){
     .study-timeline{grid-template-columns:1fr}.timeline-arrow{transform:rotate(90deg);justify-self:center}.timeline-step{min-height:0}
-    .research-chart{grid-template-columns:1fr}.chart-title{min-height:0}
+    .research-chart__panels,.chart-definitions{grid-template-columns:1fr}
     .loop-flow{grid-template-columns:1fr}.loop-arrow{transform:rotate(90deg);justify-self:center;line-height:.8}.loop-step{min-height:0}
     .loop-feedback{margin-top:1rem}.loop-feedback b{white-space:normal;text-align:center}
     .extremes-viz{grid-template-columns:1fr;gap:.7rem}.extreme-axis{height:1.6rem}.extreme-axis span{transform:rotate(90deg)}
@@ -169,6 +198,7 @@
     h2{margin-top:3.1rem}.metaphor{padding:2.25rem 1.25rem 2rem;margin-left:-.15rem;margin-right:-.15rem}
     .invite{padding:2.1rem 1.25rem}.invite>h3{font-size:1.35rem}.how-body{padding-left:.75rem;padding-right:.75rem}.device-study{gap:1rem;padding:1.1rem}.device-facts b{font-size:1.2rem}
     .btn{width:100%;padding:.9rem 1rem}.risk-loop-viz{padding:1.05rem}.risk-loop-viz figcaption{line-height:1.45}.loop-step{padding:.9rem}
+    .research-chart__facts{grid-template-columns:1fr}.research-chart__facts>div{text-align:left;display:grid;grid-template-columns:5.5rem 1fr;align-items:center}.research-chart__facts dd{margin:0}.chart-test{align-items:flex-start;flex-direction:column;gap:.25rem}.chart-test b{white-space:normal}.chart-stats table{min-width:28rem}
     .extreme-card{padding:1.2rem 1.1rem}.extreme-card h3{font-size:1.3rem}
     .diagram{font-size:.65rem;padding:1rem}.archive-card{padding:1.3rem 1.15rem}.archive-struck{font-size:1.05rem}
     #practice .practice-metaphor{padding:2.1rem 1.2rem}
@@ -394,24 +424,82 @@
 <p>Ученые наблюдали за этими семьями <strong>три года</strong>, фиксируя уровень реального риска (частоту ссор, агрессии и обесценивания) и траекторию удовлетворенности браком.</p>
 <p>В 2013 году в <em>Journal of Experimental Social Psychology</em> были опубликованы результаты, которые разрушили популярный штамп «нужно просто всегда открывать сердце»:</p>
 <figure class="artifact" data-added="artifact">
-<div class="research-chart" data-added="visual" role="img" aria-label="Две панели показывают, что последствия самозащиты зависят от реального климата риска в отношениях.">
-  <div class="chart-panel">
-    <div class="chart-title">Безопасные, тёплые отношения</div>
-    <div class="plot">
-      <i class="line open-safe"></i>
-      <i class="line armour-safe"></i>
-    </div>
-    <div class="legend"><span class="green">Мягкая открытость</span><span class="rose">Жёсткая броня</span></div>
+<div class="research-chart" data-added="visual" data-doi="10.1016/j.jesp.2012.10.010" aria-labelledby="figure3-title" aria-describedby="figure3-method figure3-note">
+  <header class="research-chart__header">
+    <div class="research-chart__eyebrow">FIGURE 3 · MURRAY ET AL., 2013</div>
+    <div class="research-chart__title" id="figure3-title">Когда осторожность совпадает — и не совпадает — с реальным риском</div>
+    <p class="research-chart__method" id="figure3-method">Это предсказанные моделью траектории, а не средние четырёх готовых групп. Низкие и высокие уровни риска и самозащиты заданы как −1 SD и +1 SD; остальные переменные модели удерживались постоянными.</p>
+  </header>
+  <dl class="research-chart__facts">
+    <div><dt>Выборка</dt><dd>222 пары → 193 в модели</dd></div>
+    <div><dt>Дневники</dt><dd>14 дней в начале</dd></div>
+    <div><dt>Наблюдение</dt><dd>7 волн · 0–36 месяцев</dd></div>
+    <div><dt>Шкала</dt><dd>4 пункта · 0–8 · α = 0,84</dd></div>
+  </dl>
+  <div class="chart-definitions">
+    <p><b>Риск</b> = частота конфликтов по самоотчёту + личная уязвимость партнёра; это составной показатель, а не клинический диагноз.</p>
+    <p><b>Самозащита</b> = три ежедневных правила «если — то»: дистанцирование, усиление зависимости партнёра и отказ компенсаторно ценить партнёра после издержек.</p>
   </div>
-  <div class="chart-panel">
-    <div class="chart-title">Рискованные, деструктивные отношения</div>
-    <div class="plot">
-      <i class="line armour-risk"></i>
-      <i class="line open-risk"></i>
-    </div>
-    <div class="legend"><span class="rose">Слепая открытость</span><span class="green">Жёсткая броня</span></div>
+  <div class="chart-legend" aria-label="Обозначения линий">
+    <span class="chart-legend__item chart-legend__item--low"><i aria-hidden="true"></i>Низкий риск · −1 SD</span>
+    <span class="chart-legend__item chart-legend__item--high"><i aria-hidden="true"></i>Высокий риск · +1 SD</span>
   </div>
-  <div class="chart-note">Смысловая перерисовка Figure 3: показаны направления траекторий, а не исходные значения.</div>
+  <div class="research-chart__panels">
+    <section class="chart-panel" aria-labelledby="figure3-less-heading">
+      <h4 class="chart-panel__title" id="figure3-less-heading">Низкая самозащита <span>−1 SD</span></h4>
+      <svg class="chart-svg" viewBox="0 0 420 276" role="img" aria-labelledby="figure3-less-title figure3-less-desc">
+  <title id="figure3-less-title">Низкая самозащита, −1 SD</title>
+  <desc id="figure3-less-desc">Предсказанная удовлетворённость от исходного замера до 36 месяцев. Низкий риск: 7,46, 7,40, 7,33, 7,27, 7,20, 7,14, 7,08; Высокий риск: 7,00, 6,85, 6,70, 6,54, 6,39, 6,24, 6,09.</desc>
+  <g class="chart-grid"><line x1="58.0" y1="218.0" x2="398.0" y2="218.0"/><text x="49.0" y="221.6" text-anchor="end">5</text><line x1="58.0" y1="184.7" x2="398.0" y2="184.7"/><text x="49.0" y="188.3" text-anchor="end">5,5</text><line x1="58.0" y1="151.3" x2="398.0" y2="151.3"/><text x="49.0" y="154.9" text-anchor="end">6</text><line x1="58.0" y1="118.0" x2="398.0" y2="118.0"/><text x="49.0" y="121.6" text-anchor="end">6,5</text><line x1="58.0" y1="84.7" x2="398.0" y2="84.7"/><text x="49.0" y="88.3" text-anchor="end">7</text><line x1="58.0" y1="51.3" x2="398.0" y2="51.3"/><text x="49.0" y="54.9" text-anchor="end">7,5</text><line x1="58.0" y1="18.0" x2="398.0" y2="18.0"/><text x="49.0" y="21.6" text-anchor="end">8</text></g>
+  <g class="chart-axis">
+    <line x1="58.0" y1="18.0" x2="58.0" y2="218.0"/>
+    <line x1="58.0" y1="218.0" x2="398.0" y2="218.0"/>
+    <line x1="58.0" y1="218.0" x2="58.0" y2="222.0"/><text x="58.0" y="236.0" text-anchor="middle">Старт</text><line x1="114.7" y1="218.0" x2="114.7" y2="222.0"/><text x="114.7" y="236.0" text-anchor="middle">6</text><line x1="171.3" y1="218.0" x2="171.3" y2="222.0"/><text x="171.3" y="236.0" text-anchor="middle">12</text><line x1="228.0" y1="218.0" x2="228.0" y2="222.0"/><text x="228.0" y="236.0" text-anchor="middle">18</text><line x1="284.7" y1="218.0" x2="284.7" y2="222.0"/><text x="284.7" y="236.0" text-anchor="middle">24</text><line x1="341.3" y1="218.0" x2="341.3" y2="222.0"/><text x="341.3" y="236.0" text-anchor="middle">30</text><line x1="398.0" y1="218.0" x2="398.0" y2="222.0"/><text x="398.0" y="236.0" text-anchor="middle">36</text>
+    <text class="chart-y-label" x="15" y="118" text-anchor="middle" transform="rotate(-90 15 118)">Удовлетворённость</text>
+    <text class="chart-x-label" x="228" y="263" text-anchor="middle">Месяцы от первого замера</text>
+  </g>
+  <g><polyline class="chart-series chart-series--low" points="58.0,54.0 114.7,58.3 171.3,62.5 228.0,66.8 284.7,71.1 341.3,75.3 398.0,79.6"/><circle class="chart-point chart-point--low" data-wave="Старт" data-value="7.460" aria-hidden="true" cx="58.0" cy="54.0" r="4"/><circle class="chart-point chart-point--low" data-wave="6" data-value="7.396" aria-hidden="true" cx="114.7" cy="58.3" r="4"/><circle class="chart-point chart-point--low" data-wave="12" data-value="7.332" aria-hidden="true" cx="171.3" cy="62.5" r="4"/><circle class="chart-point chart-point--low" data-wave="18" data-value="7.268" aria-hidden="true" cx="228.0" cy="66.8" r="4"/><circle class="chart-point chart-point--low" data-wave="24" data-value="7.204" aria-hidden="true" cx="284.7" cy="71.1" r="4"/><circle class="chart-point chart-point--low" data-wave="30" data-value="7.140" aria-hidden="true" cx="341.3" cy="75.3" r="4"/><circle class="chart-point chart-point--low" data-wave="36" data-value="7.076" aria-hidden="true" cx="398.0" cy="79.6" r="4"/><polyline class="chart-series chart-series--high" points="58.0,84.7 114.7,94.8 171.3,104.9 228.0,115.1 284.7,125.2 341.3,135.3 398.0,145.5"/><polygon class="chart-point chart-point--high" data-wave="Старт" data-value="7.000" aria-hidden="true" points="58.0,79.9 53.2,88.7 62.8,88.7"/><polygon class="chart-point chart-point--high" data-wave="6" data-value="6.848" aria-hidden="true" points="114.7,90.0 109.9,98.8 119.5,98.8"/><polygon class="chart-point chart-point--high" data-wave="12" data-value="6.696" aria-hidden="true" points="171.3,100.1 166.5,108.9 176.1,108.9"/><polygon class="chart-point chart-point--high" data-wave="18" data-value="6.544" aria-hidden="true" points="228.0,110.3 223.2,119.1 232.8,119.1"/><polygon class="chart-point chart-point--high" data-wave="24" data-value="6.392" aria-hidden="true" points="284.7,120.4 279.9,129.2 289.5,129.2"/><polygon class="chart-point chart-point--high" data-wave="30" data-value="6.240" aria-hidden="true" points="341.3,130.5 336.5,139.3 346.1,139.3"/><polygon class="chart-point chart-point--high" data-wave="36" data-value="6.088" aria-hidden="true" points="398.0,140.7 393.2,149.5 402.8,149.5"/></g>
+</svg>
+    </section>
+    <section class="chart-panel" aria-labelledby="figure3-more-heading">
+      <h4 class="chart-panel__title" id="figure3-more-heading">Высокая самозащита <span>+1 SD</span></h4>
+      <svg class="chart-svg" viewBox="0 0 420 276" role="img" aria-labelledby="figure3-more-title figure3-more-desc">
+  <title id="figure3-more-title">Высокая самозащита, +1 SD</title>
+  <desc id="figure3-more-desc">Предсказанная удовлетворённость от исходного замера до 36 месяцев. Низкий риск: 7,44, 7,25, 7,07, 6,88, 6,69, 6,50, 6,32; Высокий риск: 6,75, 6,64, 6,54, 6,43, 6,33, 6,22, 6,11.</desc>
+  <g class="chart-grid"><line x1="58.0" y1="218.0" x2="398.0" y2="218.0"/><text x="49.0" y="221.6" text-anchor="end">5</text><line x1="58.0" y1="184.7" x2="398.0" y2="184.7"/><text x="49.0" y="188.3" text-anchor="end">5,5</text><line x1="58.0" y1="151.3" x2="398.0" y2="151.3"/><text x="49.0" y="154.9" text-anchor="end">6</text><line x1="58.0" y1="118.0" x2="398.0" y2="118.0"/><text x="49.0" y="121.6" text-anchor="end">6,5</text><line x1="58.0" y1="84.7" x2="398.0" y2="84.7"/><text x="49.0" y="88.3" text-anchor="end">7</text><line x1="58.0" y1="51.3" x2="398.0" y2="51.3"/><text x="49.0" y="54.9" text-anchor="end">7,5</text><line x1="58.0" y1="18.0" x2="398.0" y2="18.0"/><text x="49.0" y="21.6" text-anchor="end">8</text></g>
+  <g class="chart-axis">
+    <line x1="58.0" y1="18.0" x2="58.0" y2="218.0"/>
+    <line x1="58.0" y1="218.0" x2="398.0" y2="218.0"/>
+    <line x1="58.0" y1="218.0" x2="58.0" y2="222.0"/><text x="58.0" y="236.0" text-anchor="middle">Старт</text><line x1="114.7" y1="218.0" x2="114.7" y2="222.0"/><text x="114.7" y="236.0" text-anchor="middle">6</text><line x1="171.3" y1="218.0" x2="171.3" y2="222.0"/><text x="171.3" y="236.0" text-anchor="middle">12</text><line x1="228.0" y1="218.0" x2="228.0" y2="222.0"/><text x="228.0" y="236.0" text-anchor="middle">18</text><line x1="284.7" y1="218.0" x2="284.7" y2="222.0"/><text x="284.7" y="236.0" text-anchor="middle">24</text><line x1="341.3" y1="218.0" x2="341.3" y2="222.0"/><text x="341.3" y="236.0" text-anchor="middle">30</text><line x1="398.0" y1="218.0" x2="398.0" y2="222.0"/><text x="398.0" y="236.0" text-anchor="middle">36</text>
+    <text class="chart-y-label" x="15" y="118" text-anchor="middle" transform="rotate(-90 15 118)">Удовлетворённость</text>
+    <text class="chart-x-label" x="228" y="263" text-anchor="middle">Месяцы от первого замера</text>
+  </g>
+  <g><polyline class="chart-series chart-series--low" points="58.0,55.3 114.7,67.8 171.3,80.3 228.0,92.7 284.7,105.2 341.3,117.7 398.0,130.1"/><circle class="chart-point chart-point--low" data-wave="Старт" data-value="7.440" aria-hidden="true" cx="58.0" cy="55.3" r="4"/><circle class="chart-point chart-point--low" data-wave="6" data-value="7.253" aria-hidden="true" cx="114.7" cy="67.8" r="4"/><circle class="chart-point chart-point--low" data-wave="12" data-value="7.066" aria-hidden="true" cx="171.3" cy="80.3" r="4"/><circle class="chart-point chart-point--low" data-wave="18" data-value="6.879" aria-hidden="true" cx="228.0" cy="92.7" r="4"/><circle class="chart-point chart-point--low" data-wave="24" data-value="6.692" aria-hidden="true" cx="284.7" cy="105.2" r="4"/><circle class="chart-point chart-point--low" data-wave="30" data-value="6.505" aria-hidden="true" cx="341.3" cy="117.7" r="4"/><circle class="chart-point chart-point--low" data-wave="36" data-value="6.318" aria-hidden="true" cx="398.0" cy="130.1" r="4"/><polyline class="chart-series chart-series--high" points="58.0,101.3 114.7,108.4 171.3,115.5 228.0,122.5 284.7,129.6 341.3,136.7 398.0,143.7"/><polygon class="chart-point chart-point--high" data-wave="Старт" data-value="6.750" aria-hidden="true" points="58.0,96.5 53.2,105.3 62.8,105.3"/><polygon class="chart-point chart-point--high" data-wave="6" data-value="6.644" aria-hidden="true" points="114.7,103.6 109.9,112.4 119.5,112.4"/><polygon class="chart-point chart-point--high" data-wave="12" data-value="6.538" aria-hidden="true" points="171.3,110.7 166.5,119.5 176.1,119.5"/><polygon class="chart-point chart-point--high" data-wave="18" data-value="6.432" aria-hidden="true" points="228.0,117.7 223.2,126.5 232.8,126.5"/><polygon class="chart-point chart-point--high" data-wave="24" data-value="6.326" aria-hidden="true" points="284.7,124.8 279.9,133.6 289.5,133.6"/><polygon class="chart-point chart-point--high" data-wave="30" data-value="6.220" aria-hidden="true" points="341.3,131.9 336.5,140.7 346.1,140.7"/><polygon class="chart-point chart-point--high" data-wave="36" data-value="6.114" aria-hidden="true" points="398.0,138.9 393.2,147.7 402.8,147.7"/></g>
+</svg>
+    </section>
+  </div>
+  <div class="chart-test">
+    <span>Главный тест · самозащита × риск × время</span>
+    <b>b = 0,268 · SE = 0,069 · z = 3,88 · p &lt; 0,01</b>
+  </div>
+  <div class="chart-stats" role="region" aria-labelledby="figure3-stats-title" tabindex="0">
+    <div class="chart-table-title" id="figure3-stats-title">Точный наклон за каждые 6 месяцев</div>
+    <table>
+      <thead><tr><th scope="col">Самозащита</th><th scope="col">Риск</th><th scope="col">b</th><th scope="col">SE</th><th scope="col">z</th><th scope="col">p</th><th scope="col">Δ 36 мес.</th></tr></thead>
+      <tbody><tr><th scope="row">Низкая самозащита<span>−1 SD</span></th><td>Низкий</td><td>−0,064</td><td>0,025</td><td>−2,56</td><td>&lt; 0,05</td><td>−0,384</td></tr><tr><th scope="row">Низкая самозащита<span>−1 SD</span></th><td>Высокий</td><td>−0,152</td><td>0,024</td><td>−6,33</td><td>&lt; 0,001</td><td>−0,912</td></tr><tr><th scope="row">Высокая самозащита<span>+1 SD</span></th><td>Низкий</td><td>−0,187</td><td>0,026</td><td>−7,19</td><td>&lt; 0,001</td><td>−1,122</td></tr><tr><th scope="row">Высокая самозащита<span>+1 SD</span></th><td>Высокий</td><td>−0,106</td><td>0,018</td><td>−5,89</td><td>&lt; 0,001</td><td>−0,636</td></tr></tbody>
+    </table>
+  </div>
+  <details class="chart-values" open>
+    <summary>Все семь предсказанных точек</summary>
+    <div class="chart-values__scroll" role="region" aria-label="Предсказанные значения удовлетворённости" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Самозащита</th><th scope="col">Риск</th><th scope="col">Старт</th><th scope="col">6</th><th scope="col">12</th><th scope="col">18</th><th scope="col">24</th><th scope="col">30</th><th scope="col">36</th></tr></thead>
+        <tbody><tr><th scope="row">Низкая самозащита<span>−1 SD</span></th><td>Низкий</td><td data-value="7.460">≈ 7,46</td><td data-value="7.396">≈ 7,40</td><td data-value="7.332">≈ 7,33</td><td data-value="7.268">≈ 7,27</td><td data-value="7.204">≈ 7,20</td><td data-value="7.140">≈ 7,14</td><td data-value="7.076">≈ 7,08</td></tr><tr><th scope="row">Низкая самозащита<span>−1 SD</span></th><td>Высокий</td><td data-value="7.000">≈ 7,00</td><td data-value="6.848">≈ 6,85</td><td data-value="6.696">≈ 6,70</td><td data-value="6.544">≈ 6,54</td><td data-value="6.392">≈ 6,39</td><td data-value="6.240">≈ 6,24</td><td data-value="6.088">≈ 6,09</td></tr><tr><th scope="row">Высокая самозащита<span>+1 SD</span></th><td>Низкий</td><td data-value="7.440">≈ 7,44</td><td data-value="7.253">≈ 7,25</td><td data-value="7.066">≈ 7,07</td><td data-value="6.879">≈ 6,88</td><td data-value="6.692">≈ 6,69</td><td data-value="6.505">≈ 6,50</td><td data-value="6.318">≈ 6,32</td></tr><tr><th scope="row">Высокая самозащита<span>+1 SD</span></th><td>Высокий</td><td data-value="6.750">≈ 6,75</td><td data-value="6.644">≈ 6,64</td><td data-value="6.538">≈ 6,54</td><td data-value="6.432">≈ 6,43</td><td data-value="6.326">≈ 6,33</td><td data-value="6.220">≈ 6,22</td><td data-value="6.114">≈ 6,11</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+  <p class="chart-note" id="figure3-note">На графике сохранены исходное окно шкалы 5–8 и интервалы Figure 3. Точки со знаком ≈ восстановлены по опубликованной фигуре и точным наклонам и округлены до 0,01: авторы не дали их отдельной таблицей. b, SE, z и p перенесены из статьи без пересчёта; Δ за 36 месяцев = b × 6 шестимесячных интервалов.</p>
+  <p class="chart-source">Источник: Murray, Holmes, Derrick, Harris, Griffin &amp; Pinkus, 2013 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4086831/#F3" target="_blank" rel="noopener noreferrer">оригинальная Figure 3</a> · <a href="https://doi.org/10.1016/j.jesp.2012.10.010" target="_blank" rel="noopener noreferrer">DOI</a></p>
 </div><figcaption data-locked="artifact">График из публикации Murray et al., 2013. <br/> Figure 3: Влияние уровня самозащиты на траекторию удовлетворенности браком</figcaption></figure>
 <p>Исследование показало:</p>
 <ul>
