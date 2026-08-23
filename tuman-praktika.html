@@ -30,10 +30,10 @@
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:"PT Serif",Georgia,"Times New Roman",serif;font-size:17px;line-height:1.7}
   .page{max-width:48rem;margin:0 auto;padding:4.6rem 1.5rem 5rem}
-  .article-header{margin-bottom:3.5rem}
+  .article-header{width:min(56rem,calc(100vw - 3rem));margin:0 0 3.15rem 50%;transform:translateX(-50%)}
   .kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.15rem}
-  h1{font-size:clamp(2.35rem,6vw,3.4rem);line-height:1.04;font-weight:700;margin:0 0 .8rem;letter-spacing:-.022em;text-wrap:balance}
-  .subtitle{font-style:italic;color:var(--ink-soft);font-size:1.16rem;max-width:40rem}
+  h1{max-width:55rem;font-size:clamp(2rem,4vw,2.95rem);line-height:1.07;font-weight:700;margin:0 0 .9rem;letter-spacing:-.018em;text-wrap:balance;word-break:normal;overflow-wrap:normal;hyphens:none}
+  .subtitle{font-style:italic;color:var(--ink-soft);font-size:1.12rem;max-width:42rem}
   h2{font-size:1.16rem;line-height:1.35;letter-spacing:.07em;text-transform:uppercase;margin:3.7rem 0 1.25rem;text-wrap:balance}
   h3{font-size:1.3rem;line-height:1.35;margin:2.4rem 0 .7rem}
   h4{font-size:1.08rem;line-height:1.4;margin:1.4rem 0 .7rem}
@@ -46,7 +46,7 @@
   .locked-article>h2:first-child{margin-top:0}
 
   .artifact{margin:2rem 0 2.25rem}
-  .artifact figcaption{font-size:.78rem;line-height:1.5;color:var(--ink-soft);margin:0 0 .75rem}
+  .artifact figcaption{font-size:.78rem;line-height:1.5;color:var(--ink-soft);margin:.75rem 0 0}
   .archive-card{position:relative;overflow:hidden;padding:1.55rem 1.7rem;background:linear-gradient(135deg,#F1EEE7,#E4DFD5);border:1px solid #D5CDBF;border-radius:12px}
   .archive-card:after{content:"";position:absolute;width:10rem;height:10rem;right:-4.5rem;top:-5rem;border:1px solid rgba(168,116,47,.22);border-radius:50%}
   .archive-date{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);margin-bottom:.75rem}
@@ -78,6 +78,34 @@
   .legend span:before{content:"";display:inline-block;width:1rem;height:3px;margin-right:.3rem;vertical-align:middle}.legend .rose:before{background:var(--rose)}.legend .green:before{background:var(--green)}
   .chart-note{grid-column:1/-1;padding-top:.15rem;text-align:center;font-size:.7rem;line-height:1.45;color:var(--ink-soft)}
 
+  .risk-loop-viz{margin:1.9rem 0 2.1rem;padding:1.45rem;background:var(--white);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(38,34,32,.045)}
+  .risk-loop-viz figcaption{text-align:center;font-size:.75rem;letter-spacing:.16em;font-weight:700;color:var(--deep);margin-bottom:1rem}
+  .loop-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.55rem;align-items:stretch}
+  .loop-step{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;min-height:7.1rem;padding:1rem .8rem;background:var(--pale);border:1px solid #E8DFD0;border-radius:10px}
+  .loop-number{font-size:1.25rem;line-height:1;color:var(--gold);font-weight:700}
+  .loop-step b{display:block;font-size:.78rem;line-height:1.35;color:var(--ink);margin-bottom:.45rem}
+  .loop-step span{display:block;font-size:.75rem;line-height:1.45;color:var(--ink-soft)}
+  .loop-arrow{align-self:center;color:var(--gold);font-size:1.25rem}
+  .loop-feedback{display:flex;align-items:center;justify-content:center;gap:.55rem;margin:.85rem .8rem 0;padding-top:.8rem;border-top:1px solid rgba(168,116,47,.34);color:var(--deep)}
+  .loop-feedback b{font-size:.77rem;letter-spacing:.06em;white-space:nowrap}
+  .feedback-turn{display:inline-block;color:var(--gold);font-size:1.05rem;line-height:1}
+
+  .extremes-viz{display:grid;grid-template-columns:1fr 2.5rem 1fr;gap:.45rem;align-items:stretch;margin:1.9rem 0 2.15rem}
+  .extreme-card{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;padding:1.45rem 1.35rem;border-radius:14px;border:1px solid var(--line);isolation:isolate}
+  .extreme-card>*:not(.extreme-motif){position:relative;z-index:1}
+  .extreme-bunker{background:linear-gradient(145deg,#F1F2EE,#E7EAE2);border-color:#D7DCCE}
+  .extreme-pool{background:linear-gradient(145deg,#F7EEE9,#EEDFD7);border-color:#E2CCC0}
+  .extreme-motif{position:absolute;z-index:0;right:-1.8rem;top:-1.7rem;width:7.8rem;height:7.8rem;opacity:.38;pointer-events:none}
+  .extreme-bunker .extreme-motif{border:1px solid #AEB7A3;box-shadow:inset 0 0 0 1.1rem rgba(174,183,163,.14),inset 0 0 0 2.2rem rgba(174,183,163,.12);transform:rotate(8deg)}
+  .extreme-pool .extreme-motif{border:1px solid #C69D8A;border-radius:50%;box-shadow:inset 0 0 0 1.1rem rgba(198,157,138,.13),inset 0 0 0 2.2rem rgba(198,157,138,.11)}
+  .extreme-index{font-size:.67rem;letter-spacing:.16em;font-weight:700;color:var(--ink-soft)}
+  .extreme-card h3{margin:.35rem 0 .05rem;font-size:1.45rem;letter-spacing:.06em;color:var(--ink)}
+  .extreme-mode{font-size:.82rem;color:var(--ink-soft);margin-bottom:1.15rem}
+  .extreme-card p{font-size:.88rem;line-height:1.55;margin:0 0 1rem}
+  .extreme-outcome{margin-top:auto!important;padding-top:1rem;border-top:1px solid rgba(91,84,76,.16)}
+  .extreme-outcome b{color:var(--deep)}
+  .extreme-axis{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.4rem}
+
   .diagram-wrap{margin:1.8rem 0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--white)}
   .diagram{margin:0;padding:1.3rem;overflow-x:auto;color:#403A35;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.71rem;line-height:1.45;-webkit-overflow-scrolling:touch}
   .diagram code{font:inherit}
@@ -90,21 +118,26 @@
   .m-gesture{text-align:center;font-weight:700;margin-bottom:2rem}
   .metaphor p:last-child,.practice-metaphor p:last-child{font-weight:700;margin-bottom:0}
 
-  .invite{margin:4.5rem auto 0;padding:2.55rem 2.4rem;background:var(--white);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 48px rgba(38,34,32,.06)}
-  .invite>h3{margin:0 0 .65rem;text-align:center;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-  .invite>h4{margin:0 0 1.45rem;text-align:center;font-size:1.55rem}
+  .invite{max-width:42rem;margin:4.5rem auto 0;padding:2.5rem 2.4rem;background:var(--white);border-radius:12px}
+  .invite>.label{margin-bottom:1rem;text-align:center;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  .invite>h3{margin:0 0 1.35rem;text-align:center;font-size:1.5rem;line-height:1.3;font-weight:700}
   .invite>p{font-size:1rem}
   .how-it-works{margin:1.55rem 0 0;border:1px solid var(--line);border-radius:10px;background:var(--pale)}
   .how-it-works>summary{cursor:pointer;padding:1rem 1.05rem;font-weight:700;color:var(--deep);list-style-position:inside}
+  .how-it-works>summary::marker,.transcript>summary::marker{color:var(--gold)}
+  .how-it-works>summary:focus-visible,.transcript>summary:focus-visible{outline:3px solid rgba(168,116,47,.25);outline-offset:-3px;border-radius:8px}
   .how-body{padding:.15rem 1.05rem 1.15rem}
   .invite-video{width:100%;max-width:22rem;margin:1.25rem auto}
   .invite-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#17130f;border-radius:14px;box-shadow:0 12px 34px rgba(38,34,32,.16)}
   .video-links p{margin:.75rem 0;text-align:center;font-size:.78rem;line-height:1.55;color:var(--ink-soft)}
+  .video-links a{color:var(--gold)!important;text-decoration:none;border-bottom:1px dotted var(--gold-soft)}
   .transcript{margin-top:1rem;padding:.15rem .85rem;background:var(--white);border:1px solid var(--line);border-radius:9px}
   .transcript>summary{cursor:pointer;padding:.75rem 0;font-weight:700;color:var(--deep)}
   .transcript-body{padding:.15rem 0 .4rem}.transcript-body p{font-size:.91rem;line-height:1.58}.transcript-note{color:var(--ink-soft);font-style:italic}
-  .invite-booking{text-align:center;margin-top:1.4rem}.invite-booking p{margin:0}.invite-booking strong{display:block;margin-bottom:.75rem;color:var(--ink-soft);font-size:.9rem;letter-spacing:.04em}
-  .invite-booking a{display:inline-block;padding:.92rem 1.45rem;background:var(--gold);border-radius:8px;color:#fff;text-decoration:none;font-weight:700}.invite-booking a:hover{background:#96662A}
+  .invite-meta{text-align:center;margin-top:1.3rem;color:var(--ink-soft);font-size:.9rem;letter-spacing:.04em;font-weight:700}
+  .invite-action{text-align:center;margin-top:1.7rem}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;max-width:100%;padding:.92rem 1.55rem;background:var(--gold);border-radius:8px;color:#fff;text-decoration:none;font-size:1rem;line-height:1.35;font-weight:700;text-align:center;box-shadow:0 7px 18px rgba(124,82,33,.16)}
+  .btn:hover{background:#96662A}.btn:focus-visible{outline:3px solid rgba(168,116,47,.32);outline-offset:3px}.btn-icon{flex:0 0 auto}
 
   .sources{margin-top:3.2rem;padding-top:1.65rem;border-top:1px solid var(--line)}
   .sources h3{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .9rem}
@@ -112,7 +145,7 @@
   .footer{margin-top:3rem;text-align:center;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
 
   .gate{margin:4rem 0 0;padding:2rem 1.5rem;text-align:center;background:var(--white);border:1px solid var(--line);border-radius:12px}
-  .gate .hint{font-style:italic;color:var(--ink-soft);margin-bottom:1rem}.gate button{appearance:none;border:0;border-radius:8px;background:var(--gold);color:#fff;padding:.9rem 1.7rem;font:700 1rem/1.2 Georgia,serif;cursor:pointer}.gate button:hover{background:#96662A}
+  .gate .hint{font-style:italic;color:var(--ink-soft);margin-bottom:1rem}.gate button{appearance:none;border:0;border-radius:8px;background:var(--gold);color:#fff;padding:.9rem 1.7rem;font:700 1rem/1.2 Georgia,serif;cursor:pointer}.gate button:hover{background:#96662A}.gate button:focus-visible{outline:3px solid rgba(168,116,47,.3);outline-offset:3px}
   #practice{scroll-margin-top:1.5rem;margin-top:4rem;padding-top:3.2rem;border-top:1px solid var(--line)}
   #practice[hidden]{display:none}
   #practice>h2{margin-top:0;font-size:2rem;letter-spacing:-.01em;text-transform:none}
@@ -124,17 +157,29 @@
   @media(max-width:720px){
     .study-timeline{grid-template-columns:1fr}.timeline-arrow{transform:rotate(90deg);justify-self:center}.timeline-step{min-height:0}
     .research-chart{grid-template-columns:1fr}.chart-title{min-height:0}
+    .article-header{width:auto;margin-left:0;transform:none}
+    .loop-flow{grid-template-columns:1fr}.loop-arrow{transform:rotate(90deg);justify-self:center;line-height:.8}.loop-step{min-height:0}
+    .loop-feedback{margin-top:1rem}.loop-feedback b{white-space:normal;text-align:center}
+    .extremes-viz{grid-template-columns:1fr;gap:.7rem}.extreme-axis{height:1.6rem}.extreme-axis span{transform:rotate(90deg)}
   }
   @media(max-width:600px){
-    body{font-size:16.5px}.page{padding:3.2rem 1.05rem 4rem}.article-header{margin-bottom:2.8rem}
+    body{font-size:16.5px}.page{padding:2.9rem 1.05rem 4rem}.article-header{margin-bottom:2.55rem}
+    .kicker{font-size:.65rem;letter-spacing:.16em;line-height:1.55;margin-bottom:.9rem}
+    h1{font-size:clamp(1.6rem,7.2vw,1.78rem);line-height:1.09;letter-spacing:-.012em}.subtitle{font-size:1.02rem;line-height:1.55}
     h2{margin-top:3.1rem}.metaphor{padding:2.25rem 1.25rem 2rem;margin-left:-.15rem;margin-right:-.15rem}
-    .invite{padding:2rem 1.1rem}.how-body{padding-left:.75rem;padding-right:.75rem}.device-study{gap:1rem;padding:1.1rem}.device-facts b{font-size:1.2rem}
+    .invite{padding:2.1rem 1.25rem}.invite>h3{font-size:1.35rem}.how-body{padding-left:.75rem;padding-right:.75rem}.device-study{gap:1rem;padding:1.1rem}.device-facts b{font-size:1.2rem}
+    .btn{width:100%;padding:.9rem 1rem}.risk-loop-viz{padding:1.05rem}.risk-loop-viz figcaption{line-height:1.45}.loop-step{padding:.9rem}
+    .extreme-card{padding:1.2rem 1.1rem}.extreme-card h3{font-size:1.3rem}
     .diagram{font-size:.65rem;padding:1rem}.archive-card{padding:1.3rem 1.15rem}.archive-struck{font-size:1.05rem}
     #practice .practice-metaphor{padding:2.1rem 1.2rem}
   }
+  @media(max-width:360px){
+    .page{padding-left:.9rem;padding-right:.9rem}.invite{padding-left:.9rem;padding-right:.9rem}.device-study{flex-direction:column;text-align:center}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   @media print{
     body{background:#fff;font-size:11.5pt}.page{max-width:100%;padding:0}@page{margin:2cm 2.2cm}
-    .artifact,.metaphor,.invite,.gate,.practice-metaphor{break-inside:avoid}.gate{display:none}#practice[hidden]{display:block}
+    .artifact,.risk-loop-viz,.extremes-viz,.metaphor,.invite,.gate,.practice-metaphor{break-inside:avoid}.gate{display:none}#practice[hidden]{display:block}
   }
 
 </style>
@@ -168,13 +213,13 @@
 <em>(«Если бы у меня была вера, я остался бы с Региной»).</em></p>
 </blockquote>
 <p>А затем — резким движением, с размаху перечеркивает написанное.</p>
-<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">Søren Kierkegaards Skrifter, архив Королевской библиотеки Дании, манускрипт JJ:115.<br/> Зачёркнутая запись от 17 мая 1843 года</figcaption>
+<figure class="artifact" data-added="artifact">
 <div class="archive-card" data-added="visual">
   <div class="archive-date">17 мая 1843</div>
   <div class="archive-original" lang="da">Havde jeg haft Tro, da var jeg bleven hos Regine.</div>
   <div class="archive-struck">«Если бы у меня была вера, я остался бы с Региной».</div>
   <div class="archive-note">Типографическая реконструкция, не факсимиле</div>
-</div></figure>
+</div><figcaption data-locked="artifact">Søren Kierkegaards Skrifter, архив Королевской библиотеки Дании, манускрипт JJ:115.<br/> Зачёркнутая запись от 17 мая 1843 года</figcaption></figure>
 <p>Посмотрите на эти два жеста. <strong>Он написал правду — и он же её вычеркнул.</strong></p>
 <p>Сначала он попытался вломиться в близость одним слепым прыжком, потребовав свадьбы. А когда почувствовал реальную зависимость — вторым таким же прыжком сбежал в глухую оборону, разрушив всё своими руками и решив судьбу за двоих.</p>
 <p>Как часто мы узнаем в этом себя?</p>
@@ -210,21 +255,45 @@
 </blockquote>
 <p>Что именно происходит в голове между моментом, когда партнер отвлекся, и моментом, когда мы надеваем броню?</p>
 <p>В 1998 году социальный психолог <strong>Сандра Мюррей</strong> (<em>Sandra Murray</em>) из Университета штата Нью-Йорк в Баффало нащупала ответ. В серии лабораторных экспериментов она открыла феномен <strong>Perceived Regard</strong> — субъективное ощущение: <em>«Насколько я верю, что партнер видит во мне безусловную ценность прямо сейчас?»</em></p>
-<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">Эксперименты Murray et al., 1998–2000, Journal of Personality and Social Psychology. <br/> Лабораторное исследование скрытых защитных реакций в паре</figcaption>
+<figure class="artifact" data-added="artifact">
 <div class="study-timeline" data-added="visual" role="img" aria-label="Исследовательская последовательность: сомнение в собственной ценности, ожидание отвержения, защитная реакция, дистанция в паре.">
   <div class="timeline-step"><b>Сомнение в себе</b><span>Угроза собственной ценности</span></div>
   <div class="timeline-arrow" aria-hidden="true">→</div>
   <div class="timeline-step"><b>Perceived regard</b><span>Как, по моему ощущению, меня видит партнёр</span></div>
   <div class="timeline-arrow" aria-hidden="true">→</div>
   <div class="timeline-step"><b>Защита</b><span>Приблизиться или снизить зависимость</span></div>
-</div></figure>
+</div><figcaption data-locked="artifact">Эксперименты Murray et al., 1998–2000, Journal of Personality and Social Psychology. <br/> Лабораторное исследование скрытых защитных реакций в паре</figcaption></figure>
 <p>Оказалось, не имеет решающего значения, насколько сильно партнер любит вас объективно. Имеет значение только то, <strong>превращается ли эта любовь внутри вашей психики в чувство безопасности, на которое можно опереться</strong>.</p>
 <p>Если внутри живет глубинное сомнение в себе, мозг автоматически переводит любую чужую усталость как личное отвержение: <em>«Он молчит — значит, я не нужен»</em>. И немедленно отдает команду обороняться.</p>
 <hr />
 <h2>IV. Как работает система регуляции риска</h2>
 <p>В 2006 году Сандра Мюррей, Джон Холмс и Нэнси Коллинз объединили эти наблюдения в фундаментальную модель — <strong>Модель регуляции межличностного риска</strong> (<em>Risk-Regulation System</em>).</p>
 <p>Они показали: внутри каждого из нас работает автоматическая исполнительная система, непрерывно взвешивающая риск открытости. Она состоит из трех шагов:</p>
-<div class="diagram-wrap" data-locked="diagram"><pre class="diagram"><code>┌────────────────────────────────────────────────────────────────────────┐
+
+<figure class="risk-loop-viz" data-added="diagram-visual" data-source-sha256="21eba8eed4560fe40272e1a1e6911ee0973ee1c18e967137743be24d08b529b5" aria-labelledby="risk-loop-title">
+  <figcaption id="risk-loop-title">ПЕТЛЯ РЕГУЛЯЦИИ РИСКА</figcaption>
+  <div class="loop-flow">
+    <div class="loop-step">
+      <div class="loop-number">1.</div>
+      <div><b>ОЦЕНКА РИСКА</b><span>«Опасно или нет?»</span></div>
+    </div>
+    <div class="loop-arrow" aria-hidden="true">→</div>
+    <div class="loop-step">
+      <div class="loop-number">2.</div>
+      <div><b>ТЕЛЕСНЫЙ СИГНАЛ</b><span>Спокойствие /<br/>Укол тревоги</span></div>
+    </div>
+    <div class="loop-arrow" aria-hidden="true">→</div>
+    <div class="loop-step">
+      <div class="loop-number">3.</div>
+      <div><b>РУБИЛЬНИК СВЯЗИ</b><span>Шаг навстречу /<br/>Уход в броню</span></div>
+    </div>
+  </div>
+  <div class="loop-feedback">
+    <span class="feedback-turn" aria-hidden="true">↩</span>
+    <b>Ответ партнёра</b>
+    <span class="feedback-turn" aria-hidden="true">↪</span>
+  </div>
+  <pre class="source-diagram" hidden aria-hidden="true"><code>┌────────────────────────────────────────────────────────────────────────┐
 │                        ПЕТЛЯ РЕГУЛЯЦИИ РИСКА                           │
 │                                                                        │
 │   1. ОЦЕНКА РИСКА      ──► 2. ТЕЛЕСНЫЙ СИГНАЛ ──► 3. РУБИЛЬНИК СВЯЗИ   │
@@ -232,7 +301,8 @@
 │                             Укол тревоги)          Уход в броню)       │
 │            ▲                                             │             │
 │            └─────────────── Ответ партнёра ──────────────┘             │
-└────────────────────────────────────────────────────────────────────────┘</code></pre></div>
+└────────────────────────────────────────────────────────────────────────┘</code></pre>
+</figure>
 <ol>
 <li><strong>Оценка ситуации:</strong> Партнер нахмурился, задержался или ответил сухо. Мозг мгновенно производит расчет: <em>«Если я сейчас проявлю уязвимость и пойду навстречу — меня примут или ранят?»</em></li>
 <li><strong>Сигнал безопасности или тревоги:</strong>
@@ -257,7 +327,26 @@
 <p>У Ани заканчивается договор аренды жилья. Они с Ильёй вместе почти год. Илья предлагает: <em>«Перевози вещи ко мне. Зачем платить за две квартиры, давай жить вместе!»</em></p>
 <p>Аня любит Илью. Но при мысли о переезде внутри всё сжимается. В прежних отношениях она уже однажды отказалась от своего жилья, переехала к мужчине, полностью связала быт и бюджет — а через год осталась одна: без накоплений, без личного угла и с тяжелым чувством опустошения.</p>
 <p>Теперь Аня зажата между двумя крайностями:</p>
-<div class="diagram-wrap" data-locked="diagram"><pre class="diagram"><code>┌──────────────────────────────────────┬──────────────────────────────────────┐
+
+<figure class="extremes-viz" id="risk-extremes" data-added="diagram-visual" data-source-sha256="5be6d92fe8018bb6452b1d7988e084aedcc37e0c88551927155131251446010a" aria-label="Две крайности: бункер и омут">
+  <div class="extreme-card extreme-bunker">
+    <span class="extreme-motif" aria-hidden="true"></span>
+    <div class="extreme-index">КРАЙНОСТЬ 1</div>
+    <h3>БУНКЕР</h3>
+    <div class="extreme-mode">(Требование гарантий)</div>
+    <p>Аня сидит в своей комнате, бесконечно анализирует отношения, ищет подвох и ждет от Ильи 100% гарантий того, что всё сложится идеально.</p>
+    <p class="extreme-outcome"><b>Итог:</b> отношения задыхаются в подозрениях; партнер чувствует стену.</p>
+  </div>
+  <div class="extreme-axis" aria-hidden="true"><span>↔</span></div>
+  <div class="extreme-card extreme-pool">
+    <span class="extreme-motif" aria-hidden="true"></span>
+    <div class="extreme-index">КРАЙНОСТЬ 2</div>
+    <h3>ОМУТ</h3>
+    <div class="extreme-mode">(Слепой прыжок)</div>
+    <p>Аня сжигает все мосты, съезжает, отдает ключи и надеется, что в этот раз её точно не ранят.</p>
+    <p class="extreme-outcome"><b>Итог:</b> полная потеря автономии и дикий страх оказаться в ловушке.</p>
+  </div>
+  <pre class="source-diagram" hidden aria-hidden="true"><code>┌──────────────────────────────────────┬──────────────────────────────────────┐
 │        КРАЙНОСТЬ 1: БУНКЕР           │        КРАЙНОСТЬ 2: ОМУТ             │
 │        (Требование гарантий)         │        (Слепой прыжок)               │
 │                                      │                                      │
@@ -268,13 +357,14 @@
 │                                      │                                      │
 │ Итог: отношения задыхаются в подоз-  │ Итог: полная потеря автономии и дикий│
 │ рениях; партнер чувствует стену.     │ страх оказаться в ловушке.           │
-└──────────────────────────────────────┴──────────────────────────────────────┘</code></pre></div>
+└──────────────────────────────────────┴──────────────────────────────────────┘</code></pre>
+</figure>
 <p>И глухая оборона, и слепой прыжок — это попытки справиться с одной и той же тревогой. В бункере человек изолирует себя от живой связи. В омуте — теряет почву под ногами.</p>
 <p>Возникает тупик: как сделать шаг навстречу другому, если стопроцентных гарантий не существует, а прыгать вслепую — опасно?</p>
 <hr />
 <h2>VI. 222 пары, карманные компьютеры и крах популярного мифа</h2>
 <p>Чтобы проверить, как работают эти стратегии на большой дистанции, Сандра Мюррей и её коллеги провели трехлетнее исследование.</p>
-<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">Карманный компьютер Dell Axim (2003 год).<br/> Электронный регистратор ежедневного дневника 222 пар в исследовании Murray et al.</figcaption>
+<figure class="artifact" data-added="artifact">
 <div class="device-study" data-added="visual">
   <div class="device" aria-hidden="true">
     <div class="device-screen"><b>DELL AXIM</b><span>42 шкалы</span><span>каждый вечер</span></div>
@@ -285,11 +375,11 @@
     <span>14 дней ежедневных записей</span>
     <span>3 года наблюдения</span>
   </div>
-</div></figure>
+</div><figcaption data-locked="artifact">Карманный компьютер Dell Axim (2003 год).<br/> Электронный регистратор ежедневного дневника 222 пар в исследовании Murray et al.</figcaption></figure>
 <p>Они пригласили <strong>222 пары молодоженов</strong> из района Баффало. Каждому выдали карманный компьютер Dell Axim со стилусом. Каждый вечер в течение двух недель устройство подавало сигнал, требуя зафиксировать: какие события произошли за день и как человек чувствовал себя по 42 шкалам.</p>
 <p>Ученые наблюдали за этими семьями <strong>три года</strong>, фиксируя уровень реального риска (частоту ссор, агрессии и обесценивания) и траекторию удовлетворенности браком.</p>
 <p>В 2013 году в <em>Journal of Experimental Social Psychology</em> были опубликованы результаты, которые разрушили популярный штамп «нужно просто всегда открывать сердце»:</p>
-<figure class="artifact" data-added="artifact"><figcaption data-locked="artifact">График из публикации Murray et al., 2013. <br/> Figure 3: Влияние уровня самозащиты на траекторию удовлетворенности браком</figcaption>
+<figure class="artifact" data-added="artifact">
 <div class="research-chart" data-added="visual" role="img" aria-label="Две панели показывают, что последствия самозащиты зависят от реального климата риска в отношениях.">
   <div class="chart-panel">
     <div class="chart-title">Безопасные, тёплые отношения</div>
@@ -308,7 +398,7 @@
     <div class="legend"><span class="rose">Слепая открытость</span><span class="green">Жёсткая броня</span></div>
   </div>
   <div class="chart-note">Смысловая перерисовка Figure 3: показаны направления траекторий, а не исходные значения.</div>
-</div></figure>
+</div><figcaption data-locked="artifact">График из публикации Murray et al., 2013. <br/> Figure 3: Влияние уровня самозащиты на траекторию удовлетворенности браком</figcaption></figure>
 <p>Исследование показало:</p>
 <ul>
 <li><strong>В безопасных отношениях</strong> чрезмерная самозащита и контроль разрушали близость. Человек не давал партнеру возможности позаботиться о себе, копил обиды и своими руками уничтожал теплый союз.</li>
