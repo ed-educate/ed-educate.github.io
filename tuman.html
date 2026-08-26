@@ -459,14 +459,14 @@
       </div>
 
       <div class="chart-legend" aria-label="Обозначения линий">
-        <span class="chart-legend__item chart-legend__item--low"><i aria-hidden="true"></i>Низкий риск (−1 SD)</span>
-        <span class="chart-legend__item chart-legend__item--high"><i aria-hidden="true"></i>Высокий риск (+1 SD)</span>
+        <span class="chart-legend__item chart-legend__item--low"><i aria-hidden="true"></i>Низкая самозащита (−1 SD)</span>
+        <span class="chart-legend__item chart-legend__item--high"><i aria-hidden="true"></i>Высокая самозащита (+1 SD)</span>
       </div>
 
       <div class="research-chart__panels">
         <section class="chart-panel">
-          <div class="chart-panel__title">Низкая самозащита <span>(−1 SD)</span></div>
-          <svg class="chart-svg" viewBox="0 0 420 276" role="img">
+          <div class="chart-panel__title">Низкий риск <span>(−1 SD)</span></div>
+          <svg class="chart-svg" viewBox="0 0 420 276" role="img" aria-label="Траектории при низком риске для низкой и высокой самозащиты">
             <g class="chart-grid"><line x1="58" y1="218" x2="398" y2="218"/><line x1="58" y1="151" x2="398" y2="151"/><line x1="58" y1="84" x2="398" y2="84"/><line x1="58" y1="18" x2="398" y2="18"/></g>
             <g class="chart-axis">
               <line x1="58" y1="18" x2="58" y2="218"/><line x1="58" y1="218" x2="398" y2="218"/>
@@ -476,15 +476,15 @@
             <g>
               <polyline class="chart-series chart-series--low" points="58,54 171,62 284,71 398,79"/>
               <circle class="chart-point--low" cx="58" cy="54" r="4"/><circle class="chart-point--low" cx="398" cy="79" r="4"/>
-              <polyline class="chart-series chart-series--high" points="58,85 171,105 284,125 398,145"/>
-              <polygon class="chart-point--high" points="58,80 53,89 63,89"/><polygon class="chart-point--high" points="398,141 393,150 403,150"/>
+              <polyline class="chart-series chart-series--high" points="58,55 171,80 284,105 398,130"/>
+              <polygon class="chart-point--high" points="58,50 53,59 63,59"/><polygon class="chart-point--high" points="398,125 393,134 403,134"/>
             </g>
           </svg>
         </section>
 
         <section class="chart-panel">
-          <div class="chart-panel__title">Высокая самозащита <span>(+1 SD)</span></div>
-          <svg class="chart-svg" viewBox="0 0 420 276" role="img">
+          <div class="chart-panel__title">Высокий риск <span>(+1 SD)</span></div>
+          <svg class="chart-svg" viewBox="0 0 420 276" role="img" aria-label="Траектории при высоком риске для низкой и высокой самозащиты">
             <g class="chart-grid"><line x1="58" y1="218" x2="398" y2="218"/><line x1="58" y1="151" x2="398" y2="151"/><line x1="58" y1="84" x2="398" y2="84"/><line x1="58" y1="18" x2="398" y2="18"/></g>
             <g class="chart-axis">
               <line x1="58" y1="18" x2="58" y2="218"/><line x1="58" y1="218" x2="398" y2="218"/>
@@ -492,8 +492,8 @@
               <text class="chart-y-label" x="15" y="118" text-anchor="middle" transform="rotate(-90 15 118)">Удовлетворённость браком</text>
             </g>
             <g>
-              <polyline class="chart-series chart-series--low" points="58,55 171,80 284,105 398,130"/>
-              <circle class="chart-point--low" cx="58" cy="55" r="4"/><circle class="chart-point--low" cx="398" cy="130" r="4"/>
+              <polyline class="chart-series chart-series--low" points="58,85 171,105 284,125 398,145"/>
+              <circle class="chart-point--low" cx="58" cy="85" r="4"/><circle class="chart-point--low" cx="398" cy="145" r="4"/>
               <polyline class="chart-series chart-series--high" points="58,101 171,115 284,129 398,144"/>
               <polygon class="chart-point--high" points="58,96 53,105 63,105"/><polygon class="chart-point--high" points="398,139 393,148 403,148"/>
             </g>
