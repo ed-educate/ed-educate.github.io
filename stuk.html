@@ -20,6 +20,7 @@
   :root{
     --ink:#262220; --ink-soft:#5b544c; --paper:#FBF9F4;
     --gold:#A8742F; --gold-soft:#C39A5B; --sand:#EFE7D8; --line:#DDD3C2;
+    --white:#fff; --pale:#F7F2E9; --deep:#7C5221;
   }
   *{box-sizing:border-box;}
   body{
@@ -84,22 +85,38 @@
   .metaphor p{font-size:.97em;}
   .metaphor .m-formula{font-weight:700; margin-top:1.6rem; margin-bottom:0;}
 
-  .invite{max-width:42rem; margin:4.5rem auto 0; padding:2.5rem 2.4rem; background:#fff; border-radius:12px;}
-  .invite .label{text-align:center; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;}
-  .invite h3{text-align:center; font-size:1.5rem; line-height:1.3; margin:0 0 1.35rem; font-weight:700;}
-  .invite p{font-size:1rem; margin:0 0 1rem;}
-  .invite-action{text-align:center; margin-top:1.7rem;}
-  .invite .when{
-    margin:1.8rem 0; padding:1rem 1.2rem; background:var(--sand); border-radius:10px;
-    font-size:.95rem; line-height:1.7;
-  }
-  .invite .when b{display:block; font-size:1.05rem; margin-bottom:.2rem;}
-  .btn{
-    display:inline-block; background:var(--gold); color:#fff; text-decoration:none;
-    padding:.9rem 2.2rem; border-radius:8px; font-size:1.02rem; font-weight:700;
-  }
-  .btn:hover{background:#96662a;}
-  .invite .fine{font-size:.82rem; color:var(--ink-soft); margin:1rem 0 0;}
+  .invite{max-width:42rem;margin:4.5rem auto 0;padding:2.5rem 2.4rem;background:var(--white);border-radius:12px;border:1px solid var(--line)}
+  .invite>.label{margin-bottom:1rem;text-align:center;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .invite>h3{margin:0 0 .6rem;text-align:center;font-size:1.45rem;line-height:1.3;font-weight:700}
+  .invite>p{font-size:.98rem;line-height:1.65;color:var(--ink-soft)}
+  .practice-question{margin:1.55rem 0 .8rem;color:var(--ink);font-size:1.08rem;line-height:1.4}
+  .knowledge-gap-stats{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0 1.2rem}
+  .knowledge-gap-stat{padding:1rem 1.05rem;background:var(--pale);border:1px solid var(--line);border-radius:10px}
+  .knowledge-gap-stat strong{display:block;margin-bottom:.3rem;color:var(--gold);font-size:1.65rem;line-height:1.1}
+  .knowledge-gap-stat span{display:block;color:var(--ink-soft);font-size:.85rem;line-height:1.45}
+  .practice-examples{margin:.95rem 0 1.25rem;padding:0;list-style:none}
+  .practice-examples li{position:relative;margin:.55rem 0;padding:.65rem .85rem .65rem 1.65rem;background:var(--pale);border-radius:8px;color:var(--ink);font-size:.93rem;line-height:1.48}
+  .practice-examples li::before{content:"";position:absolute;left:.78rem;top:1.22rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .invite>.practice-outcome{margin:1.4rem 0 0;padding:1rem 1.05rem;background:var(--sand);border-radius:10px;color:var(--ink)}
+  .how-it-works{margin:1.55rem 0 0;border:1px solid var(--line);border-radius:10px;background:var(--pale)}
+  .how-it-works>summary{cursor:pointer;padding:1rem 1.05rem;font-weight:700;color:var(--deep);list-style-position:inside}
+  .how-it-works>summary::marker,.transcript>summary::marker{color:var(--gold)}
+  .how-body{padding:.15rem 1.05rem 1.15rem}
+  .transcript{margin-top:1rem;padding:.15rem .85rem;background:var(--white);border:1px solid var(--line);border-radius:9px}
+  .transcript>summary{cursor:pointer;padding:.75rem 0;font-weight:700;color:var(--deep)}
+  .transcript-body{padding:.15rem 0 .4rem}.transcript-body p{font-size:.91rem;line-height:1.58}
+  .invite-video{width:100%;max-width:20rem;margin:1.25rem auto}
+  .invite-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#17130f;border-radius:14px;box-shadow:0 12px 34px rgba(38,34,32,.16)}
+  .video-links p{margin:.75rem 0;text-align:center;font-size:.78rem;line-height:1.55;color:var(--ink-soft)}
+  .video-links a{color:var(--gold)!important;text-decoration:none;border-bottom:1px dotted var(--gold-soft)}
+  .invite-date{margin:1.5rem auto 0;padding:.85rem 1rem;background:var(--pale);border:1px solid var(--gold-soft);border-radius:10px;color:var(--deep);text-align:center}
+  .invite-date span{display:block;margin-bottom:.2rem;font-size:.7rem;line-height:1.35;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+  .invite-date strong{display:block;font-size:1.08rem;line-height:1.4}
+  .invite-duration{max-width:30rem;margin:.7rem auto 0;padding-top:.7rem;border-top:1px solid rgba(168,116,47,.22);color:var(--ink-soft);font-size:.88rem;line-height:1.5}
+  .invite-meta{text-align:center;margin-top:1.3rem;color:var(--ink-soft);font-size:.9rem;letter-spacing:.04em;font-weight:700}
+  .invite-action{text-align:center;margin-top:1.5rem}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;max-width:100%;padding:.92rem 1.55rem;background:var(--gold);border-radius:8px;color:#fff;text-decoration:none;font-size:1rem;line-height:1.35;font-weight:700;text-align:center;box-shadow:0 7px 18px rgba(124,82,33,.16)}
+  .btn:hover{background:#96662A}
 
   .sources{margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line);}
   .sources h3{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin:0 0 .9rem;}
@@ -109,6 +126,7 @@
   .footer{margin-top:3rem; text-align:center; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);}
   @media(max-width:600px){
     .invite{padding:2.1rem 1.25rem;}
+    .knowledge-gap-stats{grid-template-columns:1fr;}
     .btn{max-width:100%;}
   }
   @media print{
@@ -118,8 +136,21 @@
     .metaphor, figure{break-inside:avoid;}
   }
 </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109811961', 'ym');
+
+    ym(109811961, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
+<noscript><div><img src="https://mc.yandex.ru/watch/109811961" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <div class="page">
 
 <div class="kicker">Процесс: Доверие · метафора «Стук»</div>
@@ -341,19 +372,76 @@
   <p class="m-formula">Доверять себе — не значит верить каждому чувству. Доверять себе — значит не оставлять внутренний стук без ответа.</p>
 </div>
 
-<div class="invite">
-  <div class="label">Продолжить в живом разговоре</div>
-  <h3>Расслышать, что внутри уже просит ответа</h3>
-  <p>Эта статья может помочь заметить внутренний стук и подобрать к нему первые слова. Но текст не услышит паузу, не задаст уточняющий вопрос и не заметит того, что пропустил ты. Чтобы понять, о чём говорит чувство и как на него ответить, нужен живой разговор.</p>
+<aside class="invite">
+  <div class="label">Живая практика</div>
+  <h3>«Услышать себя»</h3>
 
-  <p>На встречу «Процесса: Доверие» можно прийти со своим запросом. Вместо общих рассуждений ты рассказываешь о конкретной ситуации: что произошло, что ты почувствовал и что успел сделать. Остальные помогают отделить внутренний сигнал от первой реакции — без анализа тебя со стороны и без готовых ответов.</p>
+  <h4 class="practice-question">Что происходит после понимания?</h4>
+  <p>В исследовании 2026 года у медсестёр реанимации замерили два показателя: насколько хорошо они понимают правила профилактики и как применяют их в действительности. Получилось:</p>
 
-  <p>В конце ты выбираешь, что делать дальше: прислушаться, назвать чувство, обозначить границу или ничего пока не менять. Другие участники могут заметить то, что ты пропустил, но решение всё равно остаётся за тобой.</p>
+  <div class="knowledge-gap-stats" aria-label="Разрыв между пониманием и действием">
+    <div class="knowledge-gap-stat"><strong>65%</strong><span>медсестёр хорошо понимали, что нужно делать</span></div>
+    <div class="knowledge-gap-stat"><strong>12,9%</strong><span>действительно так делали</span></div>
+  </div>
 
-  <p>Встречаемся в Zoom. Сначала разбираем одну метафору, затем делимся на тройки и работаем каждый со своим запросом. В конце снова собираемся всей группой. Каждая встреча самостоятельна.</p>
+  <p>Значимой связи между тем, насколько хорошо человек знал процедуру, и тем, как он на самом деле вёл себя на работе, исследователи не нашли.</p>
 
-  <div class="invite-action"><a class="btn" href="https://ed-educate.github.io/#join">Посмотреть формат встречи</a></div>
-</div>
+  <p><strong>Этот разрыв исследовали ещё в 270 работах с участием более 600 тысяч человек за последние 20 лет. Ему дали имя — knowledge–behavior gap:</strong> знать, как нужно действовать, и действительно действовать так в нужный момент — не одно и то же.</p>
+
+  <p>В когнитивной нейронауке это описывают как <strong>конкуренцию разных систем контроля</strong>: при встрече со знакомым сигналом активируются ранее выученные stimulus–response связи, даже если новое правило уже понятно.</p>
+
+  <p><strong>На практике мы работаем именно с этим переходом</strong> — от понимания к тому, чем можно воспользоваться в реальных жизненных ситуациях.</p>
+
+  <p>Можно прийти с любой ситуацией, например:</p>
+  <ul class="practice-examples">
+    <li>«Я могу объяснить плюсы и минусы любого варианта, но не понимаю, чего хочу сам»</li>
+    <li>«Я замечаю, что что-то не так, только когда уже накрывает»</li>
+    <li>«Опять согласилась, хотя не хотела»</li>
+    <li>«Не понимаю: мне правда не хочется — или я просто боюсь?»</li>
+    <li>«Я уже всё понимаю про свою реакцию — а в моменте меня всё равно туда уносит»</li>
+  </ul>
+
+  <p class="practice-outcome"><strong>За одну встречу можно расслышать ваш собственный «стук»:</strong> различить, на что он указывает, как на него ответить и что делать дальше именно в вашей ситуации.</p>
+
+  <details class="how-it-works">
+    <summary>Как устроена практика и что нужно подготовить? (видео, 9 минут)</summary>
+    <div class="how-body">
+      <p>В этом видео я подробно разбираю структуру трёхчасовой встречи, показываю примеры работы с участниками и объясняю, с каким запросом лучше всего приходить.</p>
+      <div class="invite-video">
+        <video controls playsinline preload="none" poster="https://ed-educate.github.io/assets/kozha/praktikum-ed-poster.jpg">
+          <source src="https://ed-educate.github.io/assets/kozha/praktikum-ed.mp4" type="video/mp4"/>
+          <p>Ваш браузер не поддерживает встроенное видео. <a href="https://ed-educate.github.io/assets/kozha/praktikum-ed.mp4">Открыть видео отдельно</a>.</p>
+        </video>
+      </div>
+      <div class="video-links">
+        <p><a href="https://ed-educate.github.io/assets/kozha/praktikum-ed.mp4" target="_blank" rel="noopener noreferrer" style="color:#9E6B28; font-weight:700;">▶ Смотреть видео о практике</a> · <a href="https://www.instagram.com/reel/DcI0i5lKg8a/" target="_blank" rel="noopener noreferrer" style="color:#9E6B28;">Оригинал в Instagram</a></p>
+      </div>
+
+      <details class="transcript">
+        <summary>Прочитать вместо видео</summary>
+        <div class="transcript-body">
+          <p><b>Подготовка.</b> Особой внутренней подготовки не требуется. После оплаты вы попадаете в Telegram-канал. Там будет ссылка на Zoom: заранее проверьте звук и видео — обычно это занимает три–пять минут. Из вещей нужны только ручка и лист бумаги.</p>
+          <p><b>Начало встречи.</b> Первые минуты — короткий общий круг. Те, кто уже участвовал, замечают, что изменилось после прошлой встречи, что запомнилось и как тема проявилась в жизни.</p>
+          <p><b>Научная часть.</b> Затем участники знакомятся с доказательной основой темы: исследованиями, историей концепта и статьёй. Эта часть нужна не ради знания самого по себе, а чтобы было понятно, на каком основании построена практика с метафорой.</p>
+          <p><b>Личный запрос.</b> Каждый формулирует его для себя на бумаге; произносить запрос вслух не обязательно. По ходу занятия он может уточниться или развернуться — важен не готовый ответ, а возможность почувствовать другой шаг.</p>
+          <p><b>Работа с метафорой.</b> Метафора помогает вспомнить конкретные ситуации, увидеть привычный способ действовать и найти в собственном опыте иной вариант. Сначала каждый работает самостоятельно и делает записи.</p>
+          <p><b>Малые группы.</b> Потом участники расходятся в тройки или четвёрки и делятся жизненными примерами. Не нужно рассказывать самое болезненное: достаточно бытовой ситуации, на которой можно безопасно заметить паттерн. После этого группы объединяются и обмениваются найденными вариантами действия — так за встречу можно увидеть много разных способов отвечать на похожую ситуацию.</p>
+          <p><b>Можно ли только послушать?</b> Формат предполагает участие, поэтому прийти пассивным слушателем не получится. При этом, если станет некомфортно, можно в любой момент выйти: никто не будет удерживать или заставлять продолжать.</p>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <div class="invite-date">
+    <span>Ближайшая встреча</span>
+    <strong><time datetime="2026-09-13T12:00:00+03:00">Воскресенье, 13 сентября · 12:00&nbsp;мск</time></strong>
+    <p class="invite-duration">Для практики понадобятся 3 свободных часа и место, где вас не будут отвлекать.</p>
+  </div>
+  <div class="invite-meta">Онлайн в Zoom · 1 900 ₽</div>
+  <div class="invite-action">
+    <a class="btn" href="https://payform.ru/f0cdnIX/"><span class="btn-icon" aria-hidden="true">👉</span> <span>Записаться и оплатить участие — 1&nbsp;900&nbsp;₽</span></a>
+  </div>
+</aside>
 
 <div class="sources">
   <h3>Источники</h3>
