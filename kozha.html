@@ -139,6 +139,7 @@
   .invite-action{text-align:center;margin-top:1.5rem}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;max-width:100%;padding:.92rem 1.55rem;background:var(--gold);border-radius:8px;color:#fff;text-decoration:none;font-size:1rem;line-height:1.35;font-weight:700;text-align:center;box-shadow:0 7px 18px rgba(124,82,33,.16)}
   .btn:hover{background:#96662A}
+  .btn:disabled,.btn:disabled:hover{background:#a5a5a5;border:0;box-shadow:none;color:#fff;cursor:not-allowed;font-family:inherit}
 
   .sources{margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line);}
   .sources h3{font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin:0 0 .9rem;}
@@ -467,7 +468,7 @@
   </div>
   <div class="invite-meta">Онлайн в Zoom · 1 900 ₽</div>
   <div class="invite-action">
-    <a class="btn" href="https://payform.ru/f0cdnIX/"><span class="btn-icon" aria-hidden="true">👉</span> <span>Записаться и оплатить участие — 1&nbsp;900&nbsp;₽</span></a>
+    <button class="btn" type="button" disabled><span class="btn-icon" aria-hidden="true">👉</span> <span>Записаться и оплатить участие — 1&nbsp;900&nbsp;₽</span></button>
   </div>
 </aside>
 
