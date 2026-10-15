@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как найти себя? — Эд</title>
+<link rel="canonical" href="https://ed-educate.github.io/poisk-sebya">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>
+  if (window.location.pathname.endsWith('.html')) {
+    window.history.replaceState(null, '', window.location.pathname.slice(0, -5) + window.location.search + window.location.hash);
+  }
+</script>
+<meta name="description" content="Два видео Эда о потребностях, выгорании и самоопределении, рабочая таблица «Пазлы потребностей» и возможность попасть на индивидуальный разбор.">
+<meta property="og:title" content="Как найти себя?">
+<meta property="og:description" content="Потребности, выгорание и самоопределение: от нейрофизиологии к практике.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ed-educate.github.io/poisk-sebya">
+<meta property="og:image" content="https://ed-educate.github.io/assets/posters/kak-naiti-sebya.jpg">
+<style>
+  :root{
+    --ink:#262220; --ink-soft:#5b544c; --paper:#FBF9F4;
+    --gold:#A8742F; --gold-soft:#C39A5B; --sand:#EFE7D8; --line:#DDD3C2;
+    --white:#fff; --pale:#F7F2E9; --deep:#7C5221;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"PT Serif",Georgia,"Times New Roman",serif;
+    font-size:17px;line-height:1.68;overflow-x:hidden;overflow-wrap:break-word;
+  }
+  a{color:var(--gold)}
+  .page{max-width:46rem;margin:0 auto;padding:4.5rem 1.5rem 5rem}
+  .kicker{margin-bottom:1.2rem;color:var(--gold);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+  h1{margin:0 0 .65rem;font-size:clamp(2.65rem,8vw,3.6rem);line-height:1.04;letter-spacing:-.02em}
+  .subtitle{max-width:39rem;margin:0 0 1.2rem;color:var(--ink-soft);font-size:1.18rem;font-style:italic;line-height:1.55}
+  .author{display:flex;align-items:center;gap:.7rem;margin:1.35rem 0 2.7rem}
+  .author img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+  .author strong{font-size:.95rem}
+  h2{margin:0 0 1rem;font-size:1.55rem;line-height:1.25}
+  h3{margin:0 0 .25rem;font-size:1.18rem;line-height:1.35}
+  p{margin:0 0 1.05rem}
+  .inside{
+    margin:0 0 4rem;padding:1.55rem 1.7rem;background:var(--white);
+    border:1px solid var(--line);border-radius:12px;
+  }
+  .inside h2{margin-bottom:.8rem;color:var(--gold);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+  .inside ul,.points{margin:0;padding-left:1.2rem}
+  .inside li,.points li{margin:.4rem 0;padding-left:.2rem}
+  .material{margin:0 0 4rem}
+  .section-label{display:block;margin-bottom:.75rem;color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+  .meta{margin-bottom:1.35rem;color:var(--ink-soft);font-size:.9rem}
+  .points{margin:1.2rem 0 1.6rem}
+  .video-frame{
+    margin:1.75rem 0 0;padding:.55rem;background:#17130f;border-radius:14px;
+    box-shadow:0 14px 36px rgba(38,34,32,.16);
+  }
+  video{display:block;width:100%;aspect-ratio:8/5;background:#17130f;border-radius:9px}
+  .video-note{margin:.7rem 0 0;color:var(--ink-soft);font-size:.78rem;line-height:1.5;text-align:center}
+  .transition{
+    margin:0 0 4rem;padding:2rem 2.1rem;background:var(--sand);
+    border-left:4px solid var(--gold);border-radius:0 12px 12px 0;
+  }
+  .transition p{margin:0;font-size:1.02rem}
+  .table-action{margin:1.65rem 0 0;text-align:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;max-width:100%;
+    padding:.95rem 1.6rem;background:var(--gold);border-radius:8px;color:#fff;
+    font-size:1rem;font-weight:700;line-height:1.35;text-align:center;text-decoration:none;
+    box-shadow:0 7px 18px rgba(124,82,33,.16);transition:background .18s ease,transform .18s ease;
+  }
+  .btn:hover{background:#96662A;transform:translateY(-1px)}
+  .btn:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+  .personal-transition{margin:4.2rem 0 1.75rem;text-align:center}
+  .personal-transition p{max-width:39rem;margin:0 auto;color:var(--ink-soft);font-style:italic}
+  .invite{padding:2.7rem 2.45rem;background:var(--white);border:1px solid var(--line);border-radius:12px}
+  .invite h2{text-align:center;color:var(--gold)}
+  .selection-callout{
+    margin:1.6rem 0;padding:1.25rem 1.3rem;background:var(--sand);
+    border:1px solid var(--gold-soft);border-left:5px solid var(--gold);border-radius:10px;
+    box-shadow:0 8px 22px rgba(124,82,33,.08);
+  }
+  .selection-callout span{display:block;margin-bottom:.4rem;color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+  .selection-callout strong{display:block;font-size:1.08rem;line-height:1.45}
+  .invite p{color:var(--ink-soft);font-size:.98rem;line-height:1.65}
+  .invite p strong{color:var(--ink)}
+  .invite-action{margin-top:1.7rem;text-align:center}
+  .after-button{margin:.85rem auto 0!important;max-width:32rem;font-size:.82rem!important;line-height:1.5!important;text-align:center}
+  .footer{margin-top:3rem;color:var(--ink-soft);font-size:.72rem;letter-spacing:.2em;text-align:center;text-transform:uppercase}
+  @media(max-width:600px){
+    .page{padding:3.2rem 1.15rem 4rem}
+    .inside{padding:1.35rem 1.2rem;margin-bottom:3.2rem}
+    .material{margin-bottom:3.3rem}
+    .transition{padding:1.55rem 1.3rem;margin-bottom:3.3rem}
+    .invite{padding:2.15rem 1.25rem}
+    .selection-callout{padding:1.1rem}
+    .btn{width:100%}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109811961','ym');
+  ym(109811961,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/109811961" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<main class="page">
+  <div class="kicker">Потребности · выгорание · самоопределение</div>
+  <h1>Как найти себя?</h1>
+  <p class="subtitle">Потребности, выгорание и самоопределение: от нейрофизиологии к практике</p>
+  <div class="author">
+    <img src="assets/ed.webp" alt="Эд" width="46" height="46">
+    <strong>Эд</strong>
+  </div>
+
+  <section class="inside" aria-labelledby="inside-title">
+    <h2 id="inside-title">Что внутри</h2>
+    <ul>
+      <li>Видео о потребностях, выгорании и выборе своего дела.</li>
+      <li>Рабочая таблица, которая поможет собрать более точную карту себя.</li>
+      <li>Индивидуальный разбор ситуации.</li>
+    </ul>
+  </section>
+
+  <section class="material" aria-labelledby="main-video-title">
+    <span class="section-label">Основное видео · Карта</span>
+    <h2 id="main-video-title">Как найти себя: мета-анализ 33 исследований мозга</h2>
+    <div class="meta">51 минута</div>
+
+    <p>Поиск себя часто превращается в попытку однажды угадать правильную профессию, цель или образ жизни.</p>
+    <p>Но понять себя сложнее: сначала нужно увидеть, что вас истощает, какие потребности стоят за вашими решениями и где реальные желания смешиваются с чужими ожиданиями.</p>
+    <p>В этом видео я разбираю, как подойти к этому вопросу с точки зрения системной поведенческой психотерапии и исследований мозга:</p>
+    <ul class="points">
+      <li>убрать выгорание;</li>
+      <li>разрушить мешающие иллюзии;</li>
+      <li>начать точнее понимать себя.</li>
+    </ul>
+
+    <div class="video-frame">
+      <video controls playsinline preload="none" poster="assets/posters/kak-naiti-sebya.jpg">
+        <source src="assets/video/kak-naiti-sebya.mp4" type="video/mp4">
+        Ваш браузер не поддерживает встроенное видео.
+      </video>
+    </div>
+  </section>
+
+  <aside class="transition">
+    <p>Следующий материал поможет приложить эту карту к своей жизни: занятиям, заработку, сильным сторонам и неудовлетворённым потребностям.</p>
+  </aside>
+
+  <section class="material" aria-labelledby="puzzles-title">
+    <span class="section-label">Практический бонус</span>
+    <h2 id="puzzles-title">Пазлы потребностей</h2>
+    <div class="meta">21 минута + рабочая таблица</div>
+
+    <p>Урок для самостоятельной ревизии: что уже есть в вашей жизни, чего не хватает и какие занятия могут одновременно собирать несколько важных для вас потребностей:</p>
+    <ul class="points">
+      <li>понять свои потребности;</li>
+      <li>провести ревизию жизни;</li>
+      <li>провести ревизию заработка;</li>
+      <li>увидеть свои сильные стороны.</li>
+    </ul>
+
+    <div class="video-frame">
+      <video controls playsinline preload="none" poster="assets/posters/pazly-potrebnostei.jpg">
+        <source src="assets/video/pazly-potrebnostei.mp4" type="video/mp4">
+        Ваш браузер не поддерживает встроенное видео.
+      </video>
+    </div>
+
+    <div class="table-action">
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1TflNpr2Mls831O2foaW5IVcdKZieSW865nwzG3bUEn0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Открыть таблицу «Пазлы потребностей»</a>
+    </div>
+  </section>
+
+  <div class="personal-transition">
+    <p>Материалы помогают увидеть карту. Но иногда сложность не в недостатке знаний — трудно понять, что именно происходит в вашей ситуации и за что браться первым.</p>
+  </div>
+
+  <aside class="invite" aria-labelledby="invite-title">
+    <span class="section-label">Личный разбор с Эдом</span>
+    <h2 id="invite-title">Индивидуальный разбор ситуации</h2>
+
+    <div class="selection-callout">
+      <span>Открыт отбор</span>
+      <strong>Я сейчас отбираю несколько людей на индивидуальные разборы: где вы сейчас застряли, что уже пробовали и какое решение может подойти дальше.</strong>
+    </div>
+
+    <p>Это предварительный разговор перед возможной совместной работой. Он помогает мне не предлагать всем одно и то же, а понять, могу ли я быть полезен именно вам и какой платный формат может подойти под ваш запрос.</p>
+    <p>Если я увижу подходящее решение, расскажу о нём. Продолжать работу или нет — решаете вы, первичный разбор вашей ситуации вы получите в любом случае.</p>
+    <p>Вы можете прийти с любым запросом. Главное, опишите его в анкете подробнее, чтобы я понимал, действительно ли смогу быть вам полезен.</p>
+    <p><strong>Смотреть видео перед заполнением необязательно)</strong></p>
+
+    <div class="invite-action">
+      <a class="btn" href="https://forms.yandex.ru/cloud/6ac7d93484227c265ddef774" target="_blank" rel="noopener noreferrer">Заполнить анкету на разбор</a>
+    </div>
+    <p class="after-button">Я изучу ответы и свяжусь с вами, если увижу, что разбор может быть действительно полезен в вашей ситуации.</p>
+  </aside>
+
+  <div class="footer">Эд · Как найти себя</div>
+</main>
+</body>
+</html>
