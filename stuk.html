@@ -85,8 +85,11 @@
   .metaphor p{font-size:.97em;}
   .metaphor .m-formula{font-weight:700; margin-top:1.6rem; margin-bottom:0;}
 
-  .invite{max-width:42rem;margin:4.5rem auto 0;padding:2.6rem 2.4rem;background:var(--white);border-radius:12px;border:1px solid var(--line)}
-  .invite>h3{margin:0 0 1.35rem;text-align:center;color:var(--gold);font-size:1.65rem;line-height:1.3;font-weight:700}
+  .reflection-transition{max-width:42rem;margin:4.5rem auto 4rem;padding:2rem 2.1rem;background:var(--sand);border-left:4px solid var(--gold);border-radius:0 12px 12px 0}
+  .reflection-transition p{font-size:1.02rem}
+  .reflection-transition p:last-child{margin-bottom:0}
+  .invite{max-width:42rem;margin:0 auto;padding:2.7rem 2.45rem;background:var(--white);border-radius:12px;border:1px solid var(--line)}
+  .invite>h2{margin:0 0 1rem;text-align:center;color:var(--gold);font-size:1.55rem;line-height:1.25;letter-spacing:normal;text-transform:none}
   .invite>p{font-size:.98rem;line-height:1.65;color:var(--ink-soft)}
   .loop-list{margin:-.25rem 0 1.25rem;padding:0;list-style:none}
   .loop-list li{position:relative;margin:.3rem 0;padding-left:1.25rem;color:var(--ink-soft);font-size:.98rem;line-height:1.55}
@@ -122,6 +125,7 @@
   .invite-duration{max-width:30rem;margin:.7rem auto 0;padding-top:.7rem;border-top:1px solid rgba(168,116,47,.22);color:var(--ink-soft);font-size:.88rem;line-height:1.5}
   .invite-meta{text-align:center;margin-top:1.3rem;color:var(--ink-soft);font-size:.9rem;letter-spacing:.04em;font-weight:700}
   .invite-action{text-align:center;margin-top:1.6rem}
+  .after-button{max-width:32rem;margin:.85rem auto 0!important;font-size:.82rem!important;line-height:1.5!important;text-align:center}
   .btn{display:inline-flex;align-items:center;justify-content:center;max-width:100%;padding:.92rem 1.65rem;background:var(--gold);border-radius:8px;color:#fff;text-decoration:none;font-size:1rem;line-height:1.35;font-weight:700;text-align:center;box-shadow:0 7px 18px rgba(124,82,33,.16)}
   .btn:hover{background:#96662A}
 
@@ -134,6 +138,7 @@
   sup.ref a{color:var(--gold);text-decoration:none;font-weight:700}
   .footer{margin-top:3rem; text-align:center; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft);}
   @media(max-width:600px){
+    .reflection-transition{padding:1.55rem 1.3rem;margin-bottom:3.3rem}
     .invite{padding:2.15rem 1.25rem;}
     .selection-callout{padding:1.1rem;}
     .knowledge-gap-stats{grid-template-columns:1fr;}
@@ -382,9 +387,8 @@
   <p class="m-formula">Доверять себе — не значит верить каждому чувству. Доверять себе — значит не оставлять внутренний стук без ответа.</p>
 </div>
 
-<aside class="invite">
-  <h3>Бывает странный момент после сильного текста</h3>
-
+<aside class="reflection-transition">
+  <p>Бывает странный момент после сильного текста</p>
   <p>Вроде понял идею.<br>Даже почувствовал: «да, это про меня».</p>
 
   <p>Но потом возвращаешься в свою жизнь — и всё снова едет по старой колее:</p>
@@ -401,25 +405,25 @@
   <p>Проблема в том, что мы думаем о своей ситуации изнутри той же петли, которая нас держит.</p>
 
   <p>В такие моменты нужно не еще одно понимание, почему это происходит.<br>Нужно разбирать конкретный механизм ситуации и реальные точки воздействия на него.</p>
+</aside>
+
+<aside class="invite" aria-labelledby="invite-title">
+  <h2 id="invite-title">Индивидуальный разбор ситуации</h2>
 
   <div class="selection-callout">
     <span>Открыт отбор</span>
-    <strong>Сейчас я отбираю нескольких людей на бесплатные разборы.</strong>
+    <strong>Я сейчас отбираю несколько людей на индивидуальные разборы: где вы сейчас застряли, что уже пробовали и какое решение может подойти дальше.</strong>
   </div>
 
-  <p>Берём один ваш запрос: что вы хотите изменить, что уже пробовали, где всё снова начинает повторяться — и за что здесь вообще имеет смысл браться дальше.</p>
-
-  <p>Для вас это возможность разобрать свою ситуацию.</p>
-
-  <p>Для меня — способ не придумывать за вас, что вам нужно. Точнее писать в блоге о том, что вас беспокоит, делать под это новые форматы, предлагать действительно релевантную помощь.</p>
-
-  <p><strong>Чтобы попасть на разбор — заполните короткую анкету.</strong></p>
-
-  <p><strong>Формат подходит не всем.</strong> Я изучу запрос и свяжусь с вами в ближайшее время, если буду уверен, что формат действительно может помочь в вашей ситуации. Кому-то может подойти совсем другое в зависимости от запроса.</p>
+  <p>Это предварительный разговор перед возможной совместной работой. Он помогает мне не предлагать всем одно и то же, а понять, могу ли я быть полезен именно вам и какой платный формат может подойти под ваш запрос.</p>
+  <p>Если я увижу подходящее решение, расскажу о нём. Продолжать работу или нет — решаете вы, бесплатный разбор ситуации вы получите в любом случае.</p>
+  <p>Вы можете прийти с любым запросом. Главное, опишите его в анкете подробнее, чтобы я понимал, действительно ли смогу быть вам полезен.</p>
+  <p>Смотреть видео перед заполнением необязательно)</p>
 
   <div class="invite-action">
-    <a class="btn" href="https://forms.yandex.ru/cloud/6ac7d93484227c265ddef774" target="_blank" rel="noopener noreferrer">Попасть на разбор</a>
+    <a class="btn" href="https://forms.yandex.ru/cloud/6ac7d93484227c265ddef774" target="_blank" rel="noopener noreferrer">Заполнить анкету на разбор</a>
   </div>
+  <p class="after-button">Я изучу ответы и свяжусь с вами, если увижу, что разбор может быть действительно полезен в вашей ситуации.</p>
 </aside>
 
 <div class="sources">
