@@ -5,13 +5,10 @@
   var API = 'https://script.google.com/macros/s/AKfycby27yUEu8ULoGGK3wKwxatHXHAvU_LYVXQBFtvltLkeCbsqi0AvhgRDVC23ZodKh2893w/exec';
   var TG_USER = 'ed_educate';
   var MSK = 'Europe/Moscow';
-  var MSK_OFFSET_MIN = 180;
   var REDIRECT_MS = 1800;
 
   var params = new URLSearchParams(window.location.search);
   var chosen = null;
-  var lastSlots = [];
-  var diffMin = 0; // разница человека с Москвой в минутах
 
   function $(id) { return document.getElementById(id); }
 
@@ -24,41 +21,6 @@
   function dayIn(iso, tz) {
     var s = format(iso, tz, { weekday: 'long', day: 'numeric', month: 'long' });
     return s.charAt(0).toUpperCase() + s.slice(1);
-  }
-  function localDate(iso) {
-    return new Date(new Date(iso).getTime() + (MSK_OFFSET_MIN + diffMin) * 60000);
-  }
-  function localTime(iso) { return timeIn(localDate(iso), 'UTC'); }
-  function localDay(iso) { return dayIn(localDate(iso), 'UTC'); }
-  function sameDay(iso) { return localDay(iso) === dayIn(iso, MSK); }
-
-  function diffLabel(min) {
-    if (min === 0) return 'Как в Москве';
-    var abs = Math.abs(min);
-    var h = Math.floor(abs / 60);
-    var m = abs % 60;
-    return (min > 0 ? '+' : '−') + h + (m ? ':' + (m < 10 ? '0' : '') + m : '') + ' от Москвы';
-  }
-
-  /** Список разниц с Москвой. Сразу выбрана разница устройства, её можно поменять. */
-  function fillDiff() {
-    var select = $('diff');
-    var device = -new Date().getTimezoneOffset() - MSK_OFFSET_MIN;
-    var values = [];
-    for (var h = -13; h <= 11; h++) values.push(h * 60);
-    if (values.indexOf(device) === -1) values.push(device);
-    values.sort(function (a, b) { return a - b; });
-    values.forEach(function (min) {
-      var o = el('option', '', diffLabel(min));
-      o.value = String(min);
-      select.appendChild(o);
-    });
-    select.value = String(device);
-    diffMin = device;
-    select.addEventListener('change', function () {
-      diffMin = Number(select.value);
-      if (lastSlots.length) renderSlots(lastSlots);
-    });
   }
 
   function el(tag, cls, text) {
@@ -89,10 +51,15 @@
     }
   }
 
-  /* Выбор времени */
+  /* Часы и выбор времени */
+
+  function tickClock() {
+    var now = new Date().toISOString();
+    $('clock').textContent = timeIn(now, MSK);
+    $('clock-day').textContent = format(now, MSK, { weekday: 'long' });
+  }
 
   function renderSlots(slots) {
-    lastSlots = slots;
     var box = $('days');
     box.textContent = '';
 
@@ -116,10 +83,8 @@
       var b = el('button', 'slot');
       b.type = 'button';
       b.appendChild(el('b', '', timeIn(iso, MSK)));
-      if (diffMin !== 0) {
-        b.appendChild(el('span', '', localTime(iso) + ' у вас' +
-          (sameDay(iso) ? '' : ', ' + format(localDate(iso), 'UTC', { day: 'numeric', month: 'short' }))));
-      }
+      b.appendChild(document.createTextNode(' '));
+      b.appendChild(el('span', '', 'МСК'));
       b.addEventListener('click', function () { choose(iso); });
       group.appendChild(b);
     });
@@ -150,11 +115,7 @@
     box.textContent = '';
     box.appendChild(el('span', 'when', dayIn(iso, MSK)));
     box.appendChild(el('span', 'big', timeIn(iso, MSK)));
-    var line = 'по Москве';
-    if (diffMin !== 0) {
-      line += ', у вас ' + localTime(iso) + (sameDay(iso) ? '' : ' (' + localDay(iso).toLowerCase() + ')');
-    }
-    box.appendChild(el('span', 'when', line));
+    box.appendChild(el('span', 'when', 'по МСК'));
   }
 
   function choose(iso) {
@@ -245,7 +206,7 @@
   function finish(form) {
     var mskDay = dayIn(chosen, MSK).toLowerCase();
     var text = 'Эд, привет! Это ' + form.name + '. Запись на сессию: ' + mskDay + ', ' +
-      timeIn(chosen, MSK) + ' по Москве.' + (form.ig ? ' Инстаграм: @' + form.ig + '.' : '');
+      timeIn(chosen, MSK) + ' по МСК.' + (form.ig ? ' Инстаграм: @' + form.ig + '.' : '');
     var link = telegramLink(text);
 
     fillWhen($('done-when'), chosen);
@@ -262,7 +223,8 @@
   var name = (params.get('name') || '').slice(0, 60);
   if (name) $('name').value = name;
 
-  fillDiff();
+  tickClock();
+  window.setInterval(tickClock, 10000);
   $('form').addEventListener('submit', submit);
   $('back').addEventListener('click', function () { showOnly('pick'); });
   loadSlots();
