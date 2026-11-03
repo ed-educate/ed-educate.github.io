@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Сессия с Эдом: запись</title>
+<meta name="description" content="Запись на индивидуальную сессию с Эдом: 60 минут в Zoom.">
+<meta name="robots" content="noindex, follow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self'; connect-src https://script.google.com https://*.googleusercontent.com; base-uri 'none'; form-action 'none'">
+<meta property="og:title" content="Сессия с Эдом">
+<meta property="og:description" content="60 минут в Zoom. Выберите удобное время.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ed-educate.github.io/zapis">
+<meta property="og:image" content="https://ed-educate.github.io/assets/ed.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    color-scheme:light;
+    --bg:#FAF7F2;
+    --card:#FFFFFF;
+    --ink:#211E1A;
+    --muted:#6B645B;
+    --accent:#1E5A5E;
+    --accent-dark:#164346;
+    --accent-soft:#DCEDEA;
+    --line:#E7E0D6;
+    --error:#A23B2A;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.5;
+    -webkit-text-size-adjust:100%;
+  }
+  .page{
+    max-width:460px;
+    margin:0 auto;
+    padding:28px 20px calc(40px + env(safe-area-inset-bottom));
+  }
+  .who{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .who img{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none}
+  h1{font-family:var(--serif);font-size:30px;font-weight:400;line-height:1.15}
+  .who p{color:var(--muted);font-size:15px;line-height:1.35;margin-top:4px}
+  h2{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25}
+  .note{color:var(--muted);font-size:15px;line-height:1.4}
+  #tz{margin-top:4px;margin-bottom:16px}
+  .diff{display:block;margin-bottom:24px;font-size:15px;font-weight:600}
+  .select{position:relative;display:block;margin-top:6px}
+  .select::after{
+    content:"";position:absolute;right:18px;top:50%;width:8px;height:8px;margin-top:-6px;
+    border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);pointer-events:none;
+  }
+  select{
+    display:block;width:100%;height:52px;padding:0 40px 0 14px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    color:var(--ink);font:inherit;font-size:17px;font-weight:400;
+    -webkit-appearance:none;appearance:none;
+  }
+  .notice{color:var(--error);font-size:15px;line-height:1.4;margin-bottom:16px}
+
+  .day{margin-bottom:22px}
+  .day h3{font-size:15px;font-weight:600;margin-bottom:8px}
+  .times{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .slot{
+    min-height:62px;
+    padding:9px 12px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    color:var(--ink);
+    font:inherit;
+    cursor:pointer;
+    touch-action:manipulation;
+  }
+  .slot b{display:block;font-size:22px;font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums}
+  .slot span{display:block;color:var(--muted);font-size:13px;line-height:1.3}
+  .slot:hover{border-color:var(--accent)}
+  .slot:active{background:var(--accent-soft)}
+
+  .link{
+    background:none;border:0;padding:6px 0;
+    color:var(--accent);font:inherit;font-size:15px;
+    text-decoration:underline;text-underline-offset:3px;cursor:pointer;
+  }
+  .chosen{margin:12px 0 26px}
+  .chosen .when{font-size:15px;color:var(--muted)}
+  .chosen .big{
+    display:block;
+    font-family:var(--serif);
+    font-size:62px;
+    line-height:1.05;
+    font-variant-numeric:lining-nums tabular-nums;
+    color:var(--accent);
+    margin:2px 0;
+    letter-spacing:-.01em;
+  }
+
+  label.field{display:block;margin-bottom:16px;font-size:15px;font-weight:600}
+  label.field small{font-weight:400;color:var(--muted);font-size:14px}
+  input[type=text]{
+    display:block;width:100%;height:52px;margin-top:6px;padding:0 14px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    color:var(--ink);font:inherit;font-size:17px;font-weight:400;
+  }
+  input::placeholder{color:#A39B90}
+  .nick{position:relative;display:block}
+  .nick i{position:absolute;left:14px;top:50%;transform:translateY(-50%);margin-top:1px;font-style:normal;font-weight:400;color:var(--muted);font-size:17px;pointer-events:none}
+  .nick input{padding-left:32px}
+  .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .privacy{margin:4px 0 20px}
+  #error{color:var(--error);font-size:15px;line-height:1.4;margin-bottom:12px}
+
+  .btn{
+    display:flex;align-items:center;justify-content:center;
+    width:100%;min-height:56px;padding:12px 18px;
+    background:var(--accent);color:#fff;
+    border:0;border-radius:12px;
+    font:inherit;font-weight:600;font-size:18px;text-align:center;text-decoration:none;
+    cursor:pointer;touch-action:manipulation;
+  }
+  .btn:hover{background:var(--accent-dark)}
+  .btn[disabled]{opacity:.65;cursor:default}
+  .btn.quiet{background:var(--card);color:var(--accent);border:1px solid var(--line)}
+
+  #done h2{font-size:30px}
+  #done .chosen{margin-bottom:22px}
+  #done p.next{margin-bottom:18px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  h2:focus{outline:none}
+  @media (min-width:520px){.page{padding-top:56px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="who">
+    <img src="assets/ed.webp" alt="" width="60" height="60">
+    <div>
+      <h1>Сессия с Эдом</h1>
+      <p>60 минут в Zoom. Ссылку пришлю за 10 минут до начала.</p>
+    </div>
+  </header>
+
+  <section id="pick">
+    <h2>Выберите время</h2>
+    <p class="note" id="tz">Всё время на странице московское.</p>
+    <label class="diff" for="diff">Ваша разница с Москвой
+      <span class="select"><select id="diff" name="diff"></select></span>
+    </label>
+    <p class="notice" id="notice" role="status" hidden></p>
+    <div id="days" aria-live="polite"><p class="note">Загружаю свободное время…</p></div>
+    <noscript><p class="note">Запись работает с включённым JavaScript. Или напишите мне: <a href="https://t.me/ed_educate">t.me/ed_educate</a>.</p></noscript>
+  </section>
+
+  <section id="details" hidden>
+    <button type="button" class="link" id="back">Выбрать другое время</button>
+    <p class="chosen" id="chosen" tabindex="-1"></p>
+    <form id="form" novalidate>
+      <label class="field">Имя
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="60" required>
+      </label>
+      <label class="field">Ник в Инстаграме <small>если есть</small>
+        <span class="nick"><i aria-hidden="true">@</i><input type="text" id="ig" name="ig" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="120"></span>
+      </label>
+      <label class="trap" aria-hidden="true">Сайт <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="note privacy">Имя и ник не сохраняются на сайте: они попадут только в сообщение мне в Телеграме.</p>
+      <p id="error" role="alert" hidden></p>
+      <button type="submit" class="btn" id="submit">Записаться</button>
+    </form>
+  </section>
+
+  <section id="done" hidden>
+    <h2 tabindex="-1" id="done-title">Время за вами</h2>
+    <p class="chosen" id="done-when"></p>
+    <p class="next">Теперь отправьте мне сообщение в Телеграме, оно уже готово. Без него я не узнаю, кто записался.</p>
+    <a class="btn" id="tg" href="https://t.me/ed_educate">Открыть Телеграм</a>
+  </section>
+</main>
+<script src="js/zapis.js" defer></script>
+</body>
+</html>
