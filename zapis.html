@@ -50,27 +50,15 @@
   .who p{color:var(--muted);font-size:15px;line-height:1.35;margin-top:4px}
   h2{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25}
   .note{color:var(--muted);font-size:15px;line-height:1.4}
-  #tz{margin-top:4px;margin-bottom:16px}
-  .diff{display:block;margin-bottom:24px;font-size:15px;font-weight:600}
-  .select{position:relative;display:block;margin-top:6px}
-  .select::after{
-    content:"";position:absolute;right:18px;top:50%;width:8px;height:8px;margin-top:-6px;
-    border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
-    transform:rotate(45deg);pointer-events:none;
-  }
-  select{
-    display:block;width:100%;height:52px;padding:0 40px 0 14px;
-    background:var(--card);border:1px solid var(--line);border-radius:12px;
-    color:var(--ink);font:inherit;font-size:17px;font-weight:400;
-    -webkit-appearance:none;appearance:none;
-  }
+  .clock{margin-top:4px;margin-bottom:24px}
+  .clock b{font-weight:600;font-variant-numeric:tabular-nums}
   .notice{color:var(--error);font-size:15px;line-height:1.4;margin-bottom:16px}
 
   .day{margin-bottom:22px}
   .day h3{font-size:15px;font-weight:600;margin-bottom:8px}
   .times{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .slot{
-    min-height:62px;
+    min-height:58px;
     padding:9px 12px;
     background:var(--card);
     border:1px solid var(--line);
@@ -80,8 +68,8 @@
     cursor:pointer;
     touch-action:manipulation;
   }
-  .slot b{display:block;font-size:22px;font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums}
-  .slot span{display:block;color:var(--muted);font-size:13px;line-height:1.3}
+  .slot b{font-size:22px;font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums}
+  .slot span{color:var(--muted);font-size:14px}
   .slot:hover{border-color:var(--accent)}
   .slot:active{background:var(--accent-soft)}
 
@@ -149,11 +137,8 @@
   </header>
 
   <section id="pick">
-    <h2>Выберите время</h2>
-    <p class="note" id="tz">Всё время на странице московское.</p>
-    <label class="diff" for="diff">Ваша разница с Москвой
-      <span class="select"><select id="diff" name="diff"></select></span>
-    </label>
+    <h2>Выберите время по МСК</h2>
+    <p class="clock">В Москве сейчас <b id="clock"></b>, <span id="clock-day"></span></p>
     <p class="notice" id="notice" role="status" hidden></p>
     <div id="days" aria-live="polite"><p class="note">Загружаю свободное время…</p></div>
     <noscript><p class="note">Запись работает с включённым JavaScript. Или напишите мне: <a href="https://t.me/ed_educate">t.me/ed_educate</a>.</p></noscript>
