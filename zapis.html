@@ -103,7 +103,6 @@
   .nick i{position:absolute;left:14px;top:50%;transform:translateY(-50%);margin-top:1px;font-style:normal;font-weight:400;color:var(--muted);font-size:17px;pointer-events:none}
   .nick input{padding-left:32px}
   .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-  .privacy{margin:4px 0 20px}
   #error{color:var(--error);font-size:15px;line-height:1.4;margin-bottom:12px}
 
   .btn{
@@ -121,6 +120,7 @@
   #done h2{font-size:30px}
   #done .chosen{margin-bottom:22px}
   #done p.next{margin-bottom:18px}
+  #done p.after{margin-top:16px}
   :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
   h2:focus{outline:none}
   @media (min-width:520px){.page{padding-top:56px}}
@@ -155,7 +155,6 @@
         <span class="nick"><i aria-hidden="true">@</i><input type="text" id="ig" name="ig" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="120"></span>
       </label>
       <label class="trap" aria-hidden="true">Сайт <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
-      <p class="note privacy">Имя и ник не сохраняются на сайте: они попадут только в сообщение мне в Телеграме.</p>
       <p id="error" role="alert" hidden></p>
       <button type="submit" class="btn" id="submit">Записаться</button>
     </form>
@@ -164,8 +163,9 @@
   <section id="done" hidden>
     <h2 tabindex="-1" id="done-title">Время за вами</h2>
     <p class="chosen" id="done-when"></p>
-    <p class="next">Теперь отправьте мне сообщение в Телеграме, оно уже готово. Без него я не узнаю, кто записался.</p>
+    <p class="next">Остался один шаг: откройте Телеграм и отправьте мне готовое сообщение. Без него я не узнаю, кто записался.</p>
     <a class="btn" id="tg" href="https://t.me/ed_educate">Открыть Телеграм</a>
+    <p class="note after">Выбрали не то время? Напишите мне об этом в личные сообщения, и мы его поменяем.</p>
   </section>
 </main>
 <script src="js/zapis.js" defer></script>

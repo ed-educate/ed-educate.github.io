@@ -5,7 +5,6 @@
   var API = 'https://script.google.com/macros/s/AKfycby27yUEu8ULoGGK3wKwxatHXHAvU_LYVXQBFtvltLkeCbsqi0AvhgRDVC23ZodKh2893w/exec';
   var TG_USER = 'ed_educate';
   var MSK = 'Europe/Moscow';
-  var REDIRECT_MS = 1800;
 
   var params = new URLSearchParams(window.location.search);
   var chosen = null;
@@ -207,13 +206,11 @@
     var mskDay = dayIn(chosen, MSK).toLowerCase();
     var text = 'Эд, привет! Это ' + form.name + '. Запись на сессию: ' + mskDay + ', ' +
       timeIn(chosen, MSK) + ' по МСК.' + (form.ig ? ' Инстаграм: @' + form.ig + '.' : '');
-    var link = telegramLink(text);
 
     fillWhen($('done-when'), chosen);
-    $('tg').href = link;
+    $('tg').href = telegramLink(text);
     showOnly('done');
     $('done-title').focus({ preventScroll: true });
-    window.setTimeout(function () { window.location.href = link; }, REDIRECT_MS);
   }
 
   /* Запуск */
